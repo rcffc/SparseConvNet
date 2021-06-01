@@ -7,4 +7,5 @@
 
 #export TORCH_CUDA_ARCH_LIST="6.0;6.1;6.2;7.0;7.5"
 rm -rf build/ dist/ sparseconvnet.egg-info sparseconvnet_SCN*.so
-python setup.py develop && python examples/hello-world.py
+env MAX_JOBS=12 FORCE_CUDA=1 python setup.py develop
+env MAX_JOBS=12 python examples/hello-world.py

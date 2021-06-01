@@ -20,7 +20,7 @@ import math
 import numpy as np
 
 use_cuda = torch.cuda.is_available()
-exp_name='unet_scale20_m16_rep1_notResidualBlocks'
+exp_name=os.path.join('../results/', 'unet_scale20_m16_rep1_notResidualBlocks')
 
 class Model(nn.Module):
     def __init__(self):
@@ -63,6 +63,7 @@ for epoch in range(training_epoch, training_epochs+1):
         train_loss+=loss.item()
         loss.backward()
         optimizer.step()
+        print(i)
     print(epoch,'Train loss',train_loss/(i+1), 'MegaMulAdd=',scn.forward_pass_multiplyAdd_count/len(data.train)/1e6, 'MegaHidden',scn.forward_pass_hidden_states/len(data.train)/1e6,'time=',time.time() - start,'s')
     scn.checkpoint_save(unet,exp_name,'unet',epoch, use_cuda)
 

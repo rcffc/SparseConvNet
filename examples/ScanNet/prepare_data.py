@@ -11,8 +11,8 @@ remapper=np.ones(150)*(-100)
 for i,x in enumerate([1,2,3,4,5,6,7,8,9,10,11,12,14,16,24,28,33,34,36,39]):
     remapper[x]=i
 
-files=sorted(glob.glob('*/*_vh_clean_2.ply'))
-files2=sorted(glob.glob('*/*_vh_clean_2.labels.ply'))
+files=sorted(glob.glob('../data/*/*_vh_clean_2.ply'))
+files2=sorted(glob.glob('../data/*/*_vh_clean_2.labels.ply'))
 assert len(files) == len(files2)
 
 def f(fn):

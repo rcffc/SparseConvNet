@@ -11,6 +11,7 @@ batch_size=32
 elastic_deformation=False
 
 import torch, numpy as np, glob, math, torch.utils.data, scipy.ndimage, multiprocessing as mp, time
+import debugpy
 
 dimension=3
 full_scale=4096 #Input field size
@@ -20,11 +21,11 @@ full_scale=4096 #Input field size
 
 train,val=[],[]
 for x in torch.utils.data.DataLoader(
-        glob.glob('train/*.pth'),
+        glob.glob('/app/data/train/*.pth'),
         collate_fn=lambda x: torch.load(x[0]), num_workers=mp.cpu_count()):
     train.append(x)
 for x in torch.utils.data.DataLoader(
-        glob.glob('val/*.pth'),
+        glob.glob('/app/data/val/*.pth'),
         collate_fn=lambda x: torch.load(x[0]), num_workers=mp.cpu_count()):
     val.append(x)
 print('Training examples:', len(train))
@@ -85,7 +86,7 @@ train_data_loader = torch.utils.data.DataLoader(
     list(range(len(train))),
     batch_size=batch_size,
     collate_fn=trainMerge,
-    num_workers=20, 
+    num_workers=12, 
     shuffle=True,
     drop_last=True,
     worker_init_fn=lambda x: np.random.seed(x+int(time.time()))
@@ -134,7 +135,7 @@ val_data_loader = torch.utils.data.DataLoader(
     list(range(len(val))),
     batch_size=batch_size,
     collate_fn=valMerge,
-    num_workers=20,
+    num_workers=12,
     shuffle=True,
     worker_init_fn=lambda x: np.random.seed(x+int(time.time()))
 )
