@@ -22,16 +22,17 @@ FROM base as debugger
 RUN apt-get update && \
     apt-get install -y \
     gdb
-# COPY . /app/src/
+COPY . /app/src/
 # ENTRYPOINT [ "python", "-m", "debugpy", "--listen", "0.0.0.0:5678", "--wait-for-client", "--log-to-stderr", "/app/src/examples/ScanNet/unet.py"]
-# ENTRYPOINT [ "python", "-m", "debugpy", "--listen", "0.0.0.0:5678", "--wait-for-client", "--log-to-stderr", "/app/src/setup.py", "develop"]
-# ENTRYPOINT [ "python", "/app/src/setup.py", "develop"]
+# ENTRYPOINT [ "python -m debugpy --listen 0.0.0.0:5678 --wait-for-client --log-to-stderr /app/src/examples/ScanNet/unet.py"]
 
+# python /app/src/setup.py develop && python -m debugpy --listen 0.0.0.0:5679 --wait-for-client --log-to-stderr /app/src/examples/ScanNet/data.py
 #################################################
 FROM base as prepare_data
 
 COPY . /app/src/
-ENTRYPOINT [ "python", "-m", "debugpy", "--listen", "0.0.0.0:5678", "--wait-for-client", "--log-to-stderr", "/app/src/examples/ScanNet/prepare_data.py"]
+ENTRYPOINT [ "python", "-m", "debugpy", "--listen", "0.0.0.0:5679", "--wait-for-client", "--log-to-stderr", "/app/src/examples/ScanNet/prepare_data.py"]
+
 
 
 # RUN apt-get update && \

@@ -5,18 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "data.py",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/examples/ScanNet/data.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Python: Remote Attach",
+            "name": "prepare_data.py",
             "type": "python",
             "request": "attach",
-            "connect": { "host": "localhost", "port": 5678 },
+            "connect": { "host": "localhost", "port": 5679 },
             "pathMappings": [{ "localRoot": "${workspaceFolder}", "remoteRoot": "/app/src" }]
         },
+        {
+            "name": "unet.py",
+            "type": "python",
+            "request": "attach",
+                    "connect": { "host": "localhost", "port": 5679 },
+            "pathMappings": [{ "localRoot": "${workspaceFolder}", "remoteRoot": "/app/src" }]
+        },
+        {
+            "name": "data.py",
+            "type": "python",
+            "request": "attach",
+                    "connect": { "host": "localhost", "port": 5679 },
+            "pathMappings": [{ "localRoot": "${workspaceFolder}", "remoteRoot": "/app/src" }]
+        },
+        
     ]
 }
