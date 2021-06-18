@@ -11,9 +11,10 @@ remapper=np.ones(150)*(-100)
 for i,x in enumerate([1,2,3,4,5,6,7,8,9,10,11,12,14,16,24,28,33,34,36,39]):
     remapper[x]=i
 
-files=sorted(glob.glob('../data/*/*_vh_clean_2.ply'))
-files2=sorted(glob.glob('../data/*/*_vh_clean_2.labels.ply'))
-assert len(files) == len(files2)
+# files=sorted(glob.glob('../data/*/*_vh_clean_2.ply'))
+# files2=sorted(glob.glob('../data/*/*_vh_clean_2.labels.ply'))
+
+files_test=sorted(glob.glob('../data/test/*_vh_clean_2.ply'))
 
 def f(fn):
     fn2 = fn[:-3]+'labels.ply'
@@ -26,7 +27,15 @@ def f(fn):
     torch.save((coords,colors,w),fn[:-4]+'.pth')
     print(fn, fn2)
 
+def f_test(fn):
+    a=plyfile.PlyData().read(fn)
+    v=np.array([list(x) for x in a.elements[0]])
+    coords=np.ascontiguousarray(v[:,:3]-v[:,:3].mean(0))
+    colors=np.ascontiguousarray(v[:,3:6])/127.5-1
+    torch.save((coords,colors),fn[:-4]+'.pth')
+    print(fn)
+
 p = mp.Pool(processes=mp.cpu_count())
-p.map(f,files)
+p.map(f_test,files_test)
 p.close()
 p.join()

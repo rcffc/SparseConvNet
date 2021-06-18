@@ -19,7 +19,7 @@ full_scale=4096 #Input field size
 # Class IDs have been mapped to the range {0,1,...,19}
 # NYU_CLASS_IDS = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 24, 28, 33, 34, 36, 39])
 
-train,val=[],[]
+train,val,test=[],[],[]
 for x in torch.utils.data.DataLoader(
         glob.glob('/app/data/train/*.pth'),
         collate_fn=lambda x: torch.load(x[0]), num_workers=mp.cpu_count()):
@@ -28,9 +28,13 @@ for x in torch.utils.data.DataLoader(
         glob.glob('/app/data/val/*.pth'),
         collate_fn=lambda x: torch.load(x[0]), num_workers=mp.cpu_count()):
     val.append(x)
+for x in torch.utils.data.DataLoader(
+        glob.glob('/app/data/test/*.pth'),
+        collate_fn=lambda x: torch.load(x[0]), num_workers=mp.cpu_count()):
+    test.append(x)
 print('Training examples:', len(train))
 print('Validation examples:', len(val))
-
+print('Test examples:', len(test))
 #Elastic distortion
 blur0=np.ones((3,1,1)).astype('float32')/3
 blur1=np.ones((1,3,1)).astype('float32')/3
@@ -135,6 +139,49 @@ val_data_loader = torch.utils.data.DataLoader(
     list(range(len(val))),
     batch_size=batch_size,
     collate_fn=valMerge,
+    num_workers=12,
+    shuffle=True,
+    worker_init_fn=lambda x: np.random.seed(x+int(time.time()))
+)
+
+
+testOffsets=[0]
+for idx,x in enumerate(test):
+    testOffsets.append(testOffsets[-1]+x[2].size)
+
+def testMerge(tbl):
+    locs=[]
+    feats=[]
+    point_ids=[]
+    for idx,i in enumerate(tbl):
+        a,b,c=test[i]
+        m=np.eye(3)
+        m[0][0]*=np.random.randint(0,2)*2-1
+        m*=scale
+        theta=np.random.rand()*2*math.pi
+        m=np.matmul(m,[[math.cos(theta),math.sin(theta),0],[-math.sin(theta),math.cos(theta),0],[0,0,1]])
+        a=np.matmul(a,m)+full_scale/2+np.random.uniform(-2,2,3)
+        m=a.min(0)
+        M=a.max(0)
+        q=M-m
+        offset=-m+np.clip(full_scale-M+m-0.001,0,None)*np.random.rand(3)+np.clip(full_scale-M+m+0.001,None,0)*np.random.rand(3)
+        a+=offset
+        idxs=(a.min(1)>=0)*(a.max(1)<full_scale)
+        a=a[idxs]
+        b=b[idxs]
+        c=c[idxs]
+        a=torch.from_numpy(a).long()
+        locs.append(torch.cat([a,torch.LongTensor(a.shape[0],1).fill_(idx)],1))
+        feats.append(torch.from_numpy(b))
+        point_ids.append(torch.from_numpy(np.nonzero(idxs)[0]+testOffsets[i]))
+    locs=torch.cat(locs,0)
+    feats=torch.cat(feats,0)
+    point_ids=torch.cat(point_ids,0)
+    return {'x': [locs,feats], 'id': tbl, 'point_ids': point_ids}
+test_data_loader = torch.utils.data.DataLoader(
+    list(range(len(test))),
+    batch_size=batch_size,
+    collate_fn=testMerge,
     num_workers=12,
     shuffle=True,
     worker_init_fn=lambda x: np.random.seed(x+int(time.time()))
