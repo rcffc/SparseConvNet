@@ -7,6 +7,7 @@
 # Options
 scale=20  #Voxel size = 1/scale
 val_reps=1 # Number of test views, 1 or more
+test_reps=1
 batch_size=32
 elastic_deformation=False
 
@@ -21,17 +22,18 @@ full_scale=4096 #Input field size
 
 train,val,test=[],[],[]
 for x in torch.utils.data.DataLoader(
-        glob.glob('/app/data/train/*.pth'),
+        glob.glob('/opt/datasets/scannetv2_sparseconvnet/train/*.pth'),
         collate_fn=lambda x: torch.load(x[0]), num_workers=mp.cpu_count()):
     train.append(x)
 for x in torch.utils.data.DataLoader(
-        glob.glob('/app/data/val/*.pth'),
+        glob.glob('/opt/datasets/scannetv2_sparseconvnet/val/*.pth'),
         collate_fn=lambda x: torch.load(x[0]), num_workers=mp.cpu_count()):
     val.append(x)
 for x in torch.utils.data.DataLoader(
-        glob.glob('/app/data/test/*.pth'),
+        glob.glob('/opt/datasets/scannetv2_sparseconvnet/test/*.pth'),
         collate_fn=lambda x: torch.load(x[0]), num_workers=mp.cpu_count()):
     test.append(x)
+
 print('Training examples:', len(train))
 print('Validation examples:', len(val))
 print('Test examples:', len(test))
@@ -135,6 +137,7 @@ def valMerge(tbl):
     labels=torch.cat(labels,0)
     point_ids=torch.cat(point_ids,0)
     return {'x': [locs,feats], 'y': labels.long(), 'id': tbl, 'point_ids': point_ids}
+# bla = valMerge(val)
 val_data_loader = torch.utils.data.DataLoader(
     list(range(len(val))),
     batch_size=batch_size,
@@ -147,14 +150,14 @@ val_data_loader = torch.utils.data.DataLoader(
 
 testOffsets=[0]
 for idx,x in enumerate(test):
-    testOffsets.append(testOffsets[-1]+x[2].size)
+    testOffsets.append(testOffsets[-1]+x[1].size)
 
 def testMerge(tbl):
     locs=[]
     feats=[]
     point_ids=[]
     for idx,i in enumerate(tbl):
-        a,b,c=test[i]
+        a,b=test[i]
         m=np.eye(3)
         m[0][0]*=np.random.randint(0,2)*2-1
         m*=scale
@@ -169,7 +172,6 @@ def testMerge(tbl):
         idxs=(a.min(1)>=0)*(a.max(1)<full_scale)
         a=a[idxs]
         b=b[idxs]
-        c=c[idxs]
         a=torch.from_numpy(a).long()
         locs.append(torch.cat([a,torch.LongTensor(a.shape[0],1).fill_(idx)],1))
         feats.append(torch.from_numpy(b))
