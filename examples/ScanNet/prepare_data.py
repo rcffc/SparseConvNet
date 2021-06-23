@@ -14,7 +14,8 @@ for i,x in enumerate([1,2,3,4,5,6,7,8,9,10,11,12,14,16,24,28,33,34,36,39]):
 # files=sorted(glob.glob('../data/*/*_vh_clean_2.ply'))
 # files2=sorted(glob.glob('../data/*/*_vh_clean_2.labels.ply'))
 
-files_test=sorted(glob.glob('../data/test/*_vh_clean_2.ply'))
+files_test=sorted(glob.glob('/opt/datasets/scannetv2_sparseconvnet/test/*_vh_clean_2.ply'))
+# files_test=sorted(glob.glob('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/0.ply'))
 
 def f(fn):
     fn2 = fn[:-3]+'labels.ply'

@@ -57,5 +57,7 @@ with torch.no_grad():
             if use_cuda:
                 batch['x'][1]=batch['x'][1].cuda()
             predictions=unet(batch['x'])
+            labels = torch.argmax(predictions, 1)
+            end = time.time() - start
             store.index_add_(0,batch['point_ids'],predictions.cpu())
-        print(0,rep,'Test MegaMulAdd=',scn.forward_pass_multiplyAdd_count/len(data.test)/1e6, 'MegaHidden',scn.forward_pass_hidden_states/len(data.test)/1e6,'time=',time.time() - start,'s')
+        print(0,rep,'Test MegaMulAdd=',scn.forward_pass_multiplyAdd_count/len(data.test)/1e6, 'MegaHidden',scn.forward_pass_hidden_states/len(data.test)/1e6,'time=', end,'s')

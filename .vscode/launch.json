@@ -7,24 +7,37 @@
         {
             "name": "prepare_data.py",
             "type": "python",
-            "request": "attach",
-            "connect": { "host": "localhost", "port": 5679 },
-            "pathMappings": [{ "localRoot": "${workspaceFolder}", "remoteRoot": "/app/src" }]
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/ScanNet/prepare_data.py",
+            "console": "integratedTerminal"
         },
         {
             "name": "unet.py",
             "type": "python",
-            "request": "attach",
-                    "connect": { "host": "localhost", "port": 5679 },
-            "pathMappings": [{ "localRoot": "${workspaceFolder}", "remoteRoot": "/app/src" }]
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/ScanNet/unet.py",
+            "console": "integratedTerminal"
         },
         {
             "name": "data.py",
             "type": "python",
-            "request": "attach",
-                    "connect": { "host": "localhost", "port": 5679 },
-            "pathMappings": [{ "localRoot": "${workspaceFolder}", "remoteRoot": "/app/src" }]
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/ScanNet/data.py",
+            "console": "integratedTerminal"
         },
-        
+        {
+            "name": "test.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/ScanNet/test.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "load_vba.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/ScanNet/load_vba.py",
+            "console": "integratedTerminal"
+        },
     ]
 }

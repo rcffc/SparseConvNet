@@ -1,0 +1,20 @@
+0	wall
+1	floor
+2	cabinet
+3	bed
+4	chair
+5	sofa
+6	table
+7	door
+8	window
+9	bookshelf
+10	picture
+11	counter
+12	desk
+13	curtain
+14	refridgerator
+15	shower curtain
+16	toilet
+17	sink
+18	bathtub
+19	otherfurniture

@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/usr/bin/python3"
+    "python.pythonPath": "/igd/a4/homestud/pejiang/miniconda3/envs/sparseconvnet/bin/python"
     // "python.pythonPath": "c:\\ProgramData\\Miniconda3\\envs\\sparseconvnet\\python.exe"
 }
