@@ -1,20 +1,20 @@
-0	wall
-1	floor
-2	cabinet
-3	bed
-4	chair
-5	sofa
-6	table
-7	door
-8	window
-9	bookshelf
-10	picture
-11	counter
-12	desk
-13	curtain
-14	refridgerator
-15	shower curtain
-16	toilet
-17	sink
-18	bathtub
-19	otherfurniture
+0	wall    white
+1	floor   light_green
+2	cabinet blue
+3	bed khaki
+4	chair   yellow
+5	sofa    brown
+6	table   light_red
+7	door    red
+8	window  turqois
+9	bookshelf   olive
+10	picture rosa
+11	counter light_blue
+12	desk    pink
+13	curtain light_yellow
+14	refridgerator   orange
+15	shower dark_blue
+16	toilet  green
+17	sink    grey
+18	bathtub dark_green
+19	otherfurniture  lila

@@ -22,6 +22,7 @@ import numpy as np
 import plyfile
 
 use_cuda = torch.cuda.is_available()
+# use_cuda = False
 exp_name=os.path.join('examples','ScanNet', 'results','unet_scale20_m16_rep1_notResidualBlocks')
 
 class Model(nn.Module):
@@ -64,12 +65,33 @@ def write_ply(labels, positions):
 
     ply = plyfile.PlyData(
         [plyfile.PlyElement.describe(vertices, 'vertex')], text=False)
-    ply.write("result.ply")
+    ply.write("/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/pointclouds/0444_00_400_predicted.ply")
 
+    # ply.write(
+    #     "/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/pointclouds/scene0444_00_vh_clean_2_predicted.ply")
+    print('Finished writing')
 
 color_dict={}
-for i in range(0, 20):
-    color_dict[i] = np.random.randint(low=0, high=255, size=(3))
+color_dict[0] = np.array([255, 255, 255])
+color_dict[1] = np.array([153, 255, 102])
+color_dict[2] = np.array([51, 153, 255])
+color_dict[3] = np.array([204, 153, 0])
+color_dict[4] = np.array([255, 255, 0])
+color_dict[5] = np.array([204, 102, 0])
+color_dict[6] = np.array([255, 80, 80])
+color_dict[7] = np.array([255, 0, 0])
+color_dict[8] = np.array([0, 255, 204])
+color_dict[9] = np.array([102, 102, 51])
+color_dict[10] = np.array([255, 153, 153])
+color_dict[11] = np.array([51, 204, 255])
+color_dict[12] = np.array([255, 153, 255])
+color_dict[13] = np.array([255, 255, 153])
+color_dict[14] = np.array([255, 153, 0])
+color_dict[15] = np.array([0, 0, 153])
+color_dict[16] = np.array([0, 153, 51])
+color_dict[17] = np.array([128, 128, 128])
+color_dict[18] = np.array([0, 102, 0])
+color_dict[19] = np.array([153, 51, 255])
 
 with torch.no_grad():
     unet.eval()
@@ -78,14 +100,12 @@ with torch.no_grad():
     scn.forward_pass_hidden_states=0
     start = time.time()
     for rep in range(1,1+data.test_reps):
-        for i,batch in enumerate(data.test_data_loader):
+        for batch in data.test_data_loader:
             if use_cuda:
                 batch['x'][1]=batch['x'][1].cuda()
             predictions=unet(batch['x'])
             labels = torch.argmax(predictions, 1)
             end = time.time() - start
             write_ply(labels.cpu().numpy(), batch['x'][0].cpu().numpy())
-            store.index_add_(0,batch['point_ids'],predictions.cpu())
+            # store.index_add_(0,batch['point_ids'],predictions.cpu())
         print(0,rep,'Test MegaMulAdd=',scn.forward_pass_multiplyAdd_count/len(data.test)/1e6, 'MegaHidden',scn.forward_pass_hidden_states/len(data.test)/1e6,'time=', end,'s')
-
-

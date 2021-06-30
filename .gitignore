@@ -13,3 +13,5 @@ sparseconvnet.egg-info
 *.zip
 *.rar
 venv/
+*.ply
+*.pth
