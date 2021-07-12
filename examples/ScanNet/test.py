@@ -74,6 +74,25 @@ def write_ply(labels, positions):
     print('Finished writing')
 
 color_dict={}
+color_dict[0] = np.array([174, 199, 232])
+color_dict[1] = np.array([152, 223, 138])
+color_dict[2] = np.array([31, 119, 180])
+color_dict[3] = np.array([255, 187, 120])
+color_dict[4] = np.array([188, 189,  34])
+color_dict[5] = np.array([140,  86,  75])
+color_dict[6] = np.array([255, 152, 150])
+color_dict[7] = np.array([214,  39,  40])
+color_dict[8] = np.array([197, 176, 213])
+color_dict[9] = np.array([148, 103, 189])
+color_dict[10] = np.array([196, 156, 148])
+color_dict[11] = np.array([23, 190, 207])
+color_dict[12] = np.array([247, 182, 210])
+color_dict[13] = np.array([219, 219, 141])
+color_dict[14] = np.array([255, 127,  14])
+color_dict[15] = np.array([158, 218, 229])
+color_dict[16] = np.array([44, 160,  44])
+color_dict[17] = np.array([112, 128, 144])
+color_dict[18] = np.array([227, 119, 194])
 color_dict[19] = np.array([82,  84, 163])
 
 with torch.no_grad():
