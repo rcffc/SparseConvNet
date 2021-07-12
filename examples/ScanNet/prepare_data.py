@@ -17,9 +17,19 @@ for i,x in enumerate([1,2,3,4,5,6,7,8,9,10,11,12,14,16,24,28,33,34,36,39]):
 # files_test=sorted(glob.glob('/opt/datasets/scannetv2_sparseconvnet/test/*_vh_clean_2.ply'))
 # files_test=sorted(glob.glob('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/0.ply'))
 files_test = sorted(glob.glob(
-    '/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/pointclouds/scene0444_00_vh_clean_2.ply'))
-# files_test = sorted(glob.glob(
-#     '/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/pointclouds/mesh.ply'))
+def write_ply(coords, colors, name):
+    vertices = np.empty(len(coords), dtype=[(
+        'x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('red', 'u1'), ('green', 'u1'), ('blue', 'u1')])
+    vertices['x'] = coords[:, 0].astype('f4')
+    vertices['y'] = coords[:, 1].astype('f4')
+    vertices['z'] = coords[:, 2].astype('f4')
+    vertices['red'] = colors[:, 0].astype('u1')
+    vertices['green'] = colors[:, 1].astype('u1')
+    vertices['blue'] = colors[:, 2].astype('u1')
+
+    ply = plyfile.PlyData(
+        [plyfile.PlyElement.describe(vertices, 'vertex')], text=False)
+    ply.write(name)
 
 def f(fn):
     fn2 = fn[:-3]+'labels.ply'
