@@ -72,26 +72,7 @@ def write_ply(labels, positions):
     print('Finished writing')
 
 color_dict={}
-color_dict[0] = np.array([255, 255, 255])
-color_dict[1] = np.array([153, 255, 102])
-color_dict[2] = np.array([51, 153, 255])
-color_dict[3] = np.array([204, 153, 0])
-color_dict[4] = np.array([255, 255, 0])
-color_dict[5] = np.array([204, 102, 0])
-color_dict[6] = np.array([255, 80, 80])
-color_dict[7] = np.array([255, 0, 0])
-color_dict[8] = np.array([0, 255, 204])
-color_dict[9] = np.array([102, 102, 51])
-color_dict[10] = np.array([255, 153, 153])
-color_dict[11] = np.array([51, 204, 255])
-color_dict[12] = np.array([255, 153, 255])
-color_dict[13] = np.array([255, 255, 153])
-color_dict[14] = np.array([255, 153, 0])
-color_dict[15] = np.array([0, 0, 153])
-color_dict[16] = np.array([0, 153, 51])
-color_dict[17] = np.array([128, 128, 128])
-color_dict[18] = np.array([0, 102, 0])
-color_dict[19] = np.array([153, 51, 255])
+color_dict[19] = np.array([82,  84, 163])
 
 with torch.no_grad():
     unet.eval()
