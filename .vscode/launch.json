@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "prepare_data.py",
             "type": "python",
             "request": "launch",
@@ -33,11 +40,31 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "evaluate.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/ScanNet/evaluate.py",
+            "console": "integratedTerminal",
+            "environment": [
+                {
+                    "name": "DISPLAY",
+                    "value": "localhost: 10.0"
+                }
+            ],
+        },
+        {
             "name": "load_vba.py",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/examples/ScanNet/load_vba.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "split_val.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/ScanNet/datasplit/split_val.py",
+            "console": "integratedTerminal",
         },
     ]
 }
