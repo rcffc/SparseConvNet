@@ -58,13 +58,14 @@ def write_ply(labels, positions):
     colors = np.array([color_dict.__getitem__(label) for label in labels])
 
     vertices = np.empty(len(labels), dtype=[(
-        'x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('red', 'u1'), ('green', 'u1'), ('blue', 'u1')])
+        'x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('red', 'u1'), ('green', 'u1'), ('blue', 'u1'), ('label', 'i4')])
     vertices['x'] = positions[:, 0].astype('f4')
     vertices['y'] = positions[:, 1].astype('f4')
     vertices['z'] = positions[:, 2].astype('f4')
     vertices['red'] = colors[:, 0].astype('u1')
     vertices['green'] = colors[:, 1].astype('u1')
     vertices['blue'] = colors[:, 2].astype('u1')
+    vertices['label'] = labels.astype('i4')
 
     ply = plyfile.PlyData(
         [plyfile.PlyElement.describe(vertices, 'vertex')], text=False)
