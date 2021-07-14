@@ -68,10 +68,7 @@ def write_ply(labels, positions):
 
     ply = plyfile.PlyData(
         [plyfile.PlyElement.describe(vertices, 'vertex')], text=False)
-    ply.write("/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/pointclouds/0444_00_400_predicted.ply")
-
-    # ply.write(
-    #     "/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/pointclouds/scene0444_00_vh_clean_2_predicted.ply")
+    ply.write(config['base_path'] +  config['id'] + config['modifiers'] + '_predicted.ply')
     print('Finished writing')
 
 color_dict={}
