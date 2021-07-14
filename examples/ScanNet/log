@@ -1,0 +1,90 @@
+evaluating 25481 points...
+classes          IoU
+----------------------------
+wall          : 0.902   (tp:   3102/ fp: 107   / fn: 231   )
+floor         : 0.938   (tp:   2058/ fp: 49    / fn: 88    )
+cabinet       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+bed           : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+chair         : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+sofa          : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+table         : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+door          : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+window        : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+bookshelf     : 0.968   (tp:  13867/ fp: 312   / fn: 149   )
+picture       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+counter       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+desk          : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+curtain       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+refrigerator  : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+shower curtain: -1.000   (tp:      0/ fp: 0     / fn: 0     )
+toilet        : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+sink          : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+bathtub       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+otherfurniture: -1.000   (tp:      0/ fp: 0     / fn: 0     )
+mean IOU 0.9357182815854704
+
+-100.0: 5986
+0.0: 3333
+1.0: 2146
+9.0: 14016
+----------------------------------------------
+
+
+evaluating 25481 points...
+classes          IoU
+----------------------------
+wall          : 0.039   (tp:    273/ fp: 3609  / fn: 3060  )
+floor         : 0.139   (tp:    743/ fp: 3204  / fn: 1403  )
+cabinet       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+bed           : 0.000   (tp:      0/ fp: 5794  / fn: 0     )
+chair         : 0.000   (tp:      0/ fp: 80    / fn: 0     )
+sofa          : 0.000   (tp:      0/ fp: 2360  / fn: 0     )
+table         : 0.000   (tp:      0/ fp: 1150  / fn: 0     )
+door          : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+window        : 0.000   (tp:      0/ fp: 545   / fn: 0     )
+bookshelf     : 0.000   (tp:      0/ fp: 0     / fn: 14016 )
+picture       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+counter       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+desk          : 0.000   (tp:      0/ fp: 1091  / fn: 0     )
+curtain       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+refrigerator  : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+shower curtain: -1.000   (tp:      0/ fp: 0     / fn: 0     )
+toilet        : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+sink          : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+bathtub       : -1.000   (tp:      0/ fp: 0     / fn: 0     )
+otherfurniture: 0.000   (tp:      0/ fp: 646   / fn: 0     )
+mean IOU 0.01782043473695264
+
+classes          Accuracy
+----------------------------
+wall          : 0.658   (   273/0     )
+floor         : 0.764   (   744/0     )
+cabinet       : -1.000   (     0/0     )
+bed           : 0.703   (     0/0     )
+chair         : 0.996   (     0/0     )
+sofa          : 0.879   (     0/0     )
+table         : 0.941   (     0/0     )
+door          : -1.000   (     0/0     )
+window        : 0.972   (     0/0     )
+bookshelf     : 0.281   (     0/0     )
+picture       : -1.000   (     0/0     )
+counter       : -1.000   (     0/0     )
+desk          : 0.944   (     0/0     )
+curtain       : -1.000   (     0/0     )
+refrigerator  : -1.000   (     0/0     )
+shower curtain: -1.000   (     0/0     )
+toilet        : -1.000   (     0/0     )
+sink          : -1.000   (     0/0     )
+bathtub       : -1.000   (     0/0     )
+otherfurniture: 0.967   (     0/0     )
+mean Accuracy 0.7109002308284176
+
+0: 1806
+1: 1177
+3: 5826
+4: 84
+5: 1903
+6: 1012
+8: 38
+12: 121
+19: 2957
