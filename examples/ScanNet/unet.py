@@ -9,7 +9,7 @@ m = 16 # 16 or 32
 residual_blocks=False #True or False
 block_reps = 1 #Conv block repetition factor: 1 or 2
 
-import torch, data, iou, accuracy
+import torch, data, eval.iou as iou, eval.accuracy as accuracy
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
