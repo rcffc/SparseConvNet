@@ -19,8 +19,8 @@ import os, sys, glob
 import math
 import numpy as np
 
-use_cuda = torch.cuda.is_available()
-exp_name=os.path.join('../results/', 'unet_scale20_m16_rep1_notResidualBlocks')
+exp_name = os.path.join('examples', 'ScanNet', 'results',
+                        'unet_scale20_m16_rep1_notResidualBlocks')
 
 class Model(nn.Module):
     def __init__(self):

@@ -22,10 +22,11 @@ import numpy as np
 import plyfile
 import yaml
 
-use_cuda = torch.cuda.is_available()
-# use_cuda = False
+# use_cuda = torch.cuda.is_available()
+use_cuda = False
 exp_name=os.path.join('examples','ScanNet', 'results','unet_scale20_m16_rep1_notResidualBlocks')
-config = yaml.safe_load(open("config/scene0444_00_vh_clean_2.yaml"))
+config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/0444_00_400_scaled_normalized_transformed.yaml'))
+# config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/scene0444_00_vh_clean_2.yaml'))
 
 class Model(nn.Module):
     def __init__(self):

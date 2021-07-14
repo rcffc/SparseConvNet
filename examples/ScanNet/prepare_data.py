@@ -5,6 +5,9 @@
 # LICENSE file in the root directory of this source tree.
 
 import glob, plyfile, numpy as np, multiprocessing as mp, torch
+import yaml
+# config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/0444_00_400_scaled_normalized_transformed.yaml'))
+config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/scene0444_00_vh_clean_2.yaml'))
 
 # Map relevant classes to {0,1,...,19}, and ignored classes to -100
 remapper=np.ones(150)*(-100)
@@ -16,7 +19,14 @@ for i,x in enumerate([1,2,3,4,5,6,7,8,9,10,11,12,14,16,24,28,33,34,36,39]):
 
 # files_test=sorted(glob.glob('/opt/datasets/scannetv2_sparseconvnet/test/*_vh_clean_2.ply'))
 # files_test=sorted(glob.glob('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/0.ply'))
-files_test = sorted(glob.glob(
+# files_test = sorted(glob.glob(
+#     '/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/pointclouds/scene0444_00_vh_clean_2.ply'))
+# files_test = sorted(glob.glob(
+#     '/igd/a4/homestud/pejiang/ScanNet/scans/scene0444_00/scene0444_00_vh_clean_2_edited.ply'))
+# files_test = sorted(glob.glob(
+#     '/igd/a4/homestud/pejiang/scenes/multi/0444_00_400_edited.ply'))
+files_test = sorted(glob.glob(config['ply']))
+
 def write_ply(coords, colors, name):
     vertices = np.empty(len(coords), dtype=[(
         'x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('red', 'u1'), ('green', 'u1'), ('blue', 'u1')])
@@ -39,7 +49,8 @@ def f(fn):
     colors=np.ascontiguousarray(v[:,3:6])/127.5-1
     a=plyfile.PlyData().read(fn2)
     w=remapper[np.array(a.elements[0]['label'])]
-    torch.save((coords,colors,w),fn[:-4]+'.pth')
+    torch.save((coords, colors, w), fn[:-4]+'_normalized.pth')
+    write_ply(coords,colors, fn[:-4] + "_normalized.ply")
     print(fn, fn2)
 
 def f_test(fn):
@@ -47,7 +58,11 @@ def f_test(fn):
     v=np.array([list(x) for x in a.elements[0]])
     coords=np.ascontiguousarray(v[:,:3]-v[:,:3].mean(0))
     colors=np.ascontiguousarray(v[:,3:6])/127.5-1
-    torch.save((coords,colors),fn[:-4]+'.pth')
+    # coords=np.ascontiguousarray(v[:, :3])
+    # colors=np.ascontiguousarray(v[:, 3:6])
+
+    torch.save((coords, colors), fn[:-4] + config['modifiers'] + '.pth')
+    # write_ply(coords, colors, fn[:-4] + "_normalized.ply")
     print(fn)
 
 p = mp.Pool(processes=mp.cpu_count())
