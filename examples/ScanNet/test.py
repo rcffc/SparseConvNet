@@ -66,7 +66,7 @@ def write_ply(labels, positions):
     vertices['green'] = colors[:, 1].astype('u1')
     vertices['blue'] = colors[:, 2].astype('u1')
     vertices['label'] = labels.astype('i4')
-
+    
     ply = plyfile.PlyData(
         [plyfile.PlyElement.describe(vertices, 'vertex')], text=False)
     ply.write(config['base_path'] +  config['id'] + config['modifiers'] + '_predicted.ply')
@@ -107,6 +107,6 @@ with torch.no_grad():
             predictions=unet(batch['x'])
             labels = torch.argmax(predictions, 1)
             end = time.time() - start
-            write_ply(labels.cpu().numpy(), batch['x'][0].cpu().numpy())
+            write_ply(labels.cpu().numpy(), batch['id'][0])
             # store.index_add_(0,batch['point_ids'],predictions.cpu())
         print(0,rep,'Test MegaMulAdd=',scn.forward_pass_multiplyAdd_count/len(data.test)/1e6, 'MegaHidden',scn.forward_pass_hidden_states/len(data.test)/1e6,'time=', end,'s')
