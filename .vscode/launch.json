@@ -66,5 +66,20 @@
             "program": "${workspaceFolder}/examples/ScanNet/datasplit/split_val.py",
             "console": "integratedTerminal",
         },
+        {
+            "name": "(Docker)unet_.py",
+            "type": "python",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 5679
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "/app/src"
+                }
+            ]
+        },
     ]
 }

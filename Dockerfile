@@ -26,7 +26,7 @@ COPY . /app/src/
 # ENTRYPOINT [ "python", "-m", "debugpy", "--listen", "0.0.0.0:5678", "--wait-for-client", "--log-to-stderr", "/app/src/examples/ScanNet/unet.py"]
 # ENTRYPOINT [ "python -m debugpy --listen 0.0.0.0:5678 --wait-for-client --log-to-stderr /app/src/examples/ScanNet/unet.py"]
 
-# python /app/src/setup.py develop && python -m debugpy --listen 0.0.0.0:5679 --wait-for-client --log-to-stderr /app/src/examples/ScanNet/data.py
+# python /app/src/setup.py develop && python -m debugpy --listen 0.0.0.0:5679 --wait-for-client --log-to-stderr /app/src/examples/ScanNet/unet.py
 #################################################
 FROM base as prepare_data
 
