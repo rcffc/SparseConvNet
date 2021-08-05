@@ -5,9 +5,9 @@
 # LICENSE file in the root directory of this source tree.
 
 # Options
-m = 16 # 16 or 32
-residual_blocks=False #True or False
-block_reps = 1 #Conv block repetition factor: 1 or 2
+m = 32 # 16 or 32
+residual_blocks=True #True or False
+block_reps = 2 #Conv block repetition factor: 1 or 2
 
 import collections
 import torch, data
@@ -24,8 +24,10 @@ import yaml
 
 # use_cuda = torch.cuda.is_available()
 use_cuda = False
-exp_name=os.path.join('examples','ScanNet', 'results','unet_scale20_m16_rep1_notResidualBlocks')
-config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/0444_00_400_scaled_normalized_transformed.yaml'))
+# exp_name=os.path.join('examples','ScanNet', 'results','unet_scale20_m16_rep1_notResidualBlocks')
+exp_name = os.path.join('examples', 'ScanNet', 'results', 'unet_scale50_m32_rep2_residualBlocks_batchSize5')
+config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/0444_00_400_scaled_normalized.yaml'))
+# config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/0444_00_100_scaled_normalized_0.9_modulo8.yaml'))
 # config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/scene0444_00_vh_clean_2.yaml'))
 
 class Model(nn.Module):
