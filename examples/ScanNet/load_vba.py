@@ -15,10 +15,10 @@ scale = 0.005
 def f_test(fn):
     v=torch.load(fn)
     coords = np.ascontiguousarray((v[:, :3]-v[:, :3].mean(0)) * scale)
-    colors = np.ascontiguousarray(v[:, 4:7])/127.5-1
+    colors = np.ascontiguousarray(v[:, 3:6])/127.5-1
     torch.save((coords, colors), fn[:-4]+config['modifiers']+'.pth')
     # coords=np.ascontiguousarray(v[:, :3])
-    # colors=np.ascontiguousarray(v[:, 4:7])
+    # colors=np.ascontiguousarray(v[:, 3:6])
     # torch.save((coords,colors),fn[:-4]+'_reshaped.pth')
     
     vertices = np.empty(len(coords), dtype=[(
