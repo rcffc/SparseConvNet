@@ -1,11 +1,12 @@
 import open3d as o3d
 import numpy as np
 import copy
-from sklearn.neighbors import KDTree, KNeighborsClassifier
+from sklearn.neighbors import KDTree, KNeighborsClassifier, NearestNeighbors
 import plyfile
 import glob
 import torch
 import iou, accuracy
+import time
 
 k = 3
 
@@ -86,7 +87,7 @@ def do_registration(source, target):
     result_icp = refine_registration(source, target, source_fpfh, target_fpfh,
                                      voxel_size, result_ransac)
     # print(result_icp)
-    draw_registration_result(source, target, result_icp.transformation)
+    # draw_registration_result(source, target, result_icp.transformation)
     return result_icp.transformation
 
 
@@ -100,9 +101,51 @@ def get_knn_pc(source, target):
         knn_pc.append(source_pts[indices])
     return np.array(knn_pc)
 
+def normalize(v):
+    norm = np.linalg.norm(v)
+    if norm == 0: 
+       return v
+    return v / norm
+
+def calculate_distance_point_to_triangle(p, p0, p1, p2):
+    n = np.cross(p2-p0, p2-p1)
+    n = normalize(n)
+    dist = np.abs(np.dot(p-p0,n))
+    return dist
+
+def get_triangles(id, gt):
+    return np.where(gt[:,]==id)[0]
+
+def calculate_reconstruction_accuracy(src, gt):
+    distances = []
+    nbrs = NearestNeighbors(n_neighbors=k, algorithm='ball_tree').fit(np.asarray(gt.vertices))
+    for vtx in src:
+        start=time.time()
+        # the indices of the three closest vertices
+        indices = nbrs.kneighbors([vtx], return_distance=False)
+        
+        triangles = []
+        for id in indices[0]:
+            for triangle in get_triangles(id, np.asarray(gt.triangles)):
+                # add vertices of triangle
+                triangles.append(np.asarray(gt.triangles)[triangle])
+        
+
+        # get all triangles that includes these points
+        distance = np.Inf
+        for p0, p1, p2 in triangles:
+            new_distance = calculate_distance_point_to_triangle(vtx, np.asarray(gt.vertices)[p0], np.asarray(gt.vertices)[p1], np.asarray(gt.vertices)[p2])
+            if new_distance < distance:
+                distance = new_distance
+        
+        # append lowest distance
+        distances.append(distance)
+        print(time.time()-start)
+    return np.mean(np.array(distances))
+    
 
 # source_path = 'C:\\Users\\pejiang\\Documents\\Github\\compare-pointcloud\\0444_00_400_scaled_normalized_predicted.ply'
-source_path = '/igd/a4/homestud/pejiang/scenes/multi/0444_00/0444_00_400_scaled_normalized_predicted.ply'
+source_path = '/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/0444_00/0444_00_0.95_modulo0_scaled_normalized_predicted.ply'
 # '\\\\filer-IGD\\pejiang\\scenes\\multi\\0444_00\\0444_00_400_normalized.ply'
 # '\\\\filer-IGD\\pejiang\\repos\\SparseConvNet\\examples\\ScanNet\\pointclouds\\0000_00_1000_predicted.ply'
 # '\\\\filer-IGD\\pejiang\\repos\\SparseConvNet\\examples\\ScanNet\\pointclouds\\0444_00_400_normalized.ply'
@@ -113,9 +156,10 @@ target_path = '/igd/a4/homestud/pejiang/ScanNet/scans/scene0444_00/scene0444_00_
 
 source = o3d.io.read_point_cloud(source_path)
 target = o3d.io.read_point_cloud(target_path)
+target_mesh = o3d.io.read_triangle_mesh(target_path)
 
 # source.scale(0.005, np.zeros(3))
-
+source.scale(4, np.zeros(3))
 # draw_registration_result(source, target, np.identity(4))
 
 transformation = do_registration(source, target)
@@ -129,6 +173,12 @@ target_pth_path = '/igd/a4/homestud/pejiang/ScanNet/scans/scene0444_00/scene0444
 target_pth = glob.glob(target_pth_path)[0]
 _, _, gt_labels = torch.load(target_pth)
 
+
+# evaluate reconstruction
+mean_reconstruction_accuracy = calculate_reconstruction_accuracy(np.asarray(source.points), target_mesh)
+
+
+# evaluate segmentation
 # read source labels
 a = plyfile.PlyData().read(source_path)
 predicted_labels_reconstructed = np.array(a.elements[0]['label'])
