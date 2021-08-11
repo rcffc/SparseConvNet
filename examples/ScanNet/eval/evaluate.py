@@ -130,7 +130,7 @@ def calculate_reconstruction_accuracy(src, gt):
     distances = []
     nbrs = NearestNeighbors(n_neighbors=k, algorithm='ball_tree').fit(np.asarray(gt.vertices))
     for vtx in src:
-        start=time.time()
+        # start=time.time()
         # the indices of the three closest vertices
         indices = nbrs.kneighbors([vtx], return_distance=False)
         
@@ -150,56 +150,51 @@ def calculate_reconstruction_accuracy(src, gt):
         
         # append lowest distance
         distances.append(distance)
-        print(time.time()-start)
+        # print(time.time()-start)
     return np.mean(np.array(distances))
-    
+
+def evaluate_reconstruction(source, target_mesh, scene_id):
+    mean_reconstruction_accuracy = calculate_reconstruction_accuracy(np.asarray(source.points), target_mesh)
+    print(scene_id, '\t', mean_reconstruction_accuracy)
+
+def evaluate_segmentation(source, target, source_path, scene_id):
+    # read grount truth labels:
+    # target_pth_path = '/opt/datasets/scannetv2_sparseconvnet/train/scene0444_00_vh_clean_2.pth'
+    target_pth_path = '/igd/a4/homestud/pejiang/ScanNet/scans/scene{}/scene{}_vh_clean_2.labels.pth'.format(scene_id, scene_id)
+    target_pth = glob.glob(target_pth_path)[0]
+    _, _, gt_labels = torch.load(target_pth)
+
+    # read source labels
+    a = plyfile.PlyData().read(source_path)
+    predicted_labels_reconstructed = np.array(a.elements[0]['label'])
+
+    clf = KNeighborsClassifier(k, weights='distance')
+    clf.fit(np.asarray(source.points), predicted_labels_reconstructed)
+    predicted_labels_original_pc = clf.predict(np.array(target.points))
+
+    iou.evaluate(predicted_labels_original_pc, gt_labels.astype(int))
+    accuracy.evaluate(predicted_labels_original_pc, gt_labels.astype(int))
+
+
+# TODO change to predicted to evaluate segmentation
+source_paths = glob.glob('/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/*/*scaled_normalized.ply')
 prefix_len = len('/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/')
 scene_id_len = len('0444_00')
 
-
-# source_path = 'C:\\Users\\pejiang\\Documents\\Github\\compare-pointcloud\\0444_00_400_scaled_normalized_predicted.ply'
+# for source_path in source_paths:
 source_path = '/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/0444_00/0444_00_0.95_modulo0_scaled_normalized_predicted.ply'
-# '\\\\filer-IGD\\pejiang\\scenes\\multi\\0444_00\\0444_00_400_normalized.ply'
-# '\\\\filer-IGD\\pejiang\\repos\\SparseConvNet\\examples\\ScanNet\\pointclouds\\0000_00_1000_predicted.ply'
-# '\\\\filer-IGD\\pejiang\\repos\\SparseConvNet\\examples\\ScanNet\\pointclouds\\0444_00_400_normalized.ply'
 
 scene_id = source_path[prefix_len:prefix_len+scene_id_len]
-# target_path = '\\\\filer-IGD\\pejiang\\ScanNet\\scans\\scene0444_00\\scene0444_00_vh_clean_2.labels.ply'
-# '\\\\filer-IGD\\pejiang\\repos\\SparseConvNet\\examples\\ScanNet\\pointclouds\\scene0000_00_vh_clean_2.labels.ply'
-target_path = '/igd/a4/homestud/pejiang/ScanNet/scans/scene0444_00/scene0444_00_vh_clean_2.labels.ply'
+
+target_path = '/igd/a4/homestud/pejiang/ScanNet/scans/scene{}/scene{}_vh_clean_2.labels.ply'.format(scene_id, scene_id)
 
 source = o3d.io.read_point_cloud(source_path)
 target = o3d.io.read_point_cloud(target_path)
 target_mesh = o3d.io.read_triangle_mesh(target_path)
 
-# source.scale(0.005, np.zeros(3))
 source.scale(4, np.zeros(3))
-# draw_registration_result(source, target, np.identity(4))
 
 transformation = do_registration(source, target, scene_id)
 source.transform(transformation)
-# source.compute_point_cloud_distance(target)
 
-# read grount truth labels:
-# target_pth_path = '/opt/datasets/scannetv2_sparseconvnet/train/scene0444_00_vh_clean_2.pth'
-# target_pth_path = 'C:\\Users\\pejiang\\Documents\\Github\\compare-pointcloud\\scene0444_00_vh_clean_2.labels.pth'
-target_pth_path = '/igd/a4/homestud/pejiang/ScanNet/scans/scene0444_00/scene0444_00_vh_clean_2.labels.pth'
-target_pth = glob.glob(target_pth_path)[0]
-_, _, gt_labels = torch.load(target_pth)
-
-
-# evaluate reconstruction
-mean_reconstruction_accuracy = calculate_reconstruction_accuracy(np.asarray(source.points), target_mesh)
-print(scene_id, '\t', mean_reconstruction_accuracy)
-
-# evaluate segmentation
-# read source labels
-a = plyfile.PlyData().read(source_path)
-predicted_labels_reconstructed = np.array(a.elements[0]['label'])
-
-clf = KNeighborsClassifier(k, weights='distance')
-clf.fit(np.asarray(source.points), predicted_labels_reconstructed)
-predicted_labels_original_pc = clf.predict(np.array(target.points))
-
-iou.evaluate(predicted_labels_original_pc, gt_labels.astype(int))
-accuracy.evaluate(predicted_labels_original_pc, gt_labels.astype(int))
+evaluate_reconstruction(source, target_mesh, scene_id)
