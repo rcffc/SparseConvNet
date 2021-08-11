@@ -11,30 +11,40 @@ import time
 k = 3
 
 
-def draw_registration_result(source, target, transformation):
+def draw_registration_result(source, target, transformation, scene=None):
     source_temp = copy.deepcopy(source)
     target_temp = copy.deepcopy(target)
     source_temp.paint_uniform_color([1, 0.706, 0])
     target_temp.paint_uniform_color([0, 0.651, 0.929])
     source_temp.transform(transformation)
-    o3d.visualization.draw_geometries([source_temp, target_temp],
-                                      zoom=0.4559,
-                                      front=[0.6452, -0.3036, -0.7011],
-                                      lookat=[1.9892, 2.0208, 1.8945],
-                                      up=[-0.2779, -0.9482, 0.1556])
+    # o3d.visualization.draw_geometries([source_temp, target_temp],
+    #                                   zoom=0.4559,
+    #                                   front=[0.6452, -0.3036, -0.7011],
+    #                                   lookat=[1.9892, 2.0208, 1.8945],
+    #                                   up=[-0.2779, -0.9482, 0.1556])
+
+    if scene:
+        vis = o3d.visualization.Visualizer()
+        vis.create_window()
+        vis.add_geometry(source_temp)
+        vis.add_geometry(target_temp)
+        vis.poll_events()
+        vis.update_renderer()
+        vis.capture_screen_image('captures/{}.png'.format(scene))
+        vis.destroy_window()
 
 
 def preprocess_point_cloud(pcd, voxel_size):
-    print(":: Downsample with a voxel size %.3f." % voxel_size)
+    # print(":: Downsample with a voxel size %.3f." % voxel_size)
     pcd_down = pcd.voxel_down_sample(voxel_size)
 
     radius_normal = voxel_size * 2
-    print(":: Estimate normal with search radius %.3f." % radius_normal)
+    # print(":: Estimate normal with search radius %.3f." % radius_normal)
     pcd_down.estimate_normals(
         o3d.geometry.KDTreeSearchParamHybrid(radius=radius_normal, max_nn=30))
 
     radius_feature = voxel_size * 5
-    print(":: Compute FPFH feature with search radius %.3f." % radius_feature)
+    # print(":: Compute FPFH feature with search radius %.3f." % radius_feature)
     pcd_fpfh = o3d.pipelines.registration.compute_fpfh_feature(
         pcd_down,
         o3d.geometry.KDTreeSearchParamHybrid(radius=radius_feature, max_nn=100))
@@ -44,9 +54,9 @@ def preprocess_point_cloud(pcd, voxel_size):
 def execute_global_registration(source_down, target_down, source_fpfh,
                                 target_fpfh, voxel_size):
     distance_threshold = voxel_size * 1.5
-    print(":: RANSAC registration on downsampled point clouds.")
-    print("   Since the downsampling voxel size is %.3f," % voxel_size)
-    print("   we use a liberal distance threshold %.3f." % distance_threshold)
+    # print(":: RANSAC registration on downsampled point clouds.")
+    # print("   Since the downsampling voxel size is %.3f," % voxel_size)
+    # print("   we use a liberal distance threshold %.3f." % distance_threshold)
     result = o3d.pipelines.registration.registration_ransac_based_on_feature_matching(
         source_down, target_down, source_fpfh, target_fpfh, True,
         distance_threshold,
@@ -64,16 +74,16 @@ def refine_registration(source, target, source_fpfh, target_fpfh, voxel_size, re
     source.estimate_normals()
     target.estimate_normals()
     distance_threshold = voxel_size * 0.4
-    print(":: Point-to-plane ICP registration is applied on original point")
-    print("   clouds to refine the alignment. This time we use a strict")
-    print("   distance threshold %.3f." % distance_threshold)
+    # print(":: Point-to-plane ICP registration is applied on original point")
+    # print("   clouds to refine the alignment. This time we use a strict")
+    # print("   distance threshold %.3f." % distance_threshold)
     result = o3d.pipelines.registration.registration_icp(
         source, target, distance_threshold, result_ransac.transformation,
         o3d.pipelines.registration.TransformationEstimationPointToPlane())
     return result
 
 
-def do_registration(source, target):
+def do_registration(source, target, scene):
     voxel_size = 0.05
     source_down, source_fpfh = preprocess_point_cloud(source, voxel_size)
     target_down, target_fpfh = preprocess_point_cloud(target, voxel_size)
@@ -82,7 +92,7 @@ def do_registration(source, target):
                                                 source_fpfh, target_fpfh,
                                                 voxel_size)
     # print(result_ransac)
-    # draw_registration_result(source_down, target_down, result_ransac.transformation)
+    draw_registration_result(source_down, target_down, result_ransac.transformation, scene)
 
     result_icp = refine_registration(source, target, source_fpfh, target_fpfh,
                                      voxel_size, result_ransac)
@@ -143,6 +153,9 @@ def calculate_reconstruction_accuracy(src, gt):
         print(time.time()-start)
     return np.mean(np.array(distances))
     
+prefix_len = len('/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/')
+scene_id_len = len('0444_00')
+
 
 # source_path = 'C:\\Users\\pejiang\\Documents\\Github\\compare-pointcloud\\0444_00_400_scaled_normalized_predicted.ply'
 source_path = '/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/0444_00/0444_00_0.95_modulo0_scaled_normalized_predicted.ply'
@@ -150,6 +163,7 @@ source_path = '/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/0444_00/0
 # '\\\\filer-IGD\\pejiang\\repos\\SparseConvNet\\examples\\ScanNet\\pointclouds\\0000_00_1000_predicted.ply'
 # '\\\\filer-IGD\\pejiang\\repos\\SparseConvNet\\examples\\ScanNet\\pointclouds\\0444_00_400_normalized.ply'
 
+scene_id = source_path[prefix_len:prefix_len+scene_id_len]
 # target_path = '\\\\filer-IGD\\pejiang\\ScanNet\\scans\\scene0444_00\\scene0444_00_vh_clean_2.labels.ply'
 # '\\\\filer-IGD\\pejiang\\repos\\SparseConvNet\\examples\\ScanNet\\pointclouds\\scene0000_00_vh_clean_2.labels.ply'
 target_path = '/igd/a4/homestud/pejiang/ScanNet/scans/scene0444_00/scene0444_00_vh_clean_2.labels.ply'
@@ -162,7 +176,7 @@ target_mesh = o3d.io.read_triangle_mesh(target_path)
 source.scale(4, np.zeros(3))
 # draw_registration_result(source, target, np.identity(4))
 
-transformation = do_registration(source, target)
+transformation = do_registration(source, target, scene_id)
 source.transform(transformation)
 # source.compute_point_cloud_distance(target)
 
@@ -176,7 +190,7 @@ _, _, gt_labels = torch.load(target_pth)
 
 # evaluate reconstruction
 mean_reconstruction_accuracy = calculate_reconstruction_accuracy(np.asarray(source.points), target_mesh)
-
+print(scene_id, '\t', mean_reconstruction_accuracy)
 
 # evaluate segmentation
 # read source labels
