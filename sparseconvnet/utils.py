@@ -170,11 +170,11 @@ def checkpoint_save(model,exp_name,name2,epoch, use_cuda=True):
     if use_cuda:
         model.cuda()
     #remove previous checkpoints unless they are a power of 2 to save disk space
-    epoch=epoch-1
-    f=exp_name+'-%09d-'%epoch+name2+'.pth'
-    if os.path.isfile(f):
-        if not is_power2(epoch):
-            os.remove(f)
+    # epoch=epoch-1
+    # f=exp_name+'-%09d-'%epoch+name2+'.pth'
+    # if os.path.isfile(f):
+    #     if not is_power2(epoch) and not epoch%50==0:
+    #         os.remove(f)
 
 def random_rotation(dimension=3,allow_mirror=False):
     r=torch.qr(torch.randn(dimension,dimension))[0]

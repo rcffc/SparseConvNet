@@ -7,25 +7,37 @@
 import glob, plyfile, numpy as np, multiprocessing as mp, torch
 import yaml
 # config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/0444_00_400_scaled_normalized_transformed.yaml'))
-config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/scene0444_00_vh_clean_2.yaml'))
+# config = yaml.safe_load(open('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/config/scene0444_00_vh_clean_2.yaml'))
 
 # Map relevant classes to {0,1,...,19}, and ignored classes to -100
 remapper=np.ones(150)*(-100)
 for i,x in enumerate([1,2,3,4,5,6,7,8,9,10,11,12,14,16,24,28,33,34,36,39]):
     remapper[x]=i
 
-# files=sorted(glob.glob('../data/*/*_vh_clean_2.ply'))
-# files2=sorted(glob.glob('../data/*/*_vh_clean_2.labels.ply'))
+def filter_train(files):
+    with open('./failed_scenes_train.txt', 'r') as failed:
+        failed_lines = [s.strip() for s in failed.readlines()]
+        files = [f for f in files if f[len('/opt/datasets/train/scenes/multi/labeled/'):-len('.pth')] not in failed_lines]
+        return files
 
-# files_test=sorted(glob.glob('/opt/datasets/scannetv2_sparseconvnet/test/*_vh_clean_2.ply'))
-# files_test=sorted(glob.glob('/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/0.ply'))
-# files_test = sorted(glob.glob(
-#     '/igd/a4/homestud/pejiang/repos/SparseConvNet/examples/ScanNet/pointclouds/scene0444_00_vh_clean_2.ply'))
-# files_test = sorted(glob.glob(
-#     '/igd/a4/homestud/pejiang/ScanNet/scans/scene0444_00/scene0444_00_vh_clean_2_edited.ply'))
-# files_test = sorted(glob.glob(
-#     '/igd/a4/homestud/pejiang/scenes/multi/0444_00_400_edited.ply'))
-files_test = sorted(glob.glob(config['ply']))
+def filter_val(files):
+    with open('./failed_scenes_val.txt', 'r') as failed:
+        failed_lines = [s.strip() for s in failed.readlines()]
+        files = [f for f in files if f[len('/opt/datasets/val/scenes/multi/labeled/'):-len('.pth')] not in failed_lines]
+        return files
+
+# TODO read the .pth
+files_train=sorted(filter_train(glob.glob('/opt/datasets/train/scenes/multi/labeled/*.pth')))
+files_labeled_train=sorted(filter_train(glob.glob('/opt/datasets/train/scenes/multi/labeled/*.ply')))
+
+files_val=sorted(filter_val(glob.glob('/opt/datasets/val/scenes/multi/labeled/*.pth')))
+files_labeled_val=sorted(filter_val(glob.glob('/opt/datasets/val/scenes/multi/labeled/*.ply')))
+
+SAVE_MASK_TRAIN = '/opt/datasets/train/scenes/multi/normalized/{}.pth'
+SAVE_MASK_VAL = '/opt/datasets/val/scenes/multi/normalized/{}.pth'
+
+assert len(files_train) == len(files_labeled_train)
+assert len(files_val) == len(files_labeled_val)
 
 def write_ply(coords, colors, name):
     vertices = np.empty(len(coords), dtype=[(
@@ -41,31 +53,30 @@ def write_ply(coords, colors, name):
         [plyfile.PlyElement.describe(vertices, 'vertex')], text=False)
     ply.write(name)
 
-def f(fn):
-    fn2 = fn[:-3]+'labels.ply'
-    a=plyfile.PlyData().read(fn)
-    v=np.array([list(x) for x in a.elements[0]])
-    coords=np.ascontiguousarray(v[:,:3]-v[:,:3].mean(0))
-    colors=np.ascontiguousarray(v[:,3:6])/127.5-1
-    a=plyfile.PlyData().read(fn2)
-    w=remapper[np.array(a.elements[0]['label'])]
-    torch.save((coords, colors, w), fn[:-4]+'_normalized.pth')
-    write_ply(coords,colors, fn[:-4] + "_normalized.ply")
-    print(fn, fn2)
 
-def f_test(fn):
-    a=plyfile.PlyData().read(fn)
-    v=np.array([list(x) for x in a.elements[0]])
-    coords=np.ascontiguousarray(v[:,:3]-v[:,:3].mean(0))
-    colors=np.ascontiguousarray(v[:,3:6])/127.5-1
-    # coords=np.ascontiguousarray(v[:, :3])
-    # colors=np.ascontiguousarray(v[:, 3:6])
+def f_train(fn):
+    v = torch.load(fn)
+    coords = np.ascontiguousarray((v[0]-v[0].mean(0)), dtype=np.float32)
+    colors = np.ascontiguousarray(v[1], dtype=np.float32)/127.5-1
+    w = np.ascontiguousarray(v[2], dtype=np.float32)
+    id = fn[len('/opt/datasets/train/scenes/multi/labeled/'):-len('.pth')]
+    torch.save((coords, colors, w), SAVE_MASK_TRAIN.format(id))
 
-    torch.save((coords, colors), fn[:-4] + config['modifiers'] + '.pth')
-    # write_ply(coords, colors, fn[:-4] + "_normalized.ply")
-    print(fn)
+def f_val(fn):
+    v = torch.load(fn)
+    coords = np.ascontiguousarray((v[0]-v[0].mean(0)), dtype=np.float32)
+    colors = np.ascontiguousarray(v[1], dtype=np.float32)/127.5-1
+    w = np.ascontiguousarray(v[2], dtype=np.float32)
+    id = fn[len('/opt/datasets/val/scenes/multi/labeled/'):-len('.pth')]
+    torch.save((coords, colors, w), SAVE_MASK_VAL.format(id))
+
 
 p = mp.Pool(processes=mp.cpu_count())
-p.map(f_test,files_test)
+p.map(f_train,files_train)
+p.close()
+p.join()
+
+p = mp.Pool(processes=mp.cpu_count())
+p.map(f_val,files_val)
 p.close()
 p.join()

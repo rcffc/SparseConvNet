@@ -19,10 +19,10 @@ import os, sys, glob
 import math
 import numpy as np
 
-# use_cuda = torch.cuda.is_available()
-use_cuda = False
-# exp_name = os.path.join('examples', 'ScanNet', 'results', 'unet_scale20_m16_rep1_notResidualBlocks')
-exp_name = os.path.join('examples', 'ScanNet', 'results', 'unet_scale50_m32_rep2_residualBlocks_batchSize5')
+use_cuda = torch.cuda.is_available()
+print(use_cuda)
+# exp_name = os.path.join('/app', 'results', 'unet_scale50_m32_rep2_residualBlocks_batchSize5')
+exp_name = os.path.join('/app', 'results', 'unet_scale50_m32_rep2_residualBlocks_batchSize5_finetune')
 
 class Model(nn.Module):
     def __init__(self):
@@ -45,7 +45,11 @@ if use_cuda:
 
 training_epochs=512
 training_epoch=scn.checkpoint_restore(unet,exp_name,'unet',use_cuda)
-optimizer = optim.Adam(unet.parameters())
+if training_epoch==0:
+    unet.linear.reset_parameters()
+    print('Parameters reset')
+
+optimizer = optim.Adam(unet.parameters(),lr=0.00005)
 print('#classifer parameters', sum([x.nelement() for x in unet.parameters()]))
 
 for epoch in range(training_epoch, training_epochs+1):
@@ -65,11 +69,10 @@ for epoch in range(training_epoch, training_epochs+1):
         train_loss+=loss.item()
         loss.backward()
         optimizer.step()
-        print(i)
+        # print(i)
     print(epoch,'Train loss',train_loss/(i+1), 'MegaMulAdd=',scn.forward_pass_multiplyAdd_count/len(data.train)/1e6, 'MegaHidden',scn.forward_pass_hidden_states/len(data.train)/1e6,'time=',time.time() - start,'s')
     scn.checkpoint_save(unet,exp_name,'unet',epoch, use_cuda)
-
-    if scn.is_power2(epoch):
+    if scn.is_power2(epoch) or epoch % 10 == 0:
         with torch.no_grad():
             unet.eval()
             store=torch.zeros(data.valOffsets[-1],20)
@@ -99,7 +102,7 @@ for epoch in range(training_epoch, training_epochs+1):
 #                 batch['y'] = batch['y'].cuda()
 #             predictions = unet(batch['x'])
 #             store.index_add_(0, batch['point_ids'], predictions.cpu())
-#         print(512, rep, 'Val MegaMulAdd=', scn.forward_pass_multiplyAdd_count/len(data.val)/1e6,
+#         print(4, rep, 'Val MegaMulAdd=', scn.forward_pass_multiplyAdd_count/len(data.val)/1e6,
 #                 'MegaHidden', scn.forward_pass_hidden_states/len(data.val)/1e6, 'time=', time.time() - start, 's')
 #         iou.evaluate(store.max(1)[1].numpy(), data.valLabels)
 #         accuracy.evaluate(store.max(1)[1].numpy(), data.valLabels)

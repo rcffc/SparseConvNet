@@ -177,24 +177,20 @@ def evaluate_segmentation(source, target, source_path, scene_id):
 
 
 # TODO change to predicted to evaluate segmentation
-source_paths = glob.glob('/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/*/*scaled_normalized.ply')
-prefix_len = len('/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/')
-scene_id_len = len('0444_00')
+source_paths = glob.glob('/opt/datasets/reconstructed/*.ply')
+prefix_len = len('/opt/datasets/reconstructed/')
 
-# for source_path in source_paths:
-source_path = '/igd/a4/homestud/pejiang/scenes/basic/ftsdf0.95_modulo0/0444_00/0444_00_0.95_modulo0_scaled_normalized_predicted.ply'
+for source_path in source_paths:
+    scene_id = source_path[prefix_len:-len('.ply')]
+    target_path = '/opt/datasets/scans/scene{}/scene{}_vh_clean_2.labels.ply'.format(scene_id, scene_id)
 
-scene_id = source_path[prefix_len:prefix_len+scene_id_len]
+    source = o3d.io.read_point_cloud(source_path)
+    target = o3d.io.read_point_cloud(target_path)
+    target_mesh = o3d.io.read_triangle_mesh(target_path)
 
-target_path = '/igd/a4/homestud/pejiang/ScanNet/scans/scene{}/scene{}_vh_clean_2.labels.ply'.format(scene_id, scene_id)
+    source.scale(4, np.zeros(3))
 
-source = o3d.io.read_point_cloud(source_path)
-target = o3d.io.read_point_cloud(target_path)
-target_mesh = o3d.io.read_triangle_mesh(target_path)
+    transformation = do_registration(source, target, scene_id)
+    source.transform(transformation)
 
-source.scale(4, np.zeros(3))
-
-transformation = do_registration(source, target, scene_id)
-source.transform(transformation)
-
-evaluate_reconstruction(source, target_mesh, scene_id)
+    evaluate_reconstruction(source, target_mesh, scene_id)

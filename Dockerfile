@@ -15,18 +15,25 @@ WORKDIR /app/src
 ENV MAX_JOBS=12
 
 RUN rm -rf build/ dist/ sparseconvnet.egg-info sparseconvnet_SCN*.so
-RUN python setup.py develop
+RUN apt-get update && \
+    apt-get install -y nvidia-modprobe
+
+#RUN python setup.py develop
+#WORKDIR /app/results
 ##################################################
 FROM base as debugger
-
 RUN apt-get update && \
-    apt-get install -y \
-    gdb
+    apt-get install ffmpeg libsm6 libxext6  -y
+RUN pip install open3d
+# RUN apt-get update && \
+#     apt-get install -y \
+#     gdb
 COPY . /app/src/
 # ENTRYPOINT [ "python", "-m", "debugpy", "--listen", "0.0.0.0:5678", "--wait-for-client", "--log-to-stderr", "/app/src/examples/ScanNet/unet.py"]
 # ENTRYPOINT [ "python -m debugpy --listen 0.0.0.0:5678 --wait-for-client --log-to-stderr /app/src/examples/ScanNet/unet.py"]
 
 # python /app/src/setup.py develop && python -m debugpy --listen 0.0.0.0:5679 --wait-for-client --log-to-stderr /app/src/examples/ScanNet/unet.py
+# nohup python /app/src/examples/ScanNet/unet.py &
 #################################################
 FROM base as prepare_data
 

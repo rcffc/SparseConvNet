@@ -22,6 +22,7 @@ color_dict[16] = np.array([44, 160,  44])
 color_dict[17] = np.array([112, 128, 144])
 color_dict[18] = np.array([227, 119, 194])
 color_dict[19] = np.array([82,  84, 163])
+color_dict[-100] = np.array([0,  0, 0])
 
 def write_ply(labels, positions, path):
     global color_dict    
