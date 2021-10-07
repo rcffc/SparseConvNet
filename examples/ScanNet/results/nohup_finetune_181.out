@@ -1,0 +1,2124 @@
+Training examples: 772
+Validation examples: 205
+Test examples: 0
+True
+Restore from /app/results/unet_scale50_m32_rep2_residualBlocks_batchSize5_finetune-000000000-unet.pth
+#classifer parameters 30104372
+1 1 Val MegaMulAdd= 16154.813134204878 MegaHidden 25.225082848780488 time= 67.90597939491272 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.802   (tp: 14629050/ fp: 2459101/ fn: 1149525)
+floor         : 0.895   (tp: 9913529/ fp: 556912/ fn: 602306)
+cabinet       : 0.618   (tp: 1792860/ fp: 483669/ fn: 625691)
+bed           : 0.585   (tp: 1099550/ fp: 101873/ fn: 679686)
+chair         : 0.704   (tp: 1596952/ fp: 292393/ fn: 380103)
+sofa          : 0.677   (tp: 1273187/ fp: 369571/ fn: 239182)
+table         : 0.563   (tp: 977852/ fp: 337415/ fn: 423045)
+door          : 0.544   (tp: 1044461/ fp: 529703/ fn: 345409)
+window        : 0.526   (tp: 776984/ fp: 353371/ fn: 347355)
+bookshelf     : 0.713   (tp: 931308/ fp: 169106/ fn: 205904)
+picture       : 0.368   (tp: 129374/ fp: 55344 / fn: 167254)
+counter       : 0.492   (tp: 205065/ fp: 93812 / fn: 117515)
+desk          : 0.494   (tp: 563567/ fp: 331387/ fn: 246747)
+curtain       : 0.659   (tp: 663783/ fp: 103839/ fn: 240253)
+refrigerator  : 0.439   (tp: 180225/ fp: 9083  / fn: 221458)
+shower curtain: 0.587   (tp:  69166/ fp: 14544 / fn: 34205 )
+toilet        : 0.915   (tp: 172337/ fp: 6562  / fn: 9527  )
+sink          : 0.551   (tp:  99559/ fp: 22529 / fn: 58626 )
+bathtub       : 0.698   (tp: 197210/ fp: 43636 / fn: 41740 )
+otherfurniture: 0.308   (tp: 605784/ fp: 580822/ fn: 779141)
+mean IOU 0.6067233488853802
+1 2 Val MegaMulAdd= 32273.144533853658 MegaHidden 50.4154211902439 time= 136.73098969459534 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.805   (tp: 14765177/ fp: 2565497/ fn: 1013398)
+floor         : 0.897   (tp: 9934779/ fp: 560987/ fn: 581056)
+cabinet       : 0.631   (tp: 1838274/ fp: 492828/ fn: 580277)
+bed           : 0.589   (tp: 1085690/ fp: 64002 / fn: 693546)
+chair         : 0.734   (tp: 1634299/ fp: 248191/ fn: 342756)
+sofa          : 0.703   (tp: 1321931/ fp: 368876/ fn: 190438)
+table         : 0.560   (tp: 975358/ fp: 341927/ fn: 425539)
+door          : 0.602   (tp: 1096392/ fp: 431076/ fn: 293478)
+window        : 0.554   (tp: 796328/ fp: 312136/ fn: 328011)
+bookshelf     : 0.694   (tp: 915469/ fp: 182321/ fn: 221743)
+picture       : 0.363   (tp: 132068/ fp: 66915 / fn: 164560)
+counter       : 0.506   (tp: 207471/ fp: 87432 / fn: 115109)
+desk          : 0.510   (tp: 557260/ fp: 281840/ fn: 253054)
+curtain       : 0.643   (tp: 632812/ fp: 80404 / fn: 271224)
+refrigerator  : 0.415   (tp: 167973/ fp: 3541  / fn: 233710)
+shower curtain: 0.528   (tp:  58960/ fp: 8288  / fn: 44411 )
+toilet        : 0.931   (tp: 173055/ fp: 3920  / fn: 8809  )
+sink          : 0.574   (tp: 101017/ fp: 17806 / fn: 57168 )
+bathtub       : 0.751   (tp: 198633/ fp: 25610 / fn: 40317 )
+otherfurniture: 0.296   (tp: 566818/ fp: 533114/ fn: 818107)
+mean IOU 0.6142967365961609
+Training examples: 772
+Validation examples: 205
+Test examples: 0
+True
+Restore from /app/results/unet_scale50_m32_rep2_residualBlocks_batchSize5_finetune-000000001-unet.pth
+#classifer parameters 30104372
+2 Train loss 0.5505237931071164 MegaMulAdd= 17260.33449488083 MegaHidden 26.676425284974094 time= 493.68987107276917 s
+2 1 Val MegaMulAdd= 16169.668930653657 MegaHidden 25.219267902439025 time= 67.62968015670776 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.799   (tp: 14297947/ fp: 2107482/ fn: 1480628)
+floor         : 0.898   (tp: 9929793/ fp: 545968/ fn: 586042)
+cabinet       : 0.604   (tp: 1814276/ fp: 586075/ fn: 604275)
+bed           : 0.599   (tp: 1158264/ fp: 153068/ fn: 620972)
+chair         : 0.703   (tp: 1570065/ fp: 256632/ fn: 406990)
+sofa          : 0.684   (tp: 1379522/ fp: 505114/ fn: 132847)
+table         : 0.567   (tp: 1007890/ fp: 377881/ fn: 393007)
+door          : 0.476   (tp: 897035/ fp: 496083/ fn: 492835)
+window        : 0.570   (tp: 813190/ fp: 301242/ fn: 311149)
+bookshelf     : 0.660   (tp: 873844/ fp: 186292/ fn: 263368)
+picture       : 0.359   (tp: 146105/ fp: 110806/ fn: 150523)
+counter       : 0.454   (tp: 192396/ fp: 101120/ fn: 130184)
+desk          : 0.503   (tp: 542855/ fp: 268019/ fn: 267459)
+curtain       : 0.650   (tp: 645654/ fp: 88684 / fn: 258382)
+refrigerator  : 0.522   (tp: 216617/ fp: 13382 / fn: 185066)
+shower curtain: 0.539   (tp:  66769/ fp: 20464 / fn: 36602 )
+toilet        : 0.886   (tp: 175739/ fp: 16463 / fn: 6125  )
+sink          : 0.543   (tp: 104122/ fp: 33698 / fn: 54063 )
+bathtub       : 0.768   (tp: 204689/ fp: 27695 / fn: 34261 )
+otherfurniture: 0.259   (tp: 615421/ fp: 988114/ fn: 769504)
+mean IOU 0.6021604842466446
+2 2 Val MegaMulAdd= 32326.52311555122 MegaHidden 50.4392128 time= 135.77159333229065 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.813   (tp: 14640378/ fp: 2236008/ fn: 1138197)
+floor         : 0.899   (tp: 9953570/ fp: 555525/ fn: 562265)
+cabinet       : 0.605   (tp: 1795204/ fp: 547370/ fn: 623347)
+bed           : 0.614   (tp: 1164208/ fp: 118226/ fn: 615028)
+chair         : 0.712   (tp: 1578726/ fp: 241624/ fn: 398329)
+sofa          : 0.704   (tp: 1390761/ fp: 464009/ fn: 121608)
+table         : 0.563   (tp: 1013336/ fp: 399246/ fn: 387561)
+door          : 0.594   (tp: 1052904/ fp: 383456/ fn: 336966)
+window        : 0.586   (tp: 810639/ fp: 259571/ fn: 313700)
+bookshelf     : 0.669   (tp: 874801/ fp: 170110/ fn: 262411)
+picture       : 0.377   (tp: 144285/ fp: 86250 / fn: 152343)
+counter       : 0.504   (tp: 202829/ fp: 79862 / fn: 119751)
+desk          : 0.523   (tp: 555377/ fp: 251902/ fn: 254937)
+curtain       : 0.659   (tp: 648661/ fp: 79889 / fn: 255375)
+refrigerator  : 0.518   (tp: 213988/ fp: 11432 / fn: 187695)
+shower curtain: 0.373   (tp:  45092/ fp: 17615 / fn: 58279 )
+toilet        : 0.900   (tp: 175440/ fp: 13167 / fn: 6424  )
+sink          : 0.582   (tp: 104892/ fp: 22073 / fn: 53293 )
+bathtub       : 0.811   (tp: 207303/ fp: 16649 / fn: 31647 )
+otherfurniture: 0.290   (tp: 605479/ fp: 704618/ fn: 779446)
+mean IOU 0.6146651328800452
+2 3 Val MegaMulAdd= 48476.97916924878 MegaHidden 75.65183781463415 time= 204.06161379814148 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.816   (tp: 14664170/ fp: 2193441/ fn: 1114405)
+floor         : 0.900   (tp: 9960947/ fp: 554692/ fn: 554888)
+cabinet       : 0.616   (tp: 1825643/ fp: 546244/ fn: 592908)
+bed           : 0.611   (tp: 1152194/ fp: 107256/ fn: 627042)
+chair         : 0.723   (tp: 1593426/ fp: 226306/ fn: 383629)
+sofa          : 0.712   (tp: 1396335/ fp: 449097/ fn: 116034)
+table         : 0.565   (tp: 1012681/ fp: 391980/ fn: 388216)
+door          : 0.624   (tp: 1095511/ fp: 364850/ fn: 294359)
+window        : 0.587   (tp: 812024/ fp: 258219/ fn: 312315)
+bookshelf     : 0.694   (tp: 886459/ fp: 140667/ fn: 250753)
+picture       : 0.367   (tp: 141446/ fp: 88481 / fn: 155182)
+counter       : 0.506   (tp: 201887/ fp: 76495 / fn: 120693)
+desk          : 0.527   (tp: 559445/ fp: 250491/ fn: 250869)
+curtain       : 0.667   (tp: 654907/ fp: 77448 / fn: 249129)
+refrigerator  : 0.534   (tp: 220995/ fp: 11810 / fn: 180688)
+shower curtain: 0.417   (tp:  51244/ fp: 19449 / fn: 52127 )
+toilet        : 0.916   (tp: 175755/ fp: 10104 / fn: 6109  )
+sink          : 0.582   (tp: 105517/ fp: 23102 / fn: 52668 )
+bathtub       : 0.813   (tp: 205421/ fp: 13721 / fn: 33529 )
+otherfurniture: 0.299   (tp: 621736/ fp: 694879/ fn: 763189)
+mean IOU 0.6238264498554151
+3 Train loss 0.525656506322421 MegaMulAdd= 17064.533173264248 MegaHidden 26.418796352331604 time= 491.19029092788696 s
+4 Train loss 0.49608548479033754 MegaMulAdd= 17183.911999875647 MegaHidden 26.49548443523316 time= 492.1026210784912 s
+4 1 Val MegaMulAdd= 16072.545957307319 MegaHidden 25.16314614634146 time= 67.76874613761902 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.799   (tp: 14380588/ fp: 2212152/ fn: 1397987)
+floor         : 0.895   (tp: 9919068/ fp: 569053/ fn: 596767)
+cabinet       : 0.589   (tp: 1788006/ fp: 619388/ fn: 630545)
+bed           : 0.574   (tp: 1122313/ fp: 175052/ fn: 656923)
+chair         : 0.706   (tp: 1534577/ fp: 195857/ fn: 442478)
+sofa          : 0.725   (tp: 1394509/ fp: 412116/ fn: 117860)
+table         : 0.557   (tp: 989709/ fp: 376289/ fn: 411188)
+door          : 0.595   (tp: 1106132/ fp: 468490/ fn: 283738)
+window        : 0.556   (tp: 818050/ fp: 347958/ fn: 306289)
+bookshelf     : 0.672   (tp: 876313/ fp: 166877/ fn: 260899)
+picture       : 0.351   (tp: 145752/ fp: 118719/ fn: 150876)
+counter       : 0.483   (tp: 182985/ fp: 55885 / fn: 139595)
+desk          : 0.505   (tp: 565810/ fp: 309233/ fn: 244504)
+curtain       : 0.638   (tp: 645767/ fp: 108258/ fn: 258269)
+refrigerator  : 0.488   (tp: 217466/ fp: 43564 / fn: 184217)
+shower curtain: 0.436   (tp:  51066/ fp: 13661 / fn: 52305 )
+toilet        : 0.907   (tp: 176017/ fp: 12113 / fn: 5847  )
+sink          : 0.556   (tp:  99175/ fp: 20194 / fn: 59010 )
+bathtub       : 0.770   (tp: 204783/ fp: 27088 / fn: 34167 )
+otherfurniture: 0.258   (tp: 564815/ fp: 801627/ fn: 820110)
+mean IOU 0.603075184614178
+4 2 Val MegaMulAdd= 32270.368602536586 MegaHidden 50.422555629268295 time= 136.42612624168396 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.813   (tp: 14624269/ fp: 2212821/ fn: 1154306)
+floor         : 0.896   (tp: 9940050/ fp: 575573/ fn: 575785)
+cabinet       : 0.609   (tp: 1842507/ fp: 609194/ fn: 576044)
+bed           : 0.577   (tp: 1110131/ fp: 144017/ fn: 669105)
+chair         : 0.712   (tp: 1551910/ fp: 201983/ fn: 425145)
+sofa          : 0.730   (tp: 1403186/ fp: 409134/ fn: 109183)
+table         : 0.559   (tp: 971518/ fp: 336591/ fn: 429379)
+door          : 0.645   (tp: 1115799/ fp: 341317/ fn: 274071)
+window        : 0.569   (tp: 812598/ fp: 303506/ fn: 311741)
+bookshelf     : 0.691   (tp: 911052/ fp: 180621/ fn: 226160)
+picture       : 0.357   (tp: 145336/ fp: 110234/ fn: 151292)
+counter       : 0.481   (tp: 184162/ fp: 60326 / fn: 138418)
+desk          : 0.531   (tp: 573511/ fp: 269188/ fn: 236803)
+curtain       : 0.673   (tp: 652394/ fp: 65130 / fn: 251642)
+refrigerator  : 0.515   (tp: 222802/ fp: 31275 / fn: 178881)
+shower curtain: 0.436   (tp:  52334/ fp: 16621 / fn: 51037 )
+toilet        : 0.920   (tp: 176457/ fp: 9992  / fn: 5407  )
+sink          : 0.585   (tp: 106185/ fp: 23404 / fn: 52000 )
+bathtub       : 0.777   (tp: 208627/ fp: 29473 / fn: 30323 )
+otherfurniture: 0.302   (tp: 623290/ fp: 677957/ fn: 761635)
+mean IOU 0.6189288984428515
+4 3 Val MegaMulAdd= 48487.27318119025 MegaHidden 75.6848844487805 time= 204.56180953979492 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.816   (tp: 14691625/ fp: 2232488/ fn: 1086950)
+floor         : 0.897   (tp: 9948547/ fp: 570801/ fn: 567288)
+cabinet       : 0.642   (tp: 1888625/ fp: 522450/ fn: 529926)
+bed           : 0.586   (tp: 1121737/ fp: 134024/ fn: 657499)
+chair         : 0.722   (tp: 1558945/ fp: 181671/ fn: 418110)
+sofa          : 0.723   (tp: 1400795/ fp: 426137/ fn: 111574)
+table         : 0.570   (tp: 975936/ fp: 312163/ fn: 424961)
+door          : 0.659   (tp: 1130106/ fp: 326179/ fn: 259764)
+window        : 0.578   (tp: 819164/ fp: 292026/ fn: 305175)
+bookshelf     : 0.700   (tp: 917007/ fp: 173632/ fn: 220205)
+picture       : 0.372   (tp: 145939/ fp: 95525 / fn: 150689)
+counter       : 0.479   (tp: 184520/ fp: 62874 / fn: 138060)
+desk          : 0.529   (tp: 571178/ fp: 268794/ fn: 239136)
+curtain       : 0.670   (tp: 651140/ fp: 67483 / fn: 252896)
+refrigerator  : 0.562   (tp: 237192/ fp: 19995 / fn: 164491)
+shower curtain: 0.448   (tp:  53881/ fp: 16924 / fn: 49490 )
+toilet        : 0.914   (tp: 176674/ fp: 11484 / fn: 5190  )
+sink          : 0.597   (tp: 108063/ fp: 22926 / fn: 50122 )
+bathtub       : 0.793   (tp: 208444/ fp: 23808 / fn: 30506 )
+otherfurniture: 0.297   (tp: 611562/ fp: 674011/ fn: 773363)
+mean IOU 0.6276998737158251
+5 Train loss 0.4654120361650145 MegaMulAdd= 17191.572208870468 MegaHidden 26.532625202072538 time= 493.7272756099701 s
+6 Train loss 0.47157462783061066 MegaMulAdd= 17107.875136124352 MegaHidden 26.403036559585495 time= 491.372038602829 s
+7 Train loss 0.4593075079383788 MegaMulAdd= 17224.30060754404 MegaHidden 26.592750134715025 time= 493.9929881095886 s
+8 Train loss 0.4587588297662797 MegaMulAdd= 17133.15237823834 MegaHidden 26.466274528497408 time= 492.8615448474884 s
+8 1 Val MegaMulAdd= 16180.074602614633 MegaHidden 25.24389447804878 time= 67.65093350410461 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.814   (tp: 14622995/ fp: 2176587/ fn: 1155580)
+floor         : 0.896   (tp: 9940618/ fp: 574032/ fn: 575217)
+cabinet       : 0.603   (tp: 1847538/ fp: 643883/ fn: 571013)
+bed           : 0.614   (tp: 1185562/ fp: 150236/ fn: 593674)
+chair         : 0.722   (tp: 1575551/ fp: 204908/ fn: 401504)
+sofa          : 0.723   (tp: 1348404/ fp: 353808/ fn: 163965)
+table         : 0.559   (tp: 961717/ fp: 320540/ fn: 439180)
+door          : 0.610   (tp: 1059807/ fp: 346623/ fn: 330063)
+window        : 0.536   (tp: 753715/ fp: 282135/ fn: 370624)
+bookshelf     : 0.663   (tp: 878358/ fp: 187977/ fn: 258854)
+picture       : 0.380   (tp: 139331/ fp: 70227 / fn: 157297)
+counter       : 0.457   (tp: 184672/ fp: 81378 / fn: 137908)
+desk          : 0.520   (tp: 577699/ fp: 301311/ fn: 232615)
+curtain       : 0.717   (tp: 717083/ fp: 95934 / fn: 186953)
+refrigerator  : 0.623   (tp: 264953/ fp: 23269 / fn: 136730)
+shower curtain: 0.479   (tp:  57117/ fp: 15751 / fn: 46254 )
+toilet        : 0.910   (tp: 175471/ fp: 11037 / fn: 6393  )
+sink          : 0.593   (tp: 107952/ fp: 23950 / fn: 50233 )
+bathtub       : 0.651   (tp: 210805/ fp: 84640 / fn: 28145 )
+otherfurniture: 0.312   (tp: 632801/ fp: 646100/ fn: 752124)
+mean IOU 0.6191469241838898
+8 2 Val MegaMulAdd= 32366.90817982439 MegaHidden 50.47662267317073 time= 136.0341501235962 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.814   (tp: 14703826/ fp: 2290349/ fn: 1074749)
+floor         : 0.898   (tp: 9962239/ fp: 578275/ fn: 553596)
+cabinet       : 0.629   (tp: 1894062/ fp: 590731/ fn: 524489)
+bed           : 0.631   (tp: 1199945/ fp: 122463/ fn: 579291)
+chair         : 0.743   (tp: 1588770/ fp: 162313/ fn: 388285)
+sofa          : 0.739   (tp: 1392974/ fp: 372800/ fn: 119395)
+table         : 0.585   (tp: 988177/ fp: 288885/ fn: 412720)
+door          : 0.636   (tp: 1121550/ fp: 373226/ fn: 268320)
+window        : 0.540   (tp: 722507/ fp: 214583/ fn: 401832)
+bookshelf     : 0.693   (tp: 901804/ fp: 164259/ fn: 235408)
+picture       : 0.382   (tp: 139304/ fp: 67920 / fn: 157324)
+counter       : 0.471   (tp: 182320/ fp: 64154 / fn: 140260)
+desk          : 0.549   (tp: 583115/ fp: 250969/ fn: 227199)
+curtain       : 0.705   (tp: 703940/ fp: 94087 / fn: 200096)
+refrigerator  : 0.572   (tp: 239957/ fp: 18043 / fn: 161726)
+shower curtain: 0.483   (tp:  57075/ fp: 14685 / fn: 46296 )
+toilet        : 0.916   (tp: 176313/ fp: 10643 / fn: 5551  )
+sink          : 0.595   (tp: 105327/ fp: 18983 / fn: 52858 )
+bathtub       : 0.718   (tp: 211301/ fp: 55524 / fn: 27649 )
+otherfurniture: 0.334   (tp: 649749/ fp: 559328/ fn: 735176)
+mean IOU 0.6316340480766123
+8 3 Val MegaMulAdd= 48617.19199297561 MegaHidden 75.74072710243902 time= 204.35148406028748 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.815   (tp: 14733239/ fp: 2290768/ fn: 1045336)
+floor         : 0.898   (tp: 9964939/ fp: 578336/ fn: 550896)
+cabinet       : 0.648   (tp: 1899077/ fp: 511583/ fn: 519474)
+bed           : 0.616   (tp: 1171418/ fp: 121938/ fn: 607818)
+chair         : 0.755   (tp: 1606200/ fp: 149990/ fn: 370855)
+sofa          : 0.749   (tp: 1396463/ fp: 352074/ fn: 115906)
+table         : 0.578   (tp: 983028/ fp: 300080/ fn: 417869)
+door          : 0.654   (tp: 1127888/ fp: 334282/ fn: 261982)
+window        : 0.560   (tp: 756209/ fp: 225193/ fn: 368130)
+bookshelf     : 0.713   (tp: 914949/ fp: 145881/ fn: 222263)
+picture       : 0.370   (tp: 139461/ fp: 80242 / fn: 157167)
+counter       : 0.454   (tp: 173439/ fp: 59638 / fn: 149141)
+desk          : 0.539   (tp: 579515/ fp: 264005/ fn: 230799)
+curtain       : 0.703   (tp: 697569/ fp: 87646 / fn: 206467)
+refrigerator  : 0.620   (tp: 262581/ fp: 21766 / fn: 139102)
+shower curtain: 0.511   (tp:  59416/ fp: 12860 / fn: 43955 )
+toilet        : 0.918   (tp: 176265/ fp: 10134 / fn: 5599  )
+sink          : 0.604   (tp: 106682/ fp: 18546 / fn: 51503 )
+bathtub       : 0.779   (tp: 211823/ fp: 32832 / fn: 27127 )
+otherfurniture: 0.316   (tp: 639633/ fp: 638887/ fn: 745292)
+mean IOU 0.6401300624256365
+9 Train loss 0.44935277946196595 MegaMulAdd= 16998.742169450776 MegaHidden 26.258996559585494 time= 488.33604311943054 s
+10 Train loss 0.4425226491573569 MegaMulAdd= 17162.570503668394 MegaHidden 26.494967751295334 time= 491.96770548820496 s
+10 1 Val MegaMulAdd= 16191.104564292682 MegaHidden 25.246046907317073 time= 67.9876070022583 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.810   (tp: 14483584/ fp: 2107599/ fn: 1294991)
+floor         : 0.897   (tp: 9946302/ fp: 570198/ fn: 569533)
+cabinet       : 0.614   (tp: 1860603/ fp: 611563/ fn: 557948)
+bed           : 0.609   (tp: 1171226/ fp: 143685/ fn: 608010)
+chair         : 0.723   (tp: 1567990/ fp: 192044/ fn: 409065)
+sofa          : 0.723   (tp: 1361312/ fp: 369618/ fn: 151057)
+table         : 0.566   (tp: 963263/ fp: 300112/ fn: 437634)
+door          : 0.611   (tp: 1048588/ fp: 327387/ fn: 341282)
+window        : 0.540   (tp: 763692/ fp: 290680/ fn: 360647)
+bookshelf     : 0.699   (tp: 924945/ fp: 185366/ fn: 212267)
+picture       : 0.359   (tp: 148747/ fp: 118278/ fn: 147881)
+counter       : 0.442   (tp: 174600/ fp: 72598 / fn: 147980)
+desk          : 0.509   (tp: 584761/ fp: 337840/ fn: 225553)
+curtain       : 0.665   (tp: 708995/ fp: 162422/ fn: 195041)
+refrigerator  : 0.737   (tp: 326792/ fp: 41812 / fn: 74891 )
+shower curtain: 0.238   (tp:  29553/ fp: 20651 / fn: 73818 )
+toilet        : 0.900   (tp: 176004/ fp: 13760 / fn: 5860  )
+sink          : 0.586   (tp: 104917/ fp: 20991 / fn: 53268 )
+bathtub       : 0.672   (tp: 212288/ fp: 76971 / fn: 26662 )
+otherfurniture: 0.274   (tp: 581094/ fp: 733644/ fn: 803831)
+mean IOU 0.6086681268613928
+10 2 Val MegaMulAdd= 32337.39545209756 MegaHidden 50.458992702439026 time= 137.01612973213196 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.813   (tp: 14619202/ fp: 2208486/ fn: 1159373)
+floor         : 0.899   (tp: 9973097/ fp: 578696/ fn: 542738)
+cabinet       : 0.663   (tp: 1933338/ fp: 495719/ fn: 485213)
+bed           : 0.626   (tp: 1188591/ fp: 120807/ fn: 590645)
+chair         : 0.728   (tp: 1578558/ fp: 191386/ fn: 398497)
+sofa          : 0.734   (tp: 1363931/ fp: 344965/ fn: 148438)
+table         : 0.590   (tp: 995147/ fp: 284421/ fn: 405750)
+door          : 0.646   (tp: 1088717/ fp: 296679/ fn: 301153)
+window        : 0.578   (tp: 800692/ fp: 259774/ fn: 323647)
+bookshelf     : 0.700   (tp: 916980/ fp: 173266/ fn: 220232)
+picture       : 0.377   (tp: 146036/ fp: 91046 / fn: 150592)
+counter       : 0.455   (tp: 178417/ fp: 69492 / fn: 144163)
+desk          : 0.546   (tp: 596252/ fp: 282296/ fn: 214062)
+curtain       : 0.689   (tp: 696331/ fp: 105926/ fn: 207705)
+refrigerator  : 0.738   (tp: 323425/ fp: 36673 / fn: 78258 )
+shower curtain: 0.405   (tp:  48605/ fp: 16702 / fn: 54766 )
+toilet        : 0.903   (tp: 176713/ fp: 13767 / fn: 5151  )
+sink          : 0.604   (tp: 106234/ fp: 17782 / fn: 51951 )
+bathtub       : 0.713   (tp: 214562/ fp: 61808 / fn: 24388 )
+otherfurniture: 0.291   (tp: 592219/ fp: 649737/ fn: 792706)
+mean IOU 0.6349108782386661
+10 3 Val MegaMulAdd= 48493.9036990439 MegaHidden 75.67866583414633 time= 205.911723613739 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.813   (tp: 14635484/ fp: 2232229/ fn: 1143091)
+floor         : 0.898   (tp: 9966894/ fp: 579277/ fn: 548941)
+cabinet       : 0.658   (tp: 1919519/ fp: 499991/ fn: 499032)
+bed           : 0.622   (tp: 1193736/ fp: 139913/ fn: 585500)
+chair         : 0.735   (tp: 1591655/ fp: 188252/ fn: 385400)
+sofa          : 0.743   (tp: 1368987/ fp: 329516/ fn: 143382)
+table         : 0.588   (tp: 984139/ fp: 272730/ fn: 416758)
+door          : 0.656   (tp: 1139267/ fp: 345554/ fn: 250603)
+window        : 0.568   (tp: 781268/ fp: 251857/ fn: 343071)
+bookshelf     : 0.699   (tp: 916063/ fp: 172527/ fn: 221149)
+picture       : 0.358   (tp: 140546/ fp: 95900 / fn: 156082)
+counter       : 0.471   (tp: 180527/ fp: 60636 / fn: 142053)
+desk          : 0.546   (tp: 599016/ fp: 285922/ fn: 211298)
+curtain       : 0.680   (tp: 685871/ fp: 104604/ fn: 218165)
+refrigerator  : 0.769   (tp: 328261/ fp: 25392 / fn: 73422 )
+shower curtain: 0.424   (tp:  50135/ fp: 14750 / fn: 53236 )
+toilet        : 0.916   (tp: 176327/ fp: 10571 / fn: 5537  )
+sink          : 0.597   (tp: 104865/ fp: 17608 / fn: 53320 )
+bathtub       : 0.782   (tp: 214639/ fp: 35581 / fn: 24311 )
+otherfurniture: 0.299   (tp: 594311/ fp: 602155/ fn: 790614)
+mean IOU 0.6411473770350727
+11 Train loss 0.43719114934082154 MegaMulAdd= 16988.337952994818 MegaHidden 26.233664663212434 time= 488.5806782245636 s
+12 Train loss 0.42574154188880675 MegaMulAdd= 17284.03061604145 MegaHidden 26.631071626943005 time= 495.25951385498047 s
+13 Train loss 0.42007396563694077 MegaMulAdd= 17197.36689015544 MegaHidden 26.549869595854922 time= 492.9330804347992 s
+14 Train loss 0.41840399733998557 MegaMulAdd= 17047.876829098444 MegaHidden 26.34116103626943 time= 489.92431688308716 s
+15 Train loss 0.4061710446492418 MegaMulAdd= 17344.564072331606 MegaHidden 26.768863336787568 time= 496.02261185646057 s
+16 Train loss 0.416288663911355 MegaMulAdd= 17186.860130279794 MegaHidden 26.511702424870464 time= 492.77066230773926 s
+16 1 Val MegaMulAdd= 16169.040153756097 MegaHidden 25.227236370731706 time= 68.32805895805359 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.810   (tp: 14535785/ fp: 2162941/ fn: 1242790)
+floor         : 0.898   (tp: 9946860/ fp: 565081/ fn: 568975)
+cabinet       : 0.660   (tp: 1897229/ fp: 454463/ fn: 521322)
+bed           : 0.607   (tp: 1181521/ fp: 167813/ fn: 597715)
+chair         : 0.729   (tp: 1561566/ fp: 164056/ fn: 415489)
+sofa          : 0.723   (tp: 1403616/ fp: 428968/ fn: 108753)
+table         : 0.585   (tp: 980656/ fp: 275362/ fn: 420241)
+door          : 0.645   (tp: 1122371/ fp: 350356/ fn: 267499)
+window        : 0.536   (tp: 767997/ fp: 309026/ fn: 356342)
+bookshelf     : 0.731   (tp: 938657/ fp: 147351/ fn: 198555)
+picture       : 0.382   (tp: 149521/ fp: 94632 / fn: 147107)
+counter       : 0.414   (tp: 157942/ fp: 59043 / fn: 164638)
+desk          : 0.517   (tp: 591776/ fp: 334819/ fn: 218538)
+curtain       : 0.668   (tp: 672705/ fp: 103321/ fn: 231331)
+refrigerator  : 0.693   (tp: 303751/ fp: 36318 / fn: 97932 )
+shower curtain: 0.457   (tp:  55092/ fp: 17094 / fn: 48279 )
+toilet        : 0.910   (tp: 177048/ fp: 12788 / fn: 4816  )
+sink          : 0.601   (tp: 108955/ fp: 22979 / fn: 49230 )
+bathtub       : 0.784   (tp: 214052/ fp: 34092 / fn: 24898 )
+otherfurniture: 0.283   (tp: 598892/ fp: 729980/ fn: 786033)
+mean IOU 0.6316691914914464
+16 2 Val MegaMulAdd= 32275.936534321954 MegaHidden 50.415257600000004 time= 136.42643117904663 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.821   (tp: 14768609/ fp: 2208195/ fn: 1009966)
+floor         : 0.900   (tp: 9963666/ fp: 557461/ fn: 552169)
+cabinet       : 0.653   (tp: 1896396/ fp: 484407/ fn: 522155)
+bed           : 0.624   (tp: 1173800/ fp: 101964/ fn: 605436)
+chair         : 0.744   (tp: 1600178/ fp: 172449/ fn: 376877)
+sofa          : 0.725   (tp: 1403972/ fp: 423616/ fn: 108397)
+table         : 0.583   (tp: 979016/ fp: 277397/ fn: 421881)
+door          : 0.671   (tp: 1099813/ fp: 248003/ fn: 290057)
+window        : 0.581   (tp: 800436/ fp: 253691/ fn: 323903)
+bookshelf     : 0.734   (tp: 941062/ fp: 144500/ fn: 196150)
+picture       : 0.397   (tp: 148345/ fp: 76589 / fn: 148283)
+counter       : 0.429   (tp: 162549/ fp: 56163 / fn: 160031)
+desk          : 0.528   (tp: 595049/ fp: 317007/ fn: 215265)
+curtain       : 0.681   (tp: 678694/ fp: 92440 / fn: 225342)
+refrigerator  : 0.703   (tp: 306427/ fp: 33893 / fn: 95256 )
+shower curtain: 0.479   (tp:  56363/ fp: 14233 / fn: 47008 )
+toilet        : 0.915   (tp: 176607/ fp: 11146 / fn: 5257  )
+sink          : 0.633   (tp: 112170/ fp: 19098 / fn: 46015 )
+bathtub       : 0.770   (tp: 215455/ fp: 40762 / fn: 23495 )
+otherfurniture: 0.307   (tp: 612626/ fp: 612228/ fn: 772299)
+mean IOU 0.6440377645953945
+16 3 Val MegaMulAdd= 48509.980008585364 MegaHidden 75.67436862439024 time= 205.31085014343262 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.824   (tp: 14798131/ fp: 2187648/ fn: 980444)
+floor         : 0.900   (tp: 9974097/ fp: 563910/ fn: 541738)
+cabinet       : 0.670   (tp: 1926029/ fp: 454264/ fn: 492522)
+bed           : 0.627   (tp: 1180738/ fp: 104338/ fn: 598498)
+chair         : 0.759   (tp: 1625083/ fp: 163738/ fn: 351972)
+sofa          : 0.733   (tp: 1409046/ fp: 408912/ fn: 103323)
+table         : 0.591   (tp: 983876/ fp: 263330/ fn: 417021)
+door          : 0.685   (tp: 1119070/ fp: 243830/ fn: 270800)
+window        : 0.582   (tp: 797776/ fp: 245282/ fn: 326563)
+bookshelf     : 0.739   (tp: 947722/ fp: 145707/ fn: 189490)
+picture       : 0.413   (tp: 151495/ fp: 70014 / fn: 145133)
+counter       : 0.463   (tp: 173595/ fp: 52152 / fn: 148985)
+desk          : 0.542   (tp: 595891/ fp: 288189/ fn: 214423)
+curtain       : 0.697   (tp: 689942/ fp: 85563 / fn: 214094)
+refrigerator  : 0.721   (tp: 311216/ fp: 29701 / fn: 90467 )
+shower curtain: 0.473   (tp:  54914/ fp: 12820 / fn: 48457 )
+toilet        : 0.928   (tp: 176533/ fp: 8391  / fn: 5331  )
+sink          : 0.634   (tp: 109789/ fp: 14911 / fn: 48396 )
+bathtub       : 0.788   (tp: 215533/ fp: 34666 / fn: 23417 )
+otherfurniture: 0.307   (tp: 611429/ fp: 607204/ fn: 773496)
+mean IOU 0.6538990810824926
+17 Train loss 0.4075673518629817 MegaMulAdd= 17186.451515440414 MegaHidden 26.48325525388601 time= 492.4418954849243 s
+18 Train loss 0.40856032625034255 MegaMulAdd= 17072.704081243523 MegaHidden 26.398650777202075 time= 491.8530910015106 s
+19 Train loss 0.40898521360638856 MegaMulAdd= 17177.600443772022 MegaHidden 26.520520207253885 time= 493.4818139076233 s
+20 Train loss 0.39558300153388604 MegaMulAdd= 17200.662536414507 MegaHidden 26.574329906735752 time= 493.07925152778625 s
+20 1 Val MegaMulAdd= 16199.67614922927 MegaHidden 25.245519453658535 time= 68.52278184890747 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.815   (tp: 14536553/ fp: 2059434/ fn: 1242022)
+floor         : 0.901   (tp: 9987047/ fp: 566478/ fn: 528788)
+cabinet       : 0.635   (tp: 1830864/ fp: 466740/ fn: 587687)
+bed           : 0.631   (tp: 1218559/ fp: 151591/ fn: 560677)
+chair         : 0.716   (tp: 1576922/ fp: 226560/ fn: 400133)
+sofa          : 0.678   (tp: 1352235/ fp: 480680/ fn: 160134)
+table         : 0.571   (tp: 982335/ fp: 318983/ fn: 418562)
+door          : 0.649   (tp: 1134169/ fp: 357564/ fn: 255701)
+window        : 0.567   (tp: 787632/ fp: 264582/ fn: 336707)
+bookshelf     : 0.730   (tp: 950332/ fp: 164105/ fn: 186880)
+picture       : 0.365   (tp: 152809/ fp: 121812/ fn: 143819)
+counter       : 0.454   (tp: 167773/ fp: 46896 / fn: 154807)
+desk          : 0.523   (tp: 594775/ fp: 327112/ fn: 215539)
+curtain       : 0.677   (tp: 687138/ fp: 111067/ fn: 216898)
+refrigerator  : 0.756   (tp: 319482/ fp: 20809 / fn: 82201 )
+shower curtain: 0.465   (tp:  56678/ fp: 18594 / fn: 46693 )
+toilet        : 0.909   (tp: 176278/ fp: 12118 / fn: 5586  )
+sink          : 0.630   (tp: 112832/ fp: 20939 / fn: 45353 )
+bathtub       : 0.726   (tp: 212998/ fp: 54498 / fn: 25952 )
+otherfurniture: 0.335   (tp: 650132/ fp: 558370/ fn: 734793)
+mean IOU 0.6366220976261631
+20 2 Val MegaMulAdd= 32315.953347590243 MegaHidden 50.43345373658536 time= 137.22838711738586 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.820   (tp: 14746503/ fp: 2203674/ fn: 1032072)
+floor         : 0.901   (tp: 9989825/ fp: 568761/ fn: 526010)
+cabinet       : 0.652   (tp: 1888697/ fp: 480431/ fn: 529854)
+bed           : 0.640   (tp: 1221686/ fp: 130610/ fn: 557550)
+chair         : 0.738   (tp: 1586860/ fp: 174184/ fn: 390195)
+sofa          : 0.705   (tp: 1379588/ fp: 444719/ fn: 132781)
+table         : 0.590   (tp: 990134/ fp: 276799/ fn: 410763)
+door          : 0.657   (tp: 1077989/ fp: 251901/ fn: 311881)
+window        : 0.582   (tp: 788092/ fp: 230863/ fn: 336247)
+bookshelf     : 0.733   (tp: 941511/ fp: 147486/ fn: 195701)
+picture       : 0.382   (tp: 145926/ fp: 85174 / fn: 150702)
+counter       : 0.458   (tp: 171784/ fp: 52895 / fn: 150796)
+desk          : 0.542   (tp: 607849/ fp: 310659/ fn: 202465)
+curtain       : 0.688   (tp: 683433/ fp: 89627 / fn: 220603)
+refrigerator  : 0.739   (tp: 311501/ fp: 19911 / fn: 90182 )
+shower curtain: 0.454   (tp:  52139/ fp: 11456 / fn: 51232 )
+toilet        : 0.929   (tp: 176768/ fp: 8439  / fn: 5096  )
+sink          : 0.637   (tp: 112537/ fp: 18541 / fn: 45648 )
+bathtub       : 0.794   (tp: 214475/ fp: 31179 / fn: 24475 )
+otherfurniture: 0.335   (tp: 652005/ fp: 559864/ fn: 732920)
+mean IOU 0.6486899178423122
+20 3 Val MegaMulAdd= 48478.08726680975 MegaHidden 75.65309190243903 time= 206.3738498687744 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.821   (tp: 14764141/ fp: 2197706/ fn: 1014434)
+floor         : 0.902   (tp: 9991369/ fp: 564659/ fn: 524466)
+cabinet       : 0.659   (tp: 1904547/ fp: 470468/ fn: 514004)
+bed           : 0.640   (tp: 1223189/ fp: 131708/ fn: 556047)
+chair         : 0.742   (tp: 1595170/ fp: 172291/ fn: 381885)
+sofa          : 0.720   (tp: 1393437/ fp: 423193/ fn: 118932)
+table         : 0.601   (tp: 996975/ fp: 257361/ fn: 403922)
+door          : 0.649   (tp: 1062292/ fp: 247289/ fn: 327578)
+window        : 0.585   (tp: 794743/ fp: 233421/ fn: 329596)
+bookshelf     : 0.739   (tp: 947381/ fp: 144947/ fn: 189831)
+picture       : 0.376   (tp: 146227/ fp: 92668 / fn: 150401)
+counter       : 0.479   (tp: 176452/ fp: 45950 / fn: 146128)
+desk          : 0.550   (tp: 609962/ fp: 298077/ fn: 200352)
+curtain       : 0.698   (tp: 686735/ fp: 79443 / fn: 217301)
+refrigerator  : 0.740   (tp: 311728/ fp: 19801 / fn: 89955 )
+shower curtain: 0.491   (tp:  57603/ fp: 13860 / fn: 45768 )
+toilet        : 0.932   (tp: 176517/ fp: 7595  / fn: 5347  )
+sink          : 0.633   (tp: 111055/ fp: 17237 / fn: 47130 )
+bathtub       : 0.791   (tp: 214847/ fp: 32533 / fn: 24103 )
+otherfurniture: 0.326   (tp: 640530/ fp: 581368/ fn: 744395)
+mean IOU 0.6537302963445504
+21 Train loss 0.403444596215502 MegaMulAdd= 17163.814865243523 MegaHidden 26.48636178238342 time= 495.3581397533417 s
+22 Train loss 0.405871015090447 MegaMulAdd= 17162.341162404144 MegaHidden 26.531575088082903 time= 495.5986051559448 s
+23 Train loss 0.38649875182029486 MegaMulAdd= 17235.2439760829 MegaHidden 26.57993910880829 time= 496.93755745887756 s
+24 Train loss 0.39601989458133646 MegaMulAdd= 17161.092710051813 MegaHidden 26.475559544041452 time= 494.11555886268616 s
+25 Train loss 0.38204175079023683 MegaMulAdd= 17417.673030093265 MegaHidden 26.844867233160624 time= 501.60185050964355 s
+26 Train loss 0.3846780936439316 MegaMulAdd= 17183.64620319171 MegaHidden 26.5413632746114 time= 496.94927644729614 s
+27 Train loss 0.380215301335632 MegaMulAdd= 17117.65483054922 MegaHidden 26.404979150259067 time= 495.5475289821625 s
+28 Train loss 0.3895098070626135 MegaMulAdd= 17126.664640746116 MegaHidden 26.439330528497408 time= 495.3953535556793 s
+29 Train loss 0.3801907764433266 MegaMulAdd= 17223.3827519171 MegaHidden 26.539556393782384 time= 496.7725467681885 s
+30 Train loss 0.3787245529812652 MegaMulAdd= 17167.36647788601 MegaHidden 26.441396932642487 time= 495.01258301734924 s
+30 1 Val MegaMulAdd= 16153.164121912196 MegaHidden 25.214276214634147 time= 68.35931015014648 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.824   (tp: 14620715/ fp: 1973314/ fn: 1157860)
+floor         : 0.902   (tp: 9993724/ fp: 564710/ fn: 522111)
+cabinet       : 0.647   (tp: 1936617/ fp: 574871/ fn: 481934)
+bed           : 0.595   (tp: 1204051/ fp: 243904/ fn: 575185)
+chair         : 0.729   (tp: 1574086/ fp: 182133/ fn: 402969)
+sofa          : 0.699   (tp: 1330184/ fp: 391722/ fn: 182185)
+table         : 0.595   (tp: 995752/ fp: 271675/ fn: 405145)
+door          : 0.667   (tp: 1134422/ fp: 311689/ fn: 255448)
+window        : 0.553   (tp: 739807/ fp: 214503/ fn: 384532)
+bookshelf     : 0.731   (tp: 934495/ fp: 141040/ fn: 202717)
+picture       : 0.411   (tp: 157002/ fp: 85399 / fn: 139626)
+counter       : 0.469   (tp: 177260/ fp: 55087 / fn: 145320)
+desk          : 0.545   (tp: 590090/ fp: 273030/ fn: 220224)
+curtain       : 0.648   (tp: 671244/ fp: 132355/ fn: 232792)
+refrigerator  : 0.701   (tp: 311052/ fp: 41743 / fn: 90631 )
+shower curtain: 0.419   (tp:  49996/ fp: 16032 / fn: 53375 )
+toilet        : 0.920   (tp: 174977/ fp: 8328  / fn: 6887  )
+sink          : 0.613   (tp: 111690/ fp: 23941 / fn: 46495 )
+bathtub       : 0.764   (tp: 215350/ fp: 42863 / fn: 23600 )
+otherfurniture: 0.286   (tp: 611409/ fp: 754213/ fn: 773516)
+mean IOU 0.6358521783950816
+30 2 Val MegaMulAdd= 32279.19867957073 MegaHidden 50.3981888 time= 137.05932211875916 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.825   (tp: 14673043/ fp: 2013234/ fn: 1105532)
+floor         : 0.903   (tp: 10001283/ fp: 561337/ fn: 514552)
+cabinet       : 0.659   (tp: 1939815/ fp: 525913/ fn: 478736)
+bed           : 0.609   (tp: 1192783/ fp: 178228/ fn: 586453)
+chair         : 0.736   (tp: 1585444/ fp: 178333/ fn: 391611)
+sofa          : 0.718   (tp: 1385217/ fp: 416404/ fn: 127152)
+table         : 0.617   (tp: 999969/ fp: 221038/ fn: 400928)
+door          : 0.681   (tp: 1127425/ fp: 266249/ fn: 262445)
+window        : 0.590   (tp: 794123/ fp: 221208/ fn: 330216)
+bookshelf     : 0.753   (tp: 953156/ fp: 129297/ fn: 184056)
+picture       : 0.395   (tp: 155450/ fp: 96425 / fn: 141178)
+counter       : 0.467   (tp: 173728/ fp: 49179 / fn: 148852)
+desk          : 0.568   (tp: 614571/ fp: 271666/ fn: 195743)
+curtain       : 0.679   (tp: 672124/ fp: 85393 / fn: 231912)
+refrigerator  : 0.717   (tp: 311023/ fp: 31931 / fn: 90660 )
+shower curtain: 0.517   (tp:  59820/ fp: 12405 / fn: 43551 )
+toilet        : 0.932   (tp: 175526/ fp: 6527  / fn: 6338  )
+sink          : 0.618   (tp: 111178/ fp: 21709 / fn: 47007 )
+bathtub       : 0.781   (tp: 217017/ fp: 39018 / fn: 21933 )
+otherfurniture: 0.304   (tp: 641509/ fp: 726777/ fn: 743416)
+mean IOU 0.6533942548775895
+30 3 Val MegaMulAdd= 48583.9055492683 MegaHidden 75.70402341463415 time= 205.83900356292725 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.828   (tp: 14757782/ fp: 2034223/ fn: 1020793)
+floor         : 0.903   (tp: 10007648/ fp: 565074/ fn: 508187)
+cabinet       : 0.674   (tp: 1962413/ fp: 493152/ fn: 456138)
+bed           : 0.624   (tp: 1202191/ fp: 147805/ fn: 577045)
+chair         : 0.743   (tp: 1589528/ fp: 161250/ fn: 387527)
+sofa          : 0.733   (tp: 1398132/ fp: 394956/ fn: 114237)
+table         : 0.603   (tp: 993016/ fp: 246136/ fn: 407881)
+door          : 0.723   (tp: 1161753/ fp: 217307/ fn: 228117)
+window        : 0.597   (tp: 793015/ fp: 204226/ fn: 331324)
+bookshelf     : 0.749   (tp: 951744/ fp: 133128/ fn: 185468)
+picture       : 0.384   (tp: 152644/ fp: 100655/ fn: 143984)
+counter       : 0.484   (tp: 178898/ fp: 47309 / fn: 143682)
+desk          : 0.567   (tp: 602104/ fp: 252282/ fn: 208210)
+curtain       : 0.685   (tp: 679292/ fp: 87560 / fn: 224744)
+refrigerator  : 0.735   (tp: 315277/ fp: 27540 / fn: 86406 )
+shower curtain: 0.448   (tp:  52449/ fp: 13594 / fn: 50922 )
+toilet        : 0.924   (tp: 175876/ fp: 8411  / fn: 5988  )
+sink          : 0.641   (tp: 112716/ fp: 17572 / fn: 45469 )
+bathtub       : 0.791   (tp: 217849/ fp: 36335 / fn: 21101 )
+otherfurniture: 0.310   (tp: 645900/ fp: 697733/ fn: 739025)
+mean IOU 0.657367859612306
+31 Train loss 0.3786077141374737 MegaMulAdd= 17251.832015088083 MegaHidden 26.597076393782384 time= 494.87554907798767 s
+32 Train loss 0.3696252666413784 MegaMulAdd= 17200.71264111917 MegaHidden 26.50967983419689 time= 494.04373836517334 s
+32 1 Val MegaMulAdd= 16071.051403239026 MegaHidden 25.164621580487808 time= 68.1230320930481 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.819   (tp: 14732964/ fp: 2219358/ fn: 1045611)
+floor         : 0.902   (tp: 10001317/ fp: 571872/ fn: 514518)
+cabinet       : 0.638   (tp: 1928201/ fp: 603486/ fn: 490350)
+bed           : 0.642   (tp: 1225490/ fp: 129582/ fn: 553746)
+chair         : 0.736   (tp: 1598332/ fp: 195605/ fn: 378723)
+sofa          : 0.698   (tp: 1340284/ fp: 406921/ fn: 172085)
+table         : 0.575   (tp: 969470/ fp: 285642/ fn: 431427)
+door          : 0.624   (tp: 1052033/ fp: 295985/ fn: 337837)
+window        : 0.555   (tp: 743391/ fp: 215619/ fn: 380948)
+bookshelf     : 0.733   (tp: 931408/ fp: 133748/ fn: 205804)
+picture       : 0.358   (tp: 140040/ fp: 94470 / fn: 156588)
+counter       : 0.423   (tp: 161236/ fp: 58754 / fn: 161344)
+desk          : 0.538   (tp: 594138/ fp: 294339/ fn: 216176)
+curtain       : 0.671   (tp: 683542/ fp: 115368/ fn: 220494)
+refrigerator  : 0.616   (tp: 268770/ fp: 34478 / fn: 132913)
+shower curtain: 0.348   (tp:  39529/ fp: 10216 / fn: 63842 )
+toilet        : 0.908   (tp: 175873/ fp: 11743 / fn: 5991  )
+sink          : 0.573   (tp: 105403/ fp: 25766 / fn: 52782 )
+bathtub       : 0.783   (tp: 216521/ fp: 37696 / fn: 22429 )
+otherfurniture: 0.314   (tp: 615313/ fp: 572572/ fn: 769612)
+mean IOU 0.6226516697339186
+32 2 Val MegaMulAdd= 32203.596030595123 MegaHidden 50.37089795121951 time= 137.14601922035217 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.823   (tp: 14858884/ fp: 2275622/ fn: 919691)
+floor         : 0.904   (tp: 10023904/ fp: 569670/ fn: 491931)
+cabinet       : 0.664   (tp: 1942503/ fp: 507651/ fn: 476048)
+bed           : 0.639   (tp: 1203879/ fp: 105473/ fn: 575357)
+chair         : 0.746   (tp: 1617421/ fp: 190010/ fn: 359634)
+sofa          : 0.716   (tp: 1346373/ fp: 367411/ fn: 165996)
+table         : 0.588   (tp: 986566/ fp: 276147/ fn: 414331)
+door          : 0.655   (tp: 1055625/ fp: 221788/ fn: 334245)
+window        : 0.573   (tp: 749181/ fp: 182590/ fn: 375158)
+bookshelf     : 0.742   (tp: 940706/ fp: 130487/ fn: 196506)
+picture       : 0.412   (tp: 150289/ fp: 68472 / fn: 146339)
+counter       : 0.433   (tp: 163944/ fp: 56380 / fn: 158636)
+desk          : 0.555   (tp: 592958/ fp: 258866/ fn: 217356)
+curtain       : 0.668   (tp: 678718/ fp: 112221/ fn: 225318)
+refrigerator  : 0.707   (tp: 306854/ fp: 32237 / fn: 94829 )
+shower curtain: 0.459   (tp:  51327/ fp: 8487  / fn: 52044 )
+toilet        : 0.927   (tp: 174990/ fp: 6944  / fn: 6874  )
+sink          : 0.613   (tp: 107515/ fp: 17179 / fn: 50670 )
+bathtub       : 0.803   (tp: 215623/ fp: 29700 / fn: 23327 )
+otherfurniture: 0.325   (tp: 646801/ fp: 605079/ fn: 738124)
+mean IOU 0.6475648195868852
+32 3 Val MegaMulAdd= 48397.8319550439 MegaHidden 75.61312999024389 time= 205.82970714569092 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.826   (tp: 14904554/ fp: 2257455/ fn: 874021)
+floor         : 0.905   (tp: 10023711/ fp: 565346/ fn: 492124)
+cabinet       : 0.675   (tp: 1958029/ fp: 481504/ fn: 460522)
+bed           : 0.638   (tp: 1200134/ fp: 101452/ fn: 579102)
+chair         : 0.753   (tp: 1628197/ fp: 185791/ fn: 348858)
+sofa          : 0.725   (tp: 1364578/ fp: 370787/ fn: 147791)
+table         : 0.597   (tp: 999281/ fp: 272342/ fn: 401616)
+door          : 0.653   (tp: 1041958/ fp: 206092/ fn: 347912)
+window        : 0.570   (tp: 749372/ fp: 191159/ fn: 374967)
+bookshelf     : 0.745   (tp: 944655/ fp: 130222/ fn: 192557)
+picture       : 0.424   (tp: 150977/ fp: 59533 / fn: 145651)
+counter       : 0.436   (tp: 166035/ fp: 58001 / fn: 156545)
+desk          : 0.573   (tp: 605529/ fp: 246998/ fn: 204785)
+curtain       : 0.688   (tp: 683577/ fp: 90010 / fn: 220459)
+refrigerator  : 0.701   (tp: 308510/ fp: 38176 / fn: 93173 )
+shower curtain: 0.468   (tp:  52140/ fp: 8144  / fn: 51231 )
+toilet        : 0.934   (tp: 175277/ fp: 5785  / fn: 6587  )
+sink          : 0.618   (tp: 107739/ fp: 16247 / fn: 50446 )
+bathtub       : 0.799   (tp: 215833/ fp: 31222 / fn: 23117 )
+otherfurniture: 0.324   (tp: 642222/ fp: 597901/ fn: 742703)
+mean IOU 0.6525360196550933
+33 Train loss 0.3684018180741892 MegaMulAdd= 17120.856522652848 MegaHidden 26.413282528497408 time= 495.02464294433594 s
+34 Train loss 0.3671294139190154 MegaMulAdd= 17294.226251896373 MegaHidden 26.68455776165803 time= 499.06351017951965 s
+35 Train loss 0.3592378783051844 MegaMulAdd= 17174.54001280829 MegaHidden 26.53434536787565 time= 495.9346435070038 s
+36 Train loss 0.3730413756006724 MegaMulAdd= 17243.32347622798 MegaHidden 26.653959502590673 time= 497.1411201953888 s
+37 Train loss 0.35416538471525366 MegaMulAdd= 17192.26203050777 MegaHidden 26.581619689119172 time= 496.7144687175751 s
+38 Train loss 0.36004728427181 MegaMulAdd= 17103.7014133886 MegaHidden 26.42538474611399 time= 494.1037154197693 s
+39 Train loss 0.3689238016868567 MegaMulAdd= 17282.727940601035 MegaHidden 26.65829794818653 time= 497.8237056732178 s
+40 Train loss 0.35707571947729433 MegaMulAdd= 17292.402586777203 MegaHidden 26.679741305699483 time= 498.18750643730164 s
+40 1 Val MegaMulAdd= 16275.715058263415 MegaHidden 25.287576351219514 time= 69.00830435752869 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.822   (tp: 14713172/ fp: 2131444/ fn: 1065403)
+floor         : 0.897   (tp: 9950626/ fp: 579344/ fn: 565209)
+cabinet       : 0.620   (tp: 1856595/ fp: 575586/ fn: 561956)
+bed           : 0.628   (tp: 1235889/ fp: 187613/ fn: 543347)
+chair         : 0.746   (tp: 1596211/ fp: 163016/ fn: 380844)
+sofa          : 0.705   (tp: 1369002/ fp: 428490/ fn: 143367)
+table         : 0.590   (tp: 987186/ fp: 272708/ fn: 413711)
+door          : 0.655   (tp: 1156967/ fp: 377467/ fn: 232903)
+window        : 0.529   (tp: 724012/ fp: 243863/ fn: 400327)
+bookshelf     : 0.714   (tp: 893393/ fp: 113692/ fn: 243819)
+picture       : 0.420   (tp: 152773/ fp: 67396 / fn: 143855)
+counter       : 0.466   (tp: 173215/ fp: 49245 / fn: 149365)
+desk          : 0.544   (tp: 595213/ fp: 284597/ fn: 215101)
+curtain       : 0.656   (tp: 693317/ fp: 153440/ fn: 210719)
+refrigerator  : 0.565   (tp: 244670/ fp: 31280 / fn: 157013)
+shower curtain: 0.335   (tp:  37402/ fp: 8302  / fn: 65969 )
+toilet        : 0.921   (tp: 175138/ fp: 8325  / fn: 6726  )
+sink          : 0.630   (tp: 111434/ fp: 18664 / fn: 46751 )
+bathtub       : 0.755   (tp: 216063/ fp: 47094 / fn: 22887 )
+otherfurniture: 0.287   (tp: 579226/ fp: 633405/ fn: 805699)
+mean IOU 0.6241993940948019
+40 2 Val MegaMulAdd= 32567.58736327805 MegaHidden 50.581128273170734 time= 137.84344506263733 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.824   (tp: 14771069/ fp: 2143874/ fn: 1007506)
+floor         : 0.900   (tp: 9967263/ fp: 561769/ fn: 548572)
+cabinet       : 0.664   (tp: 1938022/ fp: 500828/ fn: 480529)
+bed           : 0.614   (tp: 1214671/ fp: 198996/ fn: 564565)
+chair         : 0.737   (tp: 1584493/ fp: 172683/ fn: 392562)
+sofa          : 0.726   (tp: 1407509/ fp: 426826/ fn: 104860)
+table         : 0.608   (tp: 997073/ fp: 239580/ fn: 403824)
+door          : 0.685   (tp: 1173615/ fp: 322880/ fn: 216255)
+window        : 0.577   (tp: 771719/ fp: 214267/ fn: 352620)
+bookshelf     : 0.735   (tp: 920492/ fp: 115419/ fn: 216720)
+picture       : 0.421   (tp: 150991/ fp: 62046 / fn: 145637)
+counter       : 0.476   (tp: 173010/ fp: 40803 / fn: 149570)
+desk          : 0.576   (tp: 609925/ fp: 248819/ fn: 200389)
+curtain       : 0.685   (tp: 683596/ fp: 94179 / fn: 220440)
+refrigerator  : 0.674   (tp: 284560/ fp: 20625 / fn: 117123)
+shower curtain: 0.363   (tp:  39788/ fp: 6239  / fn: 63583 )
+toilet        : 0.928   (tp: 175270/ fp: 7009  / fn: 6594  )
+sink          : 0.649   (tp: 113608/ fp: 16786 / fn: 44577 )
+bathtub       : 0.769   (tp: 214634/ fp: 40169 / fn: 24316 )
+otherfurniture: 0.309   (tp: 612960/ fp: 598410/ fn: 771965)
+mean IOU 0.6459471174924203
+40 3 Val MegaMulAdd= 48735.50989018536 MegaHidden 75.81653916097561 time= 206.02353811264038 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.825   (tp: 14790940/ fp: 2147276/ fn: 987635)
+floor         : 0.900   (tp: 9965291/ fp: 560363/ fn: 550544)
+cabinet       : 0.678   (tp: 1944207/ fp: 450622/ fn: 474344)
+bed           : 0.627   (tp: 1220072/ fp: 167795/ fn: 559164)
+chair         : 0.740   (tp: 1592791/ fp: 176058/ fn: 384264)
+sofa          : 0.722   (tp: 1391463/ fp: 415923/ fn: 120906)
+table         : 0.610   (tp: 1003323/ fp: 245165/ fn: 397574)
+door          : 0.691   (tp: 1162555/ fp: 292852/ fn: 227315)
+window        : 0.584   (tp: 787949/ fp: 224344/ fn: 336390)
+bookshelf     : 0.739   (tp: 927221/ fp: 118024/ fn: 209991)
+picture       : 0.416   (tp: 148927/ fp: 61724 / fn: 147701)
+counter       : 0.465   (tp: 170606/ fp: 44513 / fn: 151974)
+desk          : 0.571   (tp: 602218/ fp: 245086/ fn: 208096)
+curtain       : 0.693   (tp: 685321/ fp: 85312 / fn: 218715)
+refrigerator  : 0.732   (tp: 308415/ fp: 19841 / fn: 93268 )
+shower curtain: 0.441   (tp:  48547/ fp: 6736  / fn: 54824 )
+toilet        : 0.925   (tp: 175214/ fp: 7510  / fn: 6650  )
+sink          : 0.641   (tp: 113444/ fp: 18722 / fn: 44741 )
+bathtub       : 0.759   (tp: 215448/ fp: 44798 / fn: 23502 )
+otherfurniture: 0.316   (tp: 632475/ fp: 617384/ fn: 752450)
+mean IOU 0.6535819042836233
+41 Train loss 0.35485449384946327 MegaMulAdd= 17089.1679600829 MegaHidden 26.38045185492228 time= 493.43662548065186 s
+42 Train loss 0.3425207518331416 MegaMulAdd= 17082.680108020726 MegaHidden 26.390119668393783 time= 494.7050771713257 s
+43 Train loss 0.3496573393221025 MegaMulAdd= 17197.58311104663 MegaHidden 26.566582010362694 time= 497.91557216644287 s
+44 Train loss 0.3529908061511331 MegaMulAdd= 17151.210037430053 MegaHidden 26.458216829015544 time= 495.9462339878082 s
+45 Train loss 0.34756520932370966 MegaMulAdd= 17180.36050996891 MegaHidden 26.481328082901555 time= 496.901086807251 s
+46 Train loss 0.34314018386331474 MegaMulAdd= 17101.01313803109 MegaHidden 26.389623005181345 time= 495.6538517475128 s
+47 Train loss 0.35128826967307497 MegaMulAdd= 17235.966622756478 MegaHidden 26.592851813471505 time= 498.1930887699127 s
+48 Train loss 0.33973572199994867 MegaMulAdd= 17239.11708431088 MegaHidden 26.616931316062175 time= 498.78798151016235 s
+49 Train loss 0.34531535769437816 MegaMulAdd= 17319.742326051815 MegaHidden 26.727258943005182 time= 499.1938190460205 s
+50 Train loss 0.33336240474086304 MegaMulAdd= 17144.350723316064 MegaHidden 26.44952978238342 time= 495.3526442050934 s
+50 1 Val MegaMulAdd= 16143.830152585366 MegaHidden 25.207324097560974 time= 68.83149695396423 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.821   (tp: 14637638/ fp: 2052554/ fn: 1140937)
+floor         : 0.903   (tp: 10004566/ fp: 558089/ fn: 511269)
+cabinet       : 0.656   (tp: 1920111/ fp: 509197/ fn: 498440)
+bed           : 0.651   (tp: 1260538/ fp: 157383/ fn: 518698)
+chair         : 0.725   (tp: 1576263/ fp: 196390/ fn: 400792)
+sofa          : 0.714   (tp: 1366620/ fp: 402636/ fn: 145749)
+table         : 0.592   (tp: 995099/ fp: 280522/ fn: 405798)
+door          : 0.696   (tp: 1128773/ fp: 232917/ fn: 261097)
+window        : 0.564   (tp: 814784/ fp: 320536/ fn: 309555)
+bookshelf     : 0.730   (tp: 939908/ fp: 150095/ fn: 197304)
+picture       : 0.425   (tp: 147623/ fp: 51080 / fn: 149005)
+counter       : 0.500   (tp: 184642/ fp: 47042 / fn: 137938)
+desk          : 0.553   (tp: 594390/ fp: 264694/ fn: 215924)
+curtain       : 0.666   (tp: 682752/ fp: 120499/ fn: 221284)
+refrigerator  : 0.726   (tp: 316426/ fp: 34275 / fn: 85257 )
+shower curtain: 0.207   (tp:  24129/ fp: 12986 / fn: 79242 )
+toilet        : 0.904   (tp: 171108/ fp: 7382  / fn: 10756 )
+sink          : 0.592   (tp: 106328/ fp: 21311 / fn: 51857 )
+bathtub       : 0.731   (tp: 214045/ fp: 53900 / fn: 24905 )
+otherfurniture: 0.290   (tp: 598940/ fp: 678304/ fn: 785985)
+mean IOU 0.6322859560341529
+50 2 Val MegaMulAdd= 32315.6394432 MegaHidden 50.43997908292683 time= 137.55319619178772 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.824   (tp: 14699599/ fp: 2060869/ fn: 1078976)
+floor         : 0.904   (tp: 10001622/ fp: 554001/ fn: 514213)
+cabinet       : 0.665   (tp: 1952477/ fp: 518751/ fn: 466074)
+bed           : 0.636   (tp: 1231333/ fp: 156856/ fn: 547903)
+chair         : 0.737   (tp: 1594516/ fp: 187074/ fn: 382539)
+sofa          : 0.697   (tp: 1350572/ fp: 424657/ fn: 161797)
+table         : 0.603   (tp: 992932/ fp: 246567/ fn: 407965)
+door          : 0.700   (tp: 1147697/ fp: 250557/ fn: 242173)
+window        : 0.580   (tp: 813782/ fp: 278796/ fn: 310557)
+bookshelf     : 0.747   (tp: 949351/ fp: 133756/ fn: 187861)
+picture       : 0.437   (tp: 150155/ fp: 47046 / fn: 146473)
+counter       : 0.496   (tp: 178810/ fp: 37566 / fn: 143770)
+desk          : 0.578   (tp: 602844/ fp: 232464/ fn: 207470)
+curtain       : 0.679   (tp: 679136/ fp: 96886 / fn: 224900)
+refrigerator  : 0.752   (tp: 322279/ fp: 26862 / fn: 79404 )
+shower curtain: 0.300   (tp:  33691/ fp: 8970  / fn: 69680 )
+toilet        : 0.930   (tp: 174385/ fp: 5732  / fn: 7479  )
+sink          : 0.604   (tp: 108474/ fp: 21343 / fn: 49711 )
+bathtub       : 0.760   (tp: 214917/ fp: 43747 / fn: 24033 )
+otherfurniture: 0.298   (tp: 618356/ fp: 687047/ fn: 766569)
+mean IOU 0.6462964016144487
+50 3 Val MegaMulAdd= 48494.38289123902 MegaHidden 75.67461978536585 time= 206.1297996044159 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.824   (tp: 14743414/ fp: 2109811/ fn: 1035161)
+floor         : 0.904   (tp: 10010107/ fp: 551306/ fn: 505728)
+cabinet       : 0.675   (tp: 1968497/ fp: 498681/ fn: 450054)
+bed           : 0.653   (tp: 1246808/ fp: 131251/ fn: 532428)
+chair         : 0.740   (tp: 1596991/ fp: 180466/ fn: 380064)
+sofa          : 0.712   (tp: 1358828/ fp: 395685/ fn: 153541)
+table         : 0.603   (tp: 1009656/ fp: 272286/ fn: 391241)
+door          : 0.703   (tp: 1141874/ fp: 233750/ fn: 247996)
+window        : 0.586   (tp: 818957/ fp: 272472/ fn: 305382)
+bookshelf     : 0.749   (tp: 950862/ fp: 132069/ fn: 186350)
+picture       : 0.422   (tp: 148192/ fp: 54147 / fn: 148436)
+counter       : 0.469   (tp: 167936/ fp: 35236 / fn: 154644)
+desk          : 0.570   (tp: 602364/ fp: 247042/ fn: 207950)
+curtain       : 0.694   (tp: 683239/ fp: 80575 / fn: 220797)
+refrigerator  : 0.751   (tp: 321139/ fp: 25708 / fn: 80544 )
+shower curtain: 0.339   (tp:  38178/ fp: 9104  / fn: 65193 )
+toilet        : 0.939   (tp: 174359/ fp: 3843  / fn: 7505  )
+sink          : 0.601   (tp: 107244/ fp: 20150 / fn: 50941 )
+bathtub       : 0.778   (tp: 214631/ fp: 36925 / fn: 24319 )
+otherfurniture: 0.309   (tp: 619775/ fp: 622917/ fn: 765150)
+mean IOU 0.6511881399155732
+51 Train loss 0.3327480624732259 MegaMulAdd= 17303.496079170985 MegaHidden 26.719031751295336 time= 498.567095041275 s
+52 Train loss 0.33539242239354494 MegaMulAdd= 17122.81485541969 MegaHidden 26.393850569948185 time= 496.69212532043457 s
+53 Train loss 0.34036953505370526 MegaMulAdd= 17036.733179108807 MegaHidden 26.319104953367873 time= 493.89016246795654 s
+54 Train loss 0.3375294398177754 MegaMulAdd= 17269.05047365803 MegaHidden 26.616564227979275 time= 499.05640625953674 s
+55 Train loss 0.3315452208089364 MegaMulAdd= 17202.54742831088 MegaHidden 26.55114756476684 time= 497.5054497718811 s
+56 Train loss 0.3242931485950173 MegaMulAdd= 17249.245658404143 MegaHidden 26.59129749222798 time= 498.01961493492126 s
+57 Train loss 0.3314689602944758 MegaMulAdd= 17242.27946283938 MegaHidden 26.605134093264247 time= 497.8861539363861 s
+58 Train loss 0.33005765748101396 MegaMulAdd= 17206.316452145078 MegaHidden 26.528388352331604 time= 496.93217182159424 s
+59 Train loss 0.3275229222588725 MegaMulAdd= 17179.357040207255 MegaHidden 26.499486176165803 time= 497.08795499801636 s
+60 Train loss 0.3222419096084384 MegaMulAdd= 17093.14864315026 MegaHidden 26.38005790673575 time= 494.6530165672302 s
+60 1 Val MegaMulAdd= 16174.47345014634 MegaHidden 25.234655843902438 time= 68.9281861782074 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.821   (tp: 14643291/ fp: 2048880/ fn: 1135284)
+floor         : 0.902   (tp: 9989887/ fp: 561900/ fn: 525948)
+cabinet       : 0.656   (tp: 1921979/ fp: 513238/ fn: 496572)
+bed           : 0.635   (tp: 1235003/ fp: 164705/ fn: 544233)
+chair         : 0.717   (tp: 1619417/ fp: 282461/ fn: 357638)
+sofa          : 0.717   (tp: 1348964/ fp: 369087/ fn: 163405)
+table         : 0.575   (tp: 965557/ fp: 277331/ fn: 435340)
+door          : 0.693   (tp: 1158274/ fp: 282144/ fn: 231596)
+window        : 0.564   (tp: 802756/ fp: 297972/ fn: 321583)
+bookshelf     : 0.695   (tp: 890911/ fp: 145200/ fn: 246301)
+picture       : 0.411   (tp: 142132/ fp: 49292 / fn: 154496)
+counter       : 0.400   (tp: 150423/ fp: 53408 / fn: 172157)
+desk          : 0.534   (tp: 607261/ fp: 326745/ fn: 203053)
+curtain       : 0.685   (tp: 708685/ fp: 130253/ fn: 195351)
+refrigerator  : 0.686   (tp: 295423/ fp: 28718 / fn: 106260)
+shower curtain: 0.278   (tp:  31895/ fp: 11524 / fn: 71476 )
+toilet        : 0.932   (tp: 174917/ fp: 5780  / fn: 6947  )
+sink          : 0.595   (tp: 105942/ fp: 19848 / fn: 52243 )
+bathtub       : 0.743   (tp: 214745/ fp: 50176 / fn: 24205 )
+otherfurniture: 0.337   (tp: 654424/ fp: 555927/ fn: 730501)
+mean IOU 0.6288160121407023
+60 2 Val MegaMulAdd= 32309.513731590243 MegaHidden 50.44622891707317 time= 137.65557742118835 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.826   (tp: 14784180/ fp: 2118204/ fn: 994395)
+floor         : 0.903   (tp: 10014255/ fp: 568789/ fn: 501580)
+cabinet       : 0.651   (tp: 1924217/ fp: 536652/ fn: 494334)
+bed           : 0.633   (tp: 1212392/ fp: 135846/ fn: 566844)
+chair         : 0.724   (tp: 1615455/ fp: 254439/ fn: 361600)
+sofa          : 0.703   (tp: 1332630/ fp: 382246/ fn: 179739)
+table         : 0.598   (tp: 984611/ fp: 246439/ fn: 416286)
+door          : 0.708   (tp: 1149655/ fp: 233785/ fn: 240215)
+window        : 0.576   (tp: 800691/ fp: 266902/ fn: 323648)
+bookshelf     : 0.738   (tp: 943823/ fp: 141061/ fn: 193389)
+picture       : 0.436   (tp: 148273/ fp: 43585 / fn: 148355)
+counter       : 0.404   (tp: 155322/ fp: 61796 / fn: 167258)
+desk          : 0.559   (tp: 617590/ fp: 294207/ fn: 192724)
+curtain       : 0.681   (tp: 688839/ fp: 108207/ fn: 215197)
+refrigerator  : 0.757   (tp: 323783/ fp: 26282 / fn: 77900 )
+shower curtain: 0.325   (tp:  36277/ fp: 8244  / fn: 67094 )
+toilet        : 0.941   (tp: 175626/ fp: 4745  / fn: 6238  )
+sink          : 0.609   (tp: 107886/ fp: 18959 / fn: 50299 )
+bathtub       : 0.792   (tp: 216251/ fp: 34128 / fn: 22699 )
+otherfurniture: 0.334   (tp: 626770/ fp: 493433/ fn: 758155)
+mean IOU 0.6448793010341731
+60 3 Val MegaMulAdd= 48460.08919320976 MegaHidden 75.64661713170732 time= 206.84566831588745 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.826   (tp: 14786351/ fp: 2115361/ fn: 992224)
+floor         : 0.905   (tp: 10031928/ fp: 568369/ fn: 483907)
+cabinet       : 0.661   (tp: 1943490/ fp: 522218/ fn: 475061)
+bed           : 0.636   (tp: 1215818/ fp: 132255/ fn: 563418)
+chair         : 0.729   (tp: 1618778/ fp: 242880/ fn: 358277)
+sofa          : 0.698   (tp: 1339116/ fp: 406441/ fn: 173253)
+table         : 0.603   (tp: 995745/ fp: 251111/ fn: 405152)
+door          : 0.697   (tp: 1144384/ fp: 251502/ fn: 245486)
+window        : 0.584   (tp: 804371/ fp: 253681/ fn: 319968)
+bookshelf     : 0.748   (tp: 947739/ fp: 130635/ fn: 189473)
+picture       : 0.441   (tp: 148597/ fp: 40547 / fn: 148031)
+counter       : 0.405   (tp: 149514/ fp: 46200 / fn: 173066)
+desk          : 0.564   (tp: 613703/ fp: 277655/ fn: 196611)
+curtain       : 0.684   (tp: 682311/ fp: 92893 / fn: 221725)
+refrigerator  : 0.746   (tp: 318272/ fp: 24861 / fn: 83411 )
+shower curtain: 0.412   (tp:  45687/ fp: 7613  / fn: 57684 )
+toilet        : 0.948   (tp: 176110/ fp: 3924  / fn: 5754  )
+sink          : 0.624   (tp: 110276/ fp: 18499 / fn: 47909 )
+bathtub       : 0.789   (tp: 216121/ fp: 34878 / fn: 22829 )
+otherfurniture: 0.322   (tp: 611231/ fp: 515410/ fn: 773694)
+mean IOU 0.6511011493318992
+61 Train loss 0.3250598179829585 MegaMulAdd= 17203.780234238344 MegaHidden 26.52788887046632 time= 496.66525983810425 s
+62 Train loss 0.3271352408768295 MegaMulAdd= 17285.70463987565 MegaHidden 26.681069430051814 time= 498.3961651325226 s
+63 Train loss 0.31801623275334184 MegaMulAdd= 17162.85443937824 MegaHidden 26.500265450777203 time= 496.5506615638733 s
+64 Train loss 0.31805861518754586 MegaMulAdd= 17247.545923937825 MegaHidden 26.63474147150259 time= 497.60719752311707 s
+64 1 Val MegaMulAdd= 16208.83005377561 MegaHidden 25.25527570731707 time= 68.46075487136841 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.819   (tp: 14570553/ fp: 2008165/ fn: 1208022)
+floor         : 0.901   (tp: 9995271/ fp: 578587/ fn: 520564)
+cabinet       : 0.660   (tp: 1962599/ fp: 554411/ fn: 455952)
+bed           : 0.607   (tp: 1184036/ fp: 170450/ fn: 595200)
+chair         : 0.750   (tp: 1607854/ fp: 166968/ fn: 369201)
+sofa          : 0.719   (tp: 1394292/ fp: 427832/ fn: 118077)
+table         : 0.574   (tp: 1002259/ fp: 344339/ fn: 398638)
+door          : 0.680   (tp: 1161171/ fp: 317751/ fn: 228699)
+window        : 0.590   (tp: 818332/ fp: 261625/ fn: 306007)
+bookshelf     : 0.710   (tp: 907353/ fp: 140374/ fn: 229859)
+picture       : 0.407   (tp: 145645/ fp: 61053 / fn: 150983)
+counter       : 0.443   (tp: 167632/ fp: 55515 / fn: 154948)
+desk          : 0.507   (tp: 551770/ fp: 278205/ fn: 258544)
+curtain       : 0.695   (tp: 685793/ fp: 83142 / fn: 218243)
+refrigerator  : 0.725   (tp: 309976/ fp: 25763 / fn: 91707 )
+shower curtain: 0.486   (tp:  57874/ fp: 15700 / fn: 45497 )
+toilet        : 0.922   (tp: 175147/ fp: 8157  / fn: 6717  )
+sink          : 0.594   (tp: 106360/ fp: 20755 / fn: 51825 )
+bathtub       : 0.786   (tp: 216791/ fp: 36792 / fn: 22159 )
+otherfurniture: 0.303   (tp: 615027/ fp: 645156/ fn: 769898)
+mean IOU 0.6439848768692498
+64 2 Val MegaMulAdd= 32365.099524526828 MegaHidden 50.472898497560976 time= 137.05333614349365 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.825   (tp: 14705752/ fp: 2036577/ fn: 1072823)
+floor         : 0.903   (tp: 10015186/ fp: 572671/ fn: 500649)
+cabinet       : 0.672   (tp: 1942722/ fp: 471011/ fn: 475829)
+bed           : 0.613   (tp: 1187360/ fp: 158418/ fn: 591876)
+chair         : 0.752   (tp: 1624819/ fp: 183805/ fn: 352236)
+sofa          : 0.715   (tp: 1376139/ fp: 413443/ fn: 136230)
+table         : 0.585   (tp: 998165/ fp: 306614/ fn: 402732)
+door          : 0.693   (tp: 1165397/ fp: 291463/ fn: 224473)
+window        : 0.612   (tp: 827886/ fp: 228197/ fn: 296453)
+bookshelf     : 0.741   (tp: 939768/ fp: 131312/ fn: 197444)
+picture       : 0.410   (tp: 145895/ fp: 58889 / fn: 150733)
+counter       : 0.468   (tp: 173436/ fp: 48323 / fn: 149144)
+desk          : 0.541   (tp: 577910/ fp: 257361/ fn: 232404)
+curtain       : 0.711   (tp: 697104/ fp: 76687 / fn: 206932)
+refrigerator  : 0.740   (tp: 312821/ fp: 21095 / fn: 88862 )
+shower curtain: 0.489   (tp:  55978/ fp: 11134 / fn: 47393 )
+toilet        : 0.933   (tp: 175425/ fp: 6119  / fn: 6439  )
+sink          : 0.616   (tp: 108139/ fp: 17365 / fn: 50046 )
+bathtub       : 0.784   (tp: 216327/ fp: 36879 / fn: 22623 )
+otherfurniture: 0.303   (tp: 616027/ fp: 646856/ fn: 768898)
+mean IOU 0.6553225838657412
+64 3 Val MegaMulAdd= 48576.931264312196 MegaHidden 75.71934798048781 time= 205.5580713748932 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.826   (tp: 14761162/ fp: 2088903/ fn: 1017413)
+floor         : 0.903   (tp: 10014617/ fp: 572096/ fn: 501218)
+cabinet       : 0.683   (tp: 1955871/ fp: 445709/ fn: 462680)
+bed           : 0.615   (tp: 1181705/ fp: 141709/ fn: 597531)
+chair         : 0.757   (tp: 1626606/ fp: 172583/ fn: 350449)
+sofa          : 0.708   (tp: 1371089/ fp: 423368/ fn: 141280)
+table         : 0.600   (tp: 1017257/ fp: 294251/ fn: 383640)
+door          : 0.704   (tp: 1170953/ fp: 273769/ fn: 218917)
+window        : 0.609   (tp: 819597/ fp: 221962/ fn: 304742)
+bookshelf     : 0.736   (tp: 932709/ fp: 129758/ fn: 204503)
+picture       : 0.421   (tp: 146654/ fp: 51882 / fn: 149974)
+counter       : 0.460   (tp: 170410/ fp: 47632 / fn: 152170)
+desk          : 0.559   (tp: 588023/ fp: 242351/ fn: 222291)
+curtain       : 0.698   (tp: 683801/ fp: 75885 / fn: 220235)
+refrigerator  : 0.745   (tp: 313397/ fp: 18911 / fn: 88286 )
+shower curtain: 0.479   (tp:  54301/ fp: 10026 / fn: 49070 )
+toilet        : 0.933   (tp: 175021/ fp: 5647  / fn: 6843  )
+sink          : 0.624   (tp: 108920/ fp: 16365 / fn: 49265 )
+bathtub       : 0.790   (tp: 216859/ fp: 35611 / fn: 22091 )
+otherfurniture: 0.305   (tp: 618095/ fp: 641010/ fn: 766830)
+mean IOU 0.6577547953467098
+65 Train loss 0.3181632732029085 MegaMulAdd= 16999.871584953366 MegaHidden 26.293915025906735 time= 492.2327723503113 s
+66 Train loss 0.31669922235917736 MegaMulAdd= 17134.811382590673 MegaHidden 26.424532186528495 time= 496.22577834129333 s
+67 Train loss 0.3263275046627243 MegaMulAdd= 17285.464539481865 MegaHidden 26.654328621761657 time= 498.2630157470703 s
+68 Train loss 0.3117078457559858 MegaMulAdd= 17267.410693015543 MegaHidden 26.655962404145075 time= 498.90104818344116 s
+69 Train loss 0.31097696624793014 MegaMulAdd= 17190.593805720207 MegaHidden 26.538623336787566 time= 496.59645795822144 s
+70 Train loss 0.31974499343664614 MegaMulAdd= 17127.299974300517 MegaHidden 26.4030343626943 time= 496.05488204956055 s
+70 1 Val MegaMulAdd= 16195.331657678049 MegaHidden 25.228376351219513 time= 68.71623373031616 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.820   (tp: 14707491/ fp: 2162004/ fn: 1071084)
+floor         : 0.904   (tp: 10036491/ fp: 586150/ fn: 479344)
+cabinet       : 0.682   (tp: 1932161/ fp: 413026/ fn: 486390)
+bed           : 0.600   (tp: 1180849/ fp: 190084/ fn: 598387)
+chair         : 0.714   (tp: 1570625/ fp: 223372/ fn: 406430)
+sofa          : 0.679   (tp: 1342517/ fp: 463602/ fn: 169852)
+table         : 0.572   (tp: 961752/ fp: 281095/ fn: 439145)
+door          : 0.711   (tp: 1151100/ fp: 228187/ fn: 238770)
+window        : 0.564   (tp: 771445/ fp: 242520/ fn: 352894)
+bookshelf     : 0.700   (tp: 894840/ fp: 140516/ fn: 242372)
+picture       : 0.381   (tp: 141451/ fp: 74166 / fn: 155177)
+counter       : 0.472   (tp: 179149/ fp: 56657 / fn: 143431)
+desk          : 0.568   (tp: 611892/ fp: 266823/ fn: 198422)
+curtain       : 0.688   (tp: 691072/ fp: 101087/ fn: 212964)
+refrigerator  : 0.743   (tp: 322889/ fp: 32613 / fn: 78794 )
+shower curtain: 0.367   (tp:  42518/ fp: 12327 / fn: 60853 )
+toilet        : 0.909   (tp: 175223/ fp: 10817 / fn: 6641  )
+sink          : 0.584   (tp: 110121/ fp: 30263 / fn: 48064 )
+bathtub       : 0.755   (tp: 212252/ fp: 42123 / fn: 26698 )
+otherfurniture: 0.319   (tp: 635751/ fp: 607454/ fn: 749174)
+mean IOU 0.6367696361968678
+70 2 Val MegaMulAdd= 32425.947478165854 MegaHidden 50.499043121951225 time= 137.52757334709167 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.827   (tp: 14796275/ fp: 2108382/ fn: 982300)
+floor         : 0.906   (tp: 10042479/ fp: 569195/ fn: 473356)
+cabinet       : 0.680   (tp: 1953903/ fp: 455773/ fn: 464648)
+bed           : 0.609   (tp: 1193493/ fp: 181239/ fn: 585743)
+chair         : 0.736   (tp: 1590603/ fp: 183177/ fn: 386452)
+sofa          : 0.679   (tp: 1333700/ fp: 452510/ fn: 178669)
+table         : 0.589   (tp: 975245/ fp: 253843/ fn: 425652)
+door          : 0.706   (tp: 1147857/ fp: 237140/ fn: 242013)
+window        : 0.578   (tp: 788466/ fp: 240540/ fn: 335873)
+bookshelf     : 0.732   (tp: 926537/ fp: 129236/ fn: 210675)
+picture       : 0.403   (tp: 146677/ fp: 66945 / fn: 149951)
+counter       : 0.444   (tp: 163340/ fp: 45564 / fn: 159240)
+desk          : 0.571   (tp: 623494/ fp: 280783/ fn: 186820)
+curtain       : 0.694   (tp: 689047/ fp: 88910 / fn: 214989)
+refrigerator  : 0.765   (tp: 326576/ fp: 25243 / fn: 75107 )
+shower curtain: 0.361   (tp:  41483/ fp: 11565 / fn: 61888 )
+toilet        : 0.931   (tp: 174910/ fp: 5927  / fn: 6954  )
+sink          : 0.609   (tp: 109198/ fp: 21194 / fn: 48987 )
+bathtub       : 0.777   (tp: 215246/ fp: 38171 / fn: 23704 )
+otherfurniture: 0.327   (tp: 637917/ fp: 564692/ fn: 747008)
+mean IOU 0.6461700273385929
+70 3 Val MegaMulAdd= 48545.21978958049 MegaHidden 75.69651262439024 time= 206.51886558532715 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.828   (tp: 14809840/ fp: 2110242/ fn: 968735)
+floor         : 0.906   (tp: 10045667/ fp: 568528/ fn: 470168)
+cabinet       : 0.680   (tp: 1954012/ fp: 454437/ fn: 464539)
+bed           : 0.620   (tp: 1201520/ fp: 159923/ fn: 577716)
+chair         : 0.742   (tp: 1589351/ fp: 165501/ fn: 387704)
+sofa          : 0.695   (tp: 1345287/ fp: 424437/ fn: 167082)
+table         : 0.590   (tp: 976236/ fp: 254055/ fn: 424661)
+door          : 0.707   (tp: 1158046/ fp: 248529/ fn: 231824)
+window        : 0.585   (tp: 792027/ fp: 229930/ fn: 332312)
+bookshelf     : 0.741   (tp: 937823/ fp: 128755/ fn: 199389)
+picture       : 0.407   (tp: 145579/ fp: 60944 / fn: 151049)
+counter       : 0.441   (tp: 163280/ fp: 47521 / fn: 159300)
+desk          : 0.574   (tp: 624321/ fp: 276767/ fn: 185993)
+curtain       : 0.698   (tp: 686916/ fp: 80318 / fn: 217120)
+refrigerator  : 0.780   (tp: 331682/ fp: 23461 / fn: 70001 )
+shower curtain: 0.405   (tp:  46347/ fp: 10944 / fn: 57024 )
+toilet        : 0.941   (tp: 175551/ fp: 4608  / fn: 6313  )
+sink          : 0.616   (tp: 110808/ fp: 21667 / fn: 47377 )
+bathtub       : 0.783   (tp: 215720/ fp: 36653 / fn: 23230 )
+otherfurniture: 0.322   (tp: 634693/ fp: 584549/ fn: 750232)
+mean IOU 0.6530609122273622
+71 Train loss 0.30850518436787966 MegaMulAdd= 17143.250936290155 MegaHidden 26.47810341968912 time= 496.6889946460724 s
+72 Train loss 0.3142241106985451 MegaMulAdd= 17019.253412601036 MegaHidden 26.270298777202072 time= 491.10058856010437 s
+73 Train loss 0.31735060838135803 MegaMulAdd= 17144.77468431088 MegaHidden 26.471196269430052 time= 495.5475947856903 s
+74 Train loss 0.30215526938244897 MegaMulAdd= 17264.564138031088 MegaHidden 26.605093720207254 time= 498.0761501789093 s
+75 Train loss 0.3111281257074375 MegaMulAdd= 17289.918587689117 MegaHidden 26.680764352331604 time= 498.17699122428894 s
+76 Train loss 0.31660491382920897 MegaMulAdd= 17216.271796145076 MegaHidden 26.537286756476686 time= 497.3937849998474 s
+77 Train loss 0.30736201924163026 MegaMulAdd= 17051.929880373056 MegaHidden 26.339083730569946 time= 495.017676115036 s
+78 Train loss 0.30332183765320037 MegaMulAdd= 17116.377904 MegaHidden 26.426236808290152 time= 496.0719723701477 s
+79 Train loss 0.30513209927004653 MegaMulAdd= 17154.892862341967 MegaHidden 26.49106814507772 time= 496.19411158561707 s
+80 Train loss 0.30127259285806063 MegaMulAdd= 17234.533137823833 MegaHidden 26.563176248704664 time= 497.52739572525024 s
+80 1 Val MegaMulAdd= 16175.990163512195 MegaHidden 25.22209123902439 time= 68.2661349773407 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.817   (tp: 14612236/ fp: 2114563/ fn: 1166339)
+floor         : 0.901   (tp: 9995104/ fp: 573044/ fn: 520731)
+cabinet       : 0.671   (tp: 1927360/ fp: 453566/ fn: 491191)
+bed           : 0.613   (tp: 1188380/ fp: 160151/ fn: 590856)
+chair         : 0.730   (tp: 1603863/ fp: 220482/ fn: 373192)
+sofa          : 0.713   (tp: 1362036/ fp: 398782/ fn: 150333)
+table         : 0.572   (tp: 987921/ fp: 324777/ fn: 412976)
+door          : 0.672   (tp: 1129797/ fp: 291345/ fn: 260073)
+window        : 0.577   (tp: 832881/ fp: 318505/ fn: 291458)
+bookshelf     : 0.706   (tp: 909455/ fp: 151828/ fn: 227757)
+picture       : 0.439   (tp: 155440/ fp: 57385 / fn: 141188)
+counter       : 0.409   (tp: 159700/ fp: 68156 / fn: 162880)
+desk          : 0.553   (tp: 594033/ fp: 263465/ fn: 216281)
+curtain       : 0.630   (tp: 651027/ fp: 128865/ fn: 253009)
+refrigerator  : 0.799   (tp: 342490/ fp: 26815 / fn: 59193 )
+shower curtain: 0.320   (tp:  36368/ fp: 10199 / fn: 67003 )
+toilet        : 0.934   (tp: 175513/ fp: 5953  / fn: 6351  )
+sink          : 0.588   (tp: 109135/ fp: 27431 / fn: 49050 )
+bathtub       : 0.779   (tp: 213012/ fp: 34605 / fn: 25938 )
+otherfurniture: 0.299   (tp: 600543/ fp: 620264/ fn: 784382)
+mean IOU 0.6361527384686694
+80 2 Val MegaMulAdd= 32331.10691465366 MegaHidden 50.44148495609756 time= 136.87286758422852 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.820   (tp: 14732692/ fp: 2192359/ fn: 1045883)
+floor         : 0.902   (tp: 10004848/ fp: 577637/ fn: 510987)
+cabinet       : 0.668   (tp: 1936819/ fp: 482574/ fn: 481732)
+bed           : 0.614   (tp: 1178425/ fp: 138772/ fn: 600811)
+chair         : 0.743   (tp: 1607094/ fp: 185388/ fn: 369961)
+sofa          : 0.719   (tp: 1380723/ fp: 408627/ fn: 131646)
+table         : 0.588   (tp: 1006590/ fp: 311112/ fn: 394307)
+door          : 0.707   (tp: 1167516/ fp: 261304/ fn: 222354)
+window        : 0.603   (tp: 834674/ fp: 258908/ fn: 289665)
+bookshelf     : 0.709   (tp: 901437/ fp: 134993/ fn: 235775)
+picture       : 0.433   (tp: 150074/ fp: 49944 / fn: 146554)
+counter       : 0.446   (tp: 170565/ fp: 60265 / fn: 152015)
+desk          : 0.541   (tp: 580192/ fp: 262633/ fn: 230122)
+curtain       : 0.668   (tp: 669025/ fp: 97071 / fn: 235011)
+refrigerator  : 0.797   (tp: 338039/ fp: 22506 / fn: 63644 )
+shower curtain: 0.303   (tp:  33706/ fp: 7876  / fn: 69665 )
+toilet        : 0.942   (tp: 175949/ fp: 4830  / fn: 5915  )
+sink          : 0.592   (tp: 108728/ fp: 25490 / fn: 49457 )
+bathtub       : 0.789   (tp: 215614/ fp: 34228 / fn: 23336 )
+otherfurniture: 0.308   (tp: 591676/ fp: 535572/ fn: 793249)
+mean IOU 0.6445938825230383
+80 3 Val MegaMulAdd= 48561.74853213659 MegaHidden 75.70522973658537 time= 205.63462901115417 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.821   (tp: 14748025/ fp: 2174209/ fn: 1030550)
+floor         : 0.903   (tp: 10012590/ fp: 571090/ fn: 503245)
+cabinet       : 0.676   (tp: 1949115/ fp: 463955/ fn: 469436)
+bed           : 0.619   (tp: 1183778/ fp: 132656/ fn: 595458)
+chair         : 0.736   (tp: 1610379/ fp: 210003/ fn: 366676)
+sofa          : 0.714   (tp: 1375108/ fp: 412939/ fn: 137261)
+table         : 0.586   (tp: 1006900/ fp: 315997/ fn: 393997)
+door          : 0.714   (tp: 1175663/ fp: 257362/ fn: 214207)
+window        : 0.608   (tp: 833965/ fp: 246586/ fn: 290374)
+bookshelf     : 0.727   (tp: 926858/ fp: 138252/ fn: 210354)
+picture       : 0.433   (tp: 150561/ fp: 50987 / fn: 146067)
+counter       : 0.458   (tp: 170502/ fp: 49678 / fn: 152078)
+desk          : 0.544   (tp: 586103/ fp: 267170/ fn: 224211)
+curtain       : 0.676   (tp: 666664/ fp: 81568 / fn: 237372)
+refrigerator  : 0.776   (tp: 331077/ fp: 25172 / fn: 70606 )
+shower curtain: 0.313   (tp:  34908/ fp: 8081  / fn: 68463 )
+toilet        : 0.942   (tp: 175693/ fp: 4588  / fn: 6171  )
+sink          : 0.596   (tp: 108036/ fp: 23003 / fn: 50149 )
+bathtub       : 0.792   (tp: 215255/ fp: 32796 / fn: 23695 )
+otherfurniture: 0.308   (tp: 586706/ fp: 522497/ fn: 798219)
+mean IOU 0.6472143898424065
+81 Train loss 0.2968081704691633 MegaMulAdd= 17266.541380352333 MegaHidden 26.626834735751295 time= 497.10839462280273 s
+82 Train loss 0.2930296721396508 MegaMulAdd= 17233.83305492228 MegaHidden 26.589515481865288 time= 497.4392213821411 s
+83 Train loss 0.2951495281190841 MegaMulAdd= 17103.737486300517 MegaHidden 26.421520124352334 time= 494.7303194999695 s
+84 Train loss 0.2944443981562342 MegaMulAdd= 17252.440629347147 MegaHidden 26.58820074611399 time= 497.46840929985046 s
+85 Train loss 0.3023911669076263 MegaMulAdd= 17346.006157098447 MegaHidden 26.784757222797925 time= 498.9594871997833 s
+86 Train loss 0.2972986880544718 MegaMulAdd= 17096.381985492226 MegaHidden 26.386919419689118 time= 493.8033092021942 s
+87 Train loss 0.29711975079852265 MegaMulAdd= 17144.70035987565 MegaHidden 26.473941803108808 time= 495.1369631290436 s
+88 Train loss 0.2941781680595565 MegaMulAdd= 17078.52881757513 MegaHidden 26.354350507772022 time= 493.21263575553894 s
+89 Train loss 0.29252621067034734 MegaMulAdd= 17318.31959017617 MegaHidden 26.713260186528498 time= 499.19460892677307 s
+90 Train loss 0.303105292091896 MegaMulAdd= 17290.580811854925 MegaHidden 26.66050383419689 time= 499.19296741485596 s
+90 1 Val MegaMulAdd= 16145.12538755122 MegaHidden 25.21127211707317 time= 68.3500463962555 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.818   (tp: 14672527/ fp: 2162008/ fn: 1106048)
+floor         : 0.905   (tp: 10036548/ fp: 577136/ fn: 479287)
+cabinet       : 0.658   (tp: 1893856/ fp: 461738/ fn: 524695)
+bed           : 0.582   (tp: 1147463/ fp: 191706/ fn: 631773)
+chair         : 0.724   (tp: 1624578/ fp: 265636/ fn: 352477)
+sofa          : 0.699   (tp: 1333138/ fp: 394935/ fn: 179231)
+table         : 0.578   (tp: 978246/ fp: 292716/ fn: 422651)
+door          : 0.708   (tp: 1153412/ fp: 239175/ fn: 236458)
+window        : 0.557   (tp: 817205/ fp: 342063/ fn: 307134)
+bookshelf     : 0.669   (tp: 865543/ fp: 157095/ fn: 271669)
+picture       : 0.408   (tp: 149806/ fp: 70625 / fn: 146822)
+counter       : 0.427   (tp: 160632/ fp: 53231 / fn: 161948)
+desk          : 0.579   (tp: 614598/ fp: 251683/ fn: 195716)
+curtain       : 0.637   (tp: 645240/ fp: 109236/ fn: 258796)
+refrigerator  : 0.766   (tp: 331052/ fp: 30455 / fn: 70631 )
+shower curtain: 0.446   (tp:  52150/ fp: 13504 / fn: 51221 )
+toilet        : 0.924   (tp: 173587/ fp: 6092  / fn: 8277  )
+sink          : 0.563   (tp: 105636/ fp: 29284 / fn: 52549 )
+bathtub       : 0.746   (tp: 214830/ fp: 49003 / fn: 24120 )
+otherfurniture: 0.307   (tp: 600101/ fp: 569006/ fn: 784824)
+mean IOU 0.6350337551822515
+90 2 Val MegaMulAdd= 32364.932930965853 MegaHidden 50.47892074146341 time= 137.41513228416443 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.826   (tp: 14724305/ fp: 2043121/ fn: 1054270)
+floor         : 0.905   (tp: 10037992/ fp: 570500/ fn: 477843)
+cabinet       : 0.675   (tp: 1962425/ fp: 487333/ fn: 456126)
+bed           : 0.603   (tp: 1160430/ fp: 146232/ fn: 618806)
+chair         : 0.731   (tp: 1629045/ fp: 251686/ fn: 348010)
+sofa          : 0.700   (tp: 1340039/ fp: 401092/ fn: 172330)
+table         : 0.589   (tp: 982863/ fp: 266832/ fn: 418034)
+door          : 0.700   (tp: 1161878/ fp: 270732/ fn: 227992)
+window        : 0.573   (tp: 811585/ fp: 291087/ fn: 312754)
+bookshelf     : 0.691   (tp: 884903/ fp: 144225/ fn: 252309)
+picture       : 0.416   (tp: 149504/ fp: 62407 / fn: 147124)
+counter       : 0.461   (tp: 172187/ fp: 50742 / fn: 150393)
+desk          : 0.600   (tp: 627034/ fp: 234626/ fn: 183280)
+curtain       : 0.670   (tp: 673477/ fp: 101144/ fn: 230559)
+refrigerator  : 0.763   (tp: 322337/ fp: 20929 / fn: 79346 )
+shower curtain: 0.400   (tp:  46608/ fp: 13279 / fn: 56763 )
+toilet        : 0.942   (tp: 175141/ fp: 4062  / fn: 6723  )
+sink          : 0.586   (tp: 106383/ fp: 23355 / fn: 51802 )
+bathtub       : 0.756   (tp: 215692/ fp: 46351 / fn: 23258 )
+otherfurniture: 0.310   (tp: 617259/ fp: 605653/ fn: 767666)
+mean IOU 0.6448967613969873
+90 3 Val MegaMulAdd= 48586.65221026341 MegaHidden 75.74467434146342 time= 206.5336148738861 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.824   (tp: 14732481/ fp: 2106415/ fn: 1046094)
+floor         : 0.905   (tp: 10029044/ fp: 568142/ fn: 486791)
+cabinet       : 0.676   (tp: 1954924/ fp: 475062/ fn: 463627)
+bed           : 0.608   (tp: 1172049/ fp: 149349/ fn: 607187)
+chair         : 0.740   (tp: 1640618/ fp: 241021/ fn: 336437)
+sofa          : 0.708   (tp: 1345320/ fp: 388288/ fn: 167049)
+table         : 0.611   (tp: 998096/ fp: 233433/ fn: 402801)
+door          : 0.708   (tp: 1161456/ fp: 250145/ fn: 228414)
+window        : 0.571   (tp: 811580/ fp: 297156/ fn: 312759)
+bookshelf     : 0.687   (tp: 876717/ fp: 138227/ fn: 260495)
+picture       : 0.422   (tp: 149821/ fp: 58161 / fn: 146807)
+counter       : 0.441   (tp: 167267/ fp: 56912 / fn: 155313)
+desk          : 0.597   (tp: 624338/ fp: 235017/ fn: 185976)
+curtain       : 0.695   (tp: 683813/ fp: 79418 / fn: 220223)
+refrigerator  : 0.783   (tp: 329443/ fp: 19173 / fn: 72240 )
+shower curtain: 0.385   (tp:  44828/ fp: 13021 / fn: 58543 )
+toilet        : 0.943   (tp: 175261/ fp: 3916  / fn: 6603  )
+sink          : 0.604   (tp: 107741/ fp: 20253 / fn: 50444 )
+bathtub       : 0.761   (tp: 216984/ fp: 46319 / fn: 21966 )
+otherfurniture: 0.323   (tp: 639513/ fp: 595753/ fn: 745412)
+mean IOU 0.649541799910965
+91 Train loss 0.29405477536576136 MegaMulAdd= 17238.248118176165 MegaHidden 26.559698279792745 time= 496.801265001297 s
+92 Train loss 0.29347587420375315 MegaMulAdd= 17036.589870010364 MegaHidden 26.312122943005182 time= 492.93893480300903 s
+93 Train loss 0.28683521917888094 MegaMulAdd= 17225.92861562694 MegaHidden 26.583283025906734 time= 496.919606924057 s
+94 Train loss 0.29108443159561653 MegaMulAdd= 17160.61465488083 MegaHidden 26.478319170984456 time= 495.4389958381653 s
+95 Train loss 0.29351187574786025 MegaMulAdd= 17241.32048878756 MegaHidden 26.565260393782385 time= 497.58879947662354 s
+96 Train loss 0.2884212334628229 MegaMulAdd= 17128.49811639378 MegaHidden 26.436079958549225 time= 494.6546895503998 s
+97 Train loss 0.28846114472328843 MegaMulAdd= 17255.662603937824 MegaHidden 26.595444393782383 time= 497.46561765670776 s
+98 Train loss 0.28497851301323285 MegaMulAdd= 17075.320991668395 MegaHidden 26.366338777202074 time= 494.68655943870544 s
+99 Train loss 0.2908917339397715 MegaMulAdd= 17142.771649699484 MegaHidden 26.455007875647667 time= 494.3724739551544 s
+100 Train loss 0.28668410190707677 MegaMulAdd= 17161.96226839378 MegaHidden 26.499642984455956 time= 494.16590189933777 s
+100 1 Val MegaMulAdd= 16135.518490692682 MegaHidden 25.202719531707316 time= 68.7659752368927 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.812   (tp: 14603632/ fp: 2207685/ fn: 1174943)
+floor         : 0.904   (tp: 10034573/ fp: 581725/ fn: 481262)
+cabinet       : 0.682   (tp: 1971190/ fp: 473665/ fn: 447361)
+bed           : 0.585   (tp: 1126373/ fp: 146101/ fn: 652863)
+chair         : 0.742   (tp: 1622076/ fp: 209828/ fn: 354979)
+sofa          : 0.712   (tp: 1317807/ fp: 338753/ fn: 194562)
+table         : 0.610   (tp: 1016823/ fp: 264738/ fn: 384074)
+door          : 0.650   (tp: 1156201/ fp: 388753/ fn: 233669)
+window        : 0.539   (tp: 796389/ fp: 353982/ fn: 327950)
+bookshelf     : 0.610   (tp: 779864/ fp: 141240/ fn: 357348)
+picture       : 0.424   (tp: 154425/ fp: 67475 / fn: 142203)
+counter       : 0.412   (tp: 156304/ fp: 56442 / fn: 166276)
+desk          : 0.580   (tp: 610584/ fp: 242215/ fn: 199730)
+curtain       : 0.661   (tp: 686828/ fp: 134647/ fn: 217208)
+refrigerator  : 0.692   (tp: 291543/ fp: 19356 / fn: 110140)
+shower curtain: 0.470   (tp:  54214/ fp: 12007 / fn: 49157 )
+toilet        : 0.930   (tp: 173356/ fp: 4570  / fn: 8508  )
+sink          : 0.584   (tp: 106619/ fp: 24426 / fn: 51566 )
+bathtub       : 0.806   (tp: 215635/ fp: 28626 / fn: 23315 )
+otherfurniture: 0.307   (tp: 622507/ fp: 643298/ fn: 762418)
+mean IOU 0.6356150268559175
+100 2 Val MegaMulAdd= 32261.953957931706 MegaHidden 50.40790946341463 time= 137.37327599525452 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.814   (tp: 14704301/ fp: 2291638/ fn: 1074274)
+floor         : 0.905   (tp: 10040448/ fp: 579791/ fn: 475387)
+cabinet       : 0.668   (tp: 1952309/ fp: 504409/ fn: 466242)
+bed           : 0.630   (tp: 1186193/ fp: 102468/ fn: 593043)
+chair         : 0.756   (tp: 1630159/ fp: 178594/ fn: 346896)
+sofa          : 0.736   (tp: 1362728/ fp: 339100/ fn: 149641)
+table         : 0.592   (tp: 992237/ fp: 275994/ fn: 408660)
+door          : 0.662   (tp: 1140788/ fp: 332236/ fn: 249082)
+window        : 0.558   (tp: 817483/ fp: 339864/ fn: 306856)
+bookshelf     : 0.663   (tp: 839761/ fp: 129160/ fn: 297451)
+picture       : 0.444   (tp: 156807/ fp: 56601 / fn: 139821)
+counter       : 0.434   (tp: 163442/ fp: 54098 / fn: 159138)
+desk          : 0.589   (tp: 613795/ fp: 231453/ fn: 196519)
+curtain       : 0.705   (tp: 688444/ fp: 72991 / fn: 215592)
+refrigerator  : 0.602   (tp: 250450/ fp: 14318 / fn: 151233)
+shower curtain: 0.409   (tp:  46570/ fp: 10359 / fn: 56801 )
+toilet        : 0.941   (tp: 174708/ fp: 3821  / fn: 7156  )
+sink          : 0.614   (tp: 109003/ fp: 19342 / fn: 49182 )
+bathtub       : 0.814   (tp: 217460/ fp: 28051 / fn: 21490 )
+otherfurniture: 0.315   (tp: 615624/ fp: 569477/ fn: 769301)
+mean IOU 0.6426140444001962
+100 3 Val MegaMulAdd= 48482.77872874146 MegaHidden 75.6645063804878 time= 206.0972421169281 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.818   (tp: 14806616/ fp: 2316854/ fn: 971959)
+floor         : 0.905   (tp: 10048541/ fp: 585176/ fn: 467294)
+cabinet       : 0.680   (tp: 1955670/ fp: 456330/ fn: 462881)
+bed           : 0.617   (tp: 1167066/ fp: 111064/ fn: 612170)
+chair         : 0.751   (tp: 1616450/ fp: 175412/ fn: 360605)
+sofa          : 0.725   (tp: 1358060/ fp: 361240/ fn: 154309)
+table         : 0.597   (tp: 994859/ fp: 264401/ fn: 406038)
+door          : 0.708   (tp: 1154567/ fp: 241214/ fn: 235303)
+window        : 0.570   (tp: 815834/ fp: 306234/ fn: 308505)
+bookshelf     : 0.660   (tp: 831224/ fp: 122046/ fn: 305988)
+picture       : 0.449   (tp: 157104/ fp: 53615 / fn: 139524)
+counter       : 0.446   (tp: 166601/ fp: 51172 / fn: 155979)
+desk          : 0.587   (tp: 617830/ fp: 242861/ fn: 192484)
+curtain       : 0.689   (tp: 675001/ fp: 75316 / fn: 229035)
+refrigerator  : 0.663   (tp: 275608/ fp: 13785 / fn: 126075)
+shower curtain: 0.415   (tp:  46886/ fp: 9667  / fn: 56485 )
+toilet        : 0.944   (tp: 175248/ fp: 3748  / fn: 6616  )
+sink          : 0.635   (tp: 111165/ fp: 16865 / fn: 47020 )
+bathtub       : 0.814   (tp: 217708/ fp: 28417 / fn: 21242 )
+otherfurniture: 0.318   (tp: 625658/ fp: 583362/ fn: 759267)
+mean IOU 0.6496109792748059
+101 Train loss 0.2912686158503805 MegaMulAdd= 17018.987926093265 MegaHidden 26.263208870466322 time= 492.36213421821594 s
+102 Train loss 0.2857115255644569 MegaMulAdd= 17145.830365181348 MegaHidden 26.463731067357514 time= 495.74900484085083 s
+103 Train loss 0.2858173076015014 MegaMulAdd= 17051.61754992746 MegaHidden 26.346911585492226 time= 493.2337763309479 s
+104 Train loss 0.2794888826546731 MegaMulAdd= 17247.68259962694 MegaHidden 26.6260032746114 time= 497.6342468261719 s
+105 Train loss 0.28200289394174305 MegaMulAdd= 17152.435515689118 MegaHidden 26.473228062176165 time= 495.63206148147583 s
+106 Train loss 0.2840162767218305 MegaMulAdd= 17334.377724601036 MegaHidden 26.729191046632128 time= 499.1005940437317 s
+107 Train loss 0.2820046032694253 MegaMulAdd= 17112.62003523316 MegaHidden 26.415544704663212 time= 494.2857050895691 s
+108 Train loss 0.2809686524817696 MegaMulAdd= 17078.77946466321 MegaHidden 26.360313865284976 time= 494.1968479156494 s
+109 Train loss 0.2780314649564105 MegaMulAdd= 17266.076461430053 MegaHidden 26.66403660103627 time= 498.15562748908997 s
+110 Train loss 0.27315090146738213 MegaMulAdd= 17126.51727888083 MegaHidden 26.397645678756476 time= 495.55290937423706 s
+110 1 Val MegaMulAdd= 16270.655898536585 MegaHidden 25.291645814634148 time= 68.58485436439514 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.816   (tp: 14683060/ fp: 2218845/ fn: 1095515)
+floor         : 0.902   (tp: 10014809/ fp: 581287/ fn: 501026)
+cabinet       : 0.662   (tp: 1934464/ fp: 502815/ fn: 484087)
+bed           : 0.599   (tp: 1175715/ fp: 184917/ fn: 603521)
+chair         : 0.725   (tp: 1611795/ fp: 246757/ fn: 365260)
+sofa          : 0.674   (tp: 1308561/ fp: 428805/ fn: 203808)
+table         : 0.582   (tp: 995214/ fp: 309597/ fn: 405683)
+door          : 0.679   (tp: 1103439/ fp: 234107/ fn: 286431)
+window        : 0.553   (tp: 790327/ fp: 304386/ fn: 334012)
+bookshelf     : 0.674   (tp: 846037/ fp: 118703/ fn: 291175)
+picture       : 0.404   (tp: 151593/ fp: 78697 / fn: 145035)
+counter       : 0.442   (tp: 162428/ fp: 44880 / fn: 160152)
+desk          : 0.556   (tp: 578257/ fp: 229775/ fn: 232057)
+curtain       : 0.650   (tp: 663599/ fp: 117299/ fn: 240437)
+refrigerator  : 0.775   (tp: 334091/ fp: 29338 / fn: 67592 )
+shower curtain: 0.252   (tp:  29301/ fp: 13115 / fn: 74070 )
+toilet        : 0.916   (tp: 175792/ fp: 9994  / fn: 6072  )
+sink          : 0.626   (tp: 113645/ fp: 23481 / fn: 44540 )
+bathtub       : 0.798   (tp: 215260/ fp: 30874 / fn: 23690 )
+otherfurniture: 0.305   (tp: 613348/ fp: 628068/ fn: 771577)
+mean IOU 0.6294337387986326
+110 2 Val MegaMulAdd= 32417.62048827317 MegaHidden 50.50842161951219 time= 137.8165729045868 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.822   (tp: 14783771/ fp: 2196545/ fn: 994804)
+floor         : 0.904   (tp: 10031156/ fp: 583559/ fn: 484679)
+cabinet       : 0.669   (tp: 1946552/ fp: 489872/ fn: 471999)
+bed           : 0.631   (tp: 1193305/ fp: 111618/ fn: 585931)
+chair         : 0.740   (tp: 1625357/ fp: 218697/ fn: 351698)
+sofa          : 0.701   (tp: 1356979/ fp: 423764/ fn: 155390)
+table         : 0.594   (tp: 1016465/ fp: 309003/ fn: 384432)
+door          : 0.700   (tp: 1125124/ fp: 217663/ fn: 264746)
+window        : 0.576   (tp: 809111/ fp: 279185/ fn: 315228)
+bookshelf     : 0.652   (tp: 822985/ fp: 124907/ fn: 314227)
+picture       : 0.418   (tp: 150506/ fp: 63679 / fn: 146122)
+counter       : 0.443   (tp: 161231/ fp: 40997 / fn: 161349)
+desk          : 0.563   (tp: 577252/ fp: 214401/ fn: 233062)
+curtain       : 0.655   (tp: 648935/ fp: 87348 / fn: 255101)
+refrigerator  : 0.791   (tp: 341032/ fp: 29526 / fn: 60651 )
+shower curtain: 0.320   (tp:  35750/ fp: 8509  / fn: 67621 )
+toilet        : 0.927   (tp: 177018/ fp: 8992  / fn: 4846  )
+sink          : 0.624   (tp: 112068/ fp: 21364 / fn: 46117 )
+bathtub       : 0.803   (tp: 216195/ fp: 30437 / fn: 22755 )
+otherfurniture: 0.321   (tp: 639682/ fp: 605935/ fn: 745243)
+mean IOU 0.6427803963661665
+110 3 Val MegaMulAdd= 48714.09545506341 MegaHidden 75.8154567804878 time= 207.66039752960205 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.824   (tp: 14816402/ fp: 2209923/ fn: 962173)
+floor         : 0.905   (tp: 10035679/ fp: 570542/ fn: 480156)
+cabinet       : 0.665   (tp: 1941948/ fp: 500853/ fn: 476603)
+bed           : 0.623   (tp: 1170168/ fp: 99155 / fn: 609068)
+chair         : 0.752   (tp: 1637620/ fp: 201846/ fn: 339435)
+sofa          : 0.721   (tp: 1383087/ fp: 405487/ fn: 129282)
+table         : 0.587   (tp: 1004108/ fp: 308979/ fn: 396789)
+door          : 0.725   (tp: 1157536/ fp: 206334/ fn: 232334)
+window        : 0.575   (tp: 806081/ fp: 278519/ fn: 318258)
+bookshelf     : 0.652   (tp: 821090/ fp: 122920/ fn: 316122)
+picture       : 0.422   (tp: 150709/ fp: 60839 / fn: 145919)
+counter       : 0.451   (tp: 163415/ fp: 39565 / fn: 159165)
+desk          : 0.559   (tp: 581512/ fp: 229631/ fn: 228802)
+curtain       : 0.671   (tp: 659469/ fp: 78127 / fn: 244567)
+refrigerator  : 0.771   (tp: 329810/ fp: 26276 / fn: 71873 )
+shower curtain: 0.330   (tp:  36478/ fp: 7086  / fn: 66893 )
+toilet        : 0.935   (tp: 176943/ fp: 7348  / fn: 4921  )
+sink          : 0.623   (tp: 112579/ fp: 22645 / fn: 45606 )
+bathtub       : 0.805   (tp: 216083/ fp: 29596 / fn: 22867 )
+otherfurniture: 0.315   (tp: 626196/ fp: 603891/ fn: 758729)
+mean IOU 0.6454992098921879
+111 Train loss 0.28224681733877627 MegaMulAdd= 17178.20513380311 MegaHidden 26.50071867357513 time= 494.00097846984863 s
+112 Train loss 0.2784999854282125 MegaMulAdd= 17250.18823303627 MegaHidden 26.583186113989637 time= 494.4238221645355 s
+113 Train loss 0.26810334913142314 MegaMulAdd= 17217.307562901555 MegaHidden 26.619860020725387 time= 494.24544644355774 s
+114 Train loss 0.2822545778441739 MegaMulAdd= 17121.207058735752 MegaHidden 26.442887129533677 time= 496.28990054130554 s
+115 Train loss 0.27251275590100843 MegaMulAdd= 17255.640915440414 MegaHidden 26.610176953367873 time= 497.62614727020264 s
+116 Train loss 0.27697180066402854 MegaMulAdd= 17118.378559668396 MegaHidden 26.426052352331606 time= 495.61600494384766 s
+117 Train loss 0.27657377023201485 MegaMulAdd= 17226.44792762694 MegaHidden 26.553327005181345 time= 494.1934585571289 s
+118 Train loss 0.2714630654202653 MegaMulAdd= 17175.672760248704 MegaHidden 26.508051067357513 time= 495.09437322616577 s
+119 Train loss 0.28228130380248095 MegaMulAdd= 17189.70231100518 MegaHidden 26.529622051813472 time= 495.75524854660034 s
+120 Train loss 0.2763771483456934 MegaMulAdd= 17187.007492062177 MegaHidden 26.548697699481863 time= 495.784081697464 s
+120 1 Val MegaMulAdd= 16073.421710985365 MegaHidden 25.159523590243904 time= 68.27894592285156 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.813   (tp: 14579316/ fp: 2155776/ fn: 1199259)
+floor         : 0.907   (tp: 10062287/ fp: 583020/ fn: 453548)
+cabinet       : 0.649   (tp: 1895273/ fp: 501473/ fn: 523278)
+bed           : 0.613   (tp: 1186184/ fp: 156683/ fn: 593052)
+chair         : 0.729   (tp: 1582549/ fp: 195028/ fn: 394506)
+sofa          : 0.688   (tp: 1354352/ fp: 456261/ fn: 158017)
+table         : 0.580   (tp: 986476/ fp: 300601/ fn: 414421)
+door          : 0.696   (tp: 1141531/ fp: 250535/ fn: 248339)
+window        : 0.558   (tp: 792166/ fp: 294734/ fn: 332173)
+bookshelf     : 0.661   (tp: 868055/ fp: 176724/ fn: 269157)
+picture       : 0.432   (tp: 156116/ fp: 64698 / fn: 140512)
+counter       : 0.432   (tp: 160438/ fp: 49091 / fn: 162142)
+desk          : 0.524   (tp: 575441/ fp: 287263/ fn: 234873)
+curtain       : 0.641   (tp: 642393/ fp: 98412 / fn: 261643)
+refrigerator  : 0.778   (tp: 342418/ fp: 38367 / fn: 59265 )
+shower curtain: 0.338   (tp:  39163/ fp: 12489 / fn: 64208 )
+toilet        : 0.933   (tp: 175440/ fp: 6174  / fn: 6424  )
+sink          : 0.590   (tp: 110685/ fp: 29524 / fn: 47500 )
+bathtub       : 0.773   (tp: 217957/ fp: 43173 / fn: 20993 )
+otherfurniture: 0.306   (tp: 621197/ fp: 647012/ fn: 763728)
+mean IOU 0.6319169024042514
+120 2 Val MegaMulAdd= 32234.037198517075 MegaHidden 50.385019473170736 time= 137.53399014472961 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.819   (tp: 14734029/ fp: 2216068/ fn: 1044546)
+floor         : 0.907   (tp: 10051147/ fp: 567631/ fn: 464688)
+cabinet       : 0.653   (tp: 1928939/ fp: 534816/ fn: 489612)
+bed           : 0.619   (tp: 1180239/ fp: 128881/ fn: 598997)
+chair         : 0.751   (tp: 1622191/ fp: 182439/ fn: 354864)
+sofa          : 0.705   (tp: 1361626/ fp: 418873/ fn: 150743)
+table         : 0.591   (tp: 992409/ fp: 279709/ fn: 408488)
+door          : 0.730   (tp: 1148012/ fp: 182184/ fn: 241858)
+window        : 0.577   (tp: 806730/ fp: 272881/ fn: 317609)
+bookshelf     : 0.671   (tp: 855533/ fp: 138043/ fn: 281679)
+picture       : 0.439   (tp: 152687/ fp: 50934 / fn: 143941)
+counter       : 0.452   (tp: 166437/ fp: 45857 / fn: 156143)
+desk          : 0.549   (tp: 594334/ fp: 273030/ fn: 215980)
+curtain       : 0.661   (tp: 657473/ fp: 91250 / fn: 246563)
+refrigerator  : 0.765   (tp: 330308/ fp: 30362 / fn: 71375 )
+shower curtain: 0.371   (tp:  42188/ fp: 10229 / fn: 61183 )
+toilet        : 0.939   (tp: 175591/ fp: 5114  / fn: 6273  )
+sink          : 0.608   (tp: 107902/ fp: 19293 / fn: 50283 )
+bathtub       : 0.775   (tp: 217915/ fp: 42104 / fn: 21035 )
+otherfurniture: 0.329   (tp: 645018/ fp: 576069/ fn: 739907)
+mean IOU 0.6455040485917479
+120 3 Val MegaMulAdd= 48373.92035356098 MegaHidden 75.59230142439024 time= 206.88659596443176 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.822   (tp: 14766591/ fp: 2195591/ fn: 1011984)
+floor         : 0.907   (tp: 10047183/ fp: 563756/ fn: 468652)
+cabinet       : 0.660   (tp: 1942538/ fp: 524726/ fn: 476013)
+bed           : 0.616   (tp: 1170408/ fp: 121586/ fn: 608828)
+chair         : 0.752   (tp: 1626647/ fp: 185874/ fn: 350408)
+sofa          : 0.711   (tp: 1374678/ fp: 421255/ fn: 137691)
+table         : 0.603   (tp: 1002799/ fp: 262484/ fn: 398098)
+door          : 0.734   (tp: 1154106/ fp: 183403/ fn: 235764)
+window        : 0.585   (tp: 811931/ fp: 263645/ fn: 312408)
+bookshelf     : 0.680   (tp: 861528/ fp: 129630/ fn: 275684)
+picture       : 0.449   (tp: 154555/ fp: 47292 / fn: 142073)
+counter       : 0.451   (tp: 166540/ fp: 46962 / fn: 156040)
+desk          : 0.558   (tp: 596615/ fp: 258928/ fn: 213699)
+curtain       : 0.671   (tp: 660192/ fp: 80286 / fn: 243844)
+refrigerator  : 0.772   (tp: 330607/ fp: 26628 / fn: 71076 )
+shower curtain: 0.355   (tp:  39810/ fp: 8879  / fn: 63561 )
+toilet        : 0.944   (tp: 175853/ fp: 4346  / fn: 6011  )
+sink          : 0.617   (tp: 108735/ fp: 17911 / fn: 49450 )
+bathtub       : 0.792   (tp: 217878/ fp: 36055 / fn: 21072 )
+otherfurniture: 0.322   (tp: 641097/ fp: 606947/ fn: 743828)
+mean IOU 0.649991007914703
+121 Train loss 0.2721302806847281 MegaMulAdd= 17255.578155979274 MegaHidden 26.668302715025906 time= 497.3690505027771 s
+122 Train loss 0.2664191687068382 MegaMulAdd= 17213.84878288083 MegaHidden 26.54536683937824 time= 493.7237739562988 s
+123 Train loss 0.26985658622987857 MegaMulAdd= 17286.274130196893 MegaHidden 26.658678922279794 time= 496.8251910209656 s
+124 Train loss 0.26785057241266425 MegaMulAdd= 17222.331888331606 MegaHidden 26.6030023626943 time= 496.12666392326355 s
+125 Train loss 0.26191292804750527 MegaMulAdd= 17125.472023170983 MegaHidden 26.45272310880829 time= 492.67451572418213 s
+126 Train loss 0.27194468599635285 MegaMulAdd= 17089.618486176165 MegaHidden 26.403107316062176 time= 491.84894490242004 s
+127 Train loss 0.2655375028972502 MegaMulAdd= 17130.482499398964 MegaHidden 26.445441533678757 time= 492.4925889968872 s
+128 Train loss 0.26272716586078915 MegaMulAdd= 17191.19413488083 MegaHidden 26.49586785492228 time= 495.70968747138977 s
+128 1 Val MegaMulAdd= 16217.1419584 MegaHidden 25.25337131707317 time= 68.66036009788513 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.811   (tp: 14640270/ fp: 2268414/ fn: 1138305)
+floor         : 0.903   (tp: 10034174/ fp: 597022/ fn: 481661)
+cabinet       : 0.653   (tp: 1915499/ fp: 512613/ fn: 503052)
+bed           : 0.622   (tp: 1191029/ fp: 135780/ fn: 588207)
+chair         : 0.720   (tp: 1596949/ fp: 239513/ fn: 380106)
+sofa          : 0.692   (tp: 1321007/ fp: 396866/ fn: 191362)
+table         : 0.576   (tp: 1011600/ fp: 355494/ fn: 389297)
+door          : 0.689   (tp: 1130338/ fp: 251514/ fn: 259532)
+window        : 0.562   (tp: 790521/ fp: 281836/ fn: 333818)
+bookshelf     : 0.606   (tp: 798539/ fp: 179876/ fn: 338673)
+picture       : 0.421   (tp: 149011/ fp: 57549 / fn: 147617)
+counter       : 0.418   (tp: 159492/ fp: 59323 / fn: 163088)
+desk          : 0.557   (tp: 589623/ fp: 248297/ fn: 220691)
+curtain       : 0.683   (tp: 669912/ fp: 76422 / fn: 234124)
+refrigerator  : 0.777   (tp: 328925/ fp: 21787 / fn: 72758 )
+shower curtain: 0.411   (tp:  46456/ fp: 9633  / fn: 56915 )
+toilet        : 0.923   (tp: 175945/ fp: 8810  / fn: 5919  )
+sink          : 0.588   (tp: 105903/ fp: 21849 / fn: 52282 )
+bathtub       : 0.796   (tp: 218325/ fp: 35300 / fn: 20625 )
+otherfurniture: 0.303   (tp: 601721/ fp: 603338/ fn: 783204)
+mean IOU 0.6355587654887956
+128 2 Val MegaMulAdd= 32363.22605830244 MegaHidden 50.4716139707317 time= 137.36675477027893 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.812   (tp: 14765740/ fp: 2400878/ fn: 1012835)
+floor         : 0.904   (tp: 10024683/ fp: 573142/ fn: 491152)
+cabinet       : 0.668   (tp: 1929510/ fp: 468397/ fn: 489041)
+bed           : 0.625   (tp: 1182623/ fp: 114055/ fn: 596613)
+chair         : 0.745   (tp: 1618639/ fp: 196126/ fn: 358416)
+sofa          : 0.719   (tp: 1351222/ fp: 367127/ fn: 161147)
+table         : 0.586   (tp: 1011678/ fp: 324774/ fn: 389219)
+door          : 0.690   (tp: 1126154/ fp: 241437/ fn: 263716)
+window        : 0.576   (tp: 801782/ fp: 268538/ fn: 322557)
+bookshelf     : 0.620   (tp: 787005/ fp: 131381/ fn: 350207)
+picture       : 0.433   (tp: 150664/ fp: 51658 / fn: 145964)
+counter       : 0.459   (tp: 170888/ fp: 50051 / fn: 151692)
+desk          : 0.560   (tp: 601027/ fp: 262054/ fn: 209287)
+curtain       : 0.686   (tp: 663790/ fp: 63236 / fn: 240246)
+refrigerator  : 0.783   (tp: 328772/ fp: 18254 / fn: 72911 )
+shower curtain: 0.388   (tp:  43772/ fp: 9581  / fn: 59599 )
+toilet        : 0.939   (tp: 175820/ fp: 5459  / fn: 6044  )
+sink          : 0.621   (tp: 109093/ fp: 17573 / fn: 49092 )
+bathtub       : 0.801   (tp: 218588/ fp: 33921 / fn: 20362 )
+otherfurniture: 0.315   (tp: 614278/ fp: 563105/ fn: 770647)
+mean IOU 0.6464809328420084
+128 3 Val MegaMulAdd= 48492.69495399024 MegaHidden 75.67202388292684 time= 205.94622993469238 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.816   (tp: 14804932/ fp: 2364668/ fn: 973643)
+floor         : 0.905   (tp: 10031153/ fp: 566773/ fn: 484682)
+cabinet       : 0.683   (tp: 1948119/ fp: 434748/ fn: 470432)
+bed           : 0.629   (tp: 1186397/ fp: 107933/ fn: 592839)
+chair         : 0.744   (tp: 1623908/ fp: 205019/ fn: 353147)
+sofa          : 0.718   (tp: 1356992/ fp: 378457/ fn: 155377)
+table         : 0.586   (tp: 1009089/ fp: 320814/ fn: 391808)
+door          : 0.705   (tp: 1141781/ fp: 229362/ fn: 248089)
+window        : 0.567   (tp: 796549/ fp: 280851/ fn: 327790)
+bookshelf     : 0.634   (tp: 802485/ fp: 128142/ fn: 334727)
+picture       : 0.435   (tp: 149880/ fp: 47777 / fn: 146748)
+counter       : 0.448   (tp: 162075/ fp: 38948 / fn: 160505)
+desk          : 0.567   (tp: 603724/ fp: 254268/ fn: 206590)
+curtain       : 0.691   (tp: 671489/ fp: 67201 / fn: 232547)
+refrigerator  : 0.761   (tp: 321118/ fp: 20403 / fn: 80565 )
+shower curtain: 0.450   (tp:  51393/ fp: 10764 / fn: 51978 )
+toilet        : 0.942   (tp: 175995/ fp: 5008  / fn: 5869  )
+sink          : 0.628   (tp: 109848/ fp: 16623 / fn: 48337 )
+bathtub       : 0.803   (tp: 216780/ fp: 30994 / fn: 22170 )
+otherfurniture: 0.325   (tp: 625061/ fp: 538954/ fn: 759864)
+mean IOU 0.6518948676906741
+129 Train loss 0.26304437766795036 MegaMulAdd= 17317.41796091192 MegaHidden 26.6661496373057 time= 499.1412777900696 s
+130 Train loss 0.2666351477337348 MegaMulAdd= 17018.543659440413 MegaHidden 26.279637554404143 time= 490.3298690319061 s
+130 1 Val MegaMulAdd= 16051.659685307317 MegaHidden 25.155400429268294 time= 68.65003943443298 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.806   (tp: 14608544/ fp: 2335862/ fn: 1170031)
+floor         : 0.902   (tp: 10005898/ fp: 577064/ fn: 509937)
+cabinet       : 0.674   (tp: 1922193/ fp: 433359/ fn: 496358)
+bed           : 0.603   (tp: 1160026/ fp: 145051/ fn: 619210)
+chair         : 0.732   (tp: 1624276/ fp: 243207/ fn: 352779)
+sofa          : 0.695   (tp: 1370321/ fp: 459512/ fn: 142048)
+table         : 0.569   (tp: 977403/ fp: 316878/ fn: 423494)
+door          : 0.689   (tp: 1121544/ fp: 238734/ fn: 268326)
+window        : 0.563   (tp: 823786/ fp: 339811/ fn: 300553)
+bookshelf     : 0.572   (tp: 733574/ fp: 144197/ fn: 403638)
+picture       : 0.419   (tp: 155324/ fp: 74478 / fn: 141304)
+counter       : 0.418   (tp: 165961/ fp: 74513 / fn: 156619)
+desk          : 0.589   (tp: 613437/ fp: 230357/ fn: 196877)
+curtain       : 0.683   (tp: 670982/ fp: 78136 / fn: 233054)
+refrigerator  : 0.741   (tp: 321001/ fp: 31609 / fn: 80682 )
+shower curtain: 0.379   (tp:  43307/ fp: 11024 / fn: 60064 )
+toilet        : 0.935   (tp: 174050/ fp: 4371  / fn: 7814  )
+sink          : 0.563   (tp: 103239/ fp: 25347 / fn: 54946 )
+bathtub       : 0.724   (tp: 218126/ fp: 62146 / fn: 20824 )
+otherfurniture: 0.296   (tp: 589719/ fp: 608108/ fn: 795206)
+mean IOU 0.6275251271427421
+130 2 Val MegaMulAdd= 32265.011236058537 MegaHidden 50.40776117073171 time= 137.41871309280396 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.817   (tp: 14757338/ fp: 2273518/ fn: 1021237)
+floor         : 0.905   (tp: 10038229/ fp: 572929/ fn: 477606)
+cabinet       : 0.680   (tp: 1929897/ fp: 418230/ fn: 488654)
+bed           : 0.617   (tp: 1155325/ fp: 93787 / fn: 623911)
+chair         : 0.733   (tp: 1631244/ fp: 248147/ fn: 345811)
+sofa          : 0.695   (tp: 1364642/ fp: 451058/ fn: 147727)
+table         : 0.586   (tp: 993842/ fp: 296160/ fn: 407055)
+door          : 0.730   (tp: 1158966/ fp: 198719/ fn: 230904)
+window        : 0.568   (tp: 826458/ fp: 331778/ fn: 297881)
+bookshelf     : 0.592   (tp: 749437/ fp: 128214/ fn: 387775)
+picture       : 0.432   (tp: 154713/ fp: 61397 / fn: 141915)
+counter       : 0.436   (tp: 168943/ fp: 65256 / fn: 153637)
+desk          : 0.598   (tp: 618562/ fp: 224193/ fn: 191752)
+curtain       : 0.689   (tp: 671772/ fp: 71017 / fn: 232264)
+refrigerator  : 0.809   (tp: 346246/ fp: 26430 / fn: 55437 )
+shower curtain: 0.440   (tp:  49405/ fp: 8845  / fn: 53966 )
+toilet        : 0.941   (tp: 174943/ fp: 3962  / fn: 6921  )
+sink          : 0.590   (tp: 107942/ fp: 24732 / fn: 50243 )
+bathtub       : 0.759   (tp: 218890/ fp: 49395 / fn: 20060 )
+otherfurniture: 0.306   (tp: 598742/ fp: 573172/ fn: 786183)
+mean IOU 0.6461552797768686
+130 3 Val MegaMulAdd= 48349.60225342439 MegaHidden 75.57834021463415 time= 205.9109365940094 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.816   (tp: 14740540/ fp: 2277854/ fn: 1038035)
+floor         : 0.906   (tp: 10053536/ fp: 581441/ fn: 462299)
+cabinet       : 0.683   (tp: 1949142/ fp: 436237/ fn: 469409)
+bed           : 0.615   (tp: 1162296/ fp: 110924/ fn: 616940)
+chair         : 0.741   (tp: 1629095/ fp: 222732/ fn: 347960)
+sofa          : 0.707   (tp: 1373286/ fp: 430971/ fn: 139083)
+table         : 0.590   (tp: 995017/ fp: 284643/ fn: 405880)
+door          : 0.732   (tp: 1163904/ fp: 199910/ fn: 225966)
+window        : 0.568   (tp: 819577/ fp: 319444/ fn: 304762)
+bookshelf     : 0.621   (tp: 781193/ fp: 121675/ fn: 356019)
+picture       : 0.449   (tp: 157277/ fp: 53672 / fn: 139351)
+counter       : 0.438   (tp: 168321/ fp: 61691 / fn: 154259)
+desk          : 0.597   (tp: 621175/ fp: 230252/ fn: 189139)
+curtain       : 0.684   (tp: 665205/ fp: 68362 / fn: 238831)
+refrigerator  : 0.823   (tp: 353076/ fp: 27416 / fn: 48607 )
+shower curtain: 0.338   (tp:  38008/ fp: 9093  / fn: 65363 )
+toilet        : 0.944   (tp: 174856/ fp: 3357  / fn: 7008  )
+sink          : 0.604   (tp: 109861/ fp: 23722 / fn: 48324 )
+bathtub       : 0.798   (tp: 218611/ fp: 34863 / fn: 20339 )
+otherfurniture: 0.320   (tp: 618347/ fp: 545893/ fn: 766578)
+mean IOU 0.6486664718795271
+131 Train loss 0.25831420351932577 MegaMulAdd= 17177.220905409325 MegaHidden 26.44189185492228 time= 493.6952040195465 s
+132 Train loss 0.26503976734427664 MegaMulAdd= 17213.697307191713 MegaHidden 26.520895336787568 time= 494.50109577178955 s
+133 Train loss 0.25744024243254165 MegaMulAdd= 17150.339354943004 MegaHidden 26.45742739896373 time= 492.46671628952026 s
+134 Train loss 0.255062891968659 MegaMulAdd= 17221.456284476684 MegaHidden 26.541639378238344 time= 494.249657869339 s
+135 Train loss 0.26503622072277133 MegaMulAdd= 17184.0981600829 MegaHidden 26.52523970984456 time= 493.21863412857056 s
+136 Train loss 0.2641381815849961 MegaMulAdd= 17052.397741098444 MegaHidden 26.384938487046632 time= 493.2760350704193 s
+137 Train loss 0.25203507335542086 MegaMulAdd= 17188.20376746114 MegaHidden 26.50689081865285 time= 496.6606366634369 s
+138 Train loss 0.2547000591437538 MegaMulAdd= 17307.163244352334 MegaHidden 26.697162321243525 time= 499.7446973323822 s
+139 Train loss 0.2646658469426942 MegaMulAdd= 17024.073038134713 MegaHidden 26.29143316062176 time= 492.8882098197937 s
+140 Train loss 0.2582955276714517 MegaMulAdd= 17219.600056953368 MegaHidden 26.551147979274614 time= 497.38839077949524 s
+140 1 Val MegaMulAdd= 16189.067424780487 MegaHidden 25.246808351219514 time= 68.69487404823303 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.813   (tp: 14580338/ fp: 2157698/ fn: 1198237)
+floor         : 0.900   (tp: 10009207/ fp: 609511/ fn: 506628)
+cabinet       : 0.667   (tp: 1958131/ fp: 515969/ fn: 460420)
+bed           : 0.619   (tp: 1198863/ fp: 156409/ fn: 580373)
+chair         : 0.730   (tp: 1585547/ fp: 193645/ fn: 391508)
+sofa          : 0.716   (tp: 1380282/ fp: 416746/ fn: 132087)
+table         : 0.603   (tp: 997426/ fp: 252295/ fn: 403471)
+door          : 0.654   (tp: 1115178/ fp: 314125/ fn: 274692)
+window        : 0.567   (tp: 805319/ fp: 295309/ fn: 319020)
+bookshelf     : 0.642   (tp: 835720/ fp: 163831/ fn: 301492)
+picture       : 0.411   (tp: 150630/ fp: 70250 / fn: 145998)
+counter       : 0.382   (tp: 149564/ fp: 69107 / fn: 173016)
+desk          : 0.549   (tp: 598881/ fp: 279717/ fn: 211433)
+curtain       : 0.679   (tp: 686385/ fp: 106411/ fn: 217651)
+refrigerator  : 0.712   (tp: 308674/ fp: 31928 / fn: 93009 )
+shower curtain: 0.318   (tp:  35859/ fp: 9309  / fn: 67512 )
+toilet        : 0.921   (tp: 173268/ fp: 6250  / fn: 8596  )
+sink          : 0.591   (tp: 107349/ fp: 23431 / fn: 50836 )
+bathtub       : 0.759   (tp: 218200/ fp: 48478 / fn: 20750 )
+otherfurniture: 0.326   (tp: 640652/ fp: 580583/ fn: 744273)
+mean IOU 0.6280507359718023
+140 2 Val MegaMulAdd= 32359.723826731708 MegaHidden 50.47387676097561 time= 138.14678049087524 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.817   (tp: 14735507/ fp: 2255208/ fn: 1043068)
+floor         : 0.901   (tp: 10015730/ fp: 595550/ fn: 500105)
+cabinet       : 0.671   (tp: 1932411/ fp: 460501/ fn: 486140)
+bed           : 0.615   (tp: 1186746/ fp: 148880/ fn: 592490)
+chair         : 0.743   (tp: 1604992/ fp: 183476/ fn: 372063)
+sofa          : 0.743   (tp: 1407481/ fp: 382882/ fn: 104888)
+table         : 0.606   (tp: 1002365/ fp: 253912/ fn: 398532)
+door          : 0.697   (tp: 1157305/ fp: 270513/ fn: 232565)
+window        : 0.583   (tp: 798449/ fp: 244564/ fn: 325890)
+bookshelf     : 0.647   (tp: 833415/ fp: 151616/ fn: 303797)
+picture       : 0.410   (tp: 151755/ fp: 73486 / fn: 144873)
+counter       : 0.394   (tp: 150683/ fp: 59672 / fn: 171897)
+desk          : 0.592   (tp: 613327/ fp: 225009/ fn: 196987)
+curtain       : 0.682   (tp: 686005/ fp: 102313/ fn: 218031)
+refrigerator  : 0.731   (tp: 310472/ fp: 23329 / fn: 91211 )
+shower curtain: 0.255   (tp:  28914/ fp: 9989  / fn: 74457 )
+toilet        : 0.932   (tp: 173766/ fp: 4553  / fn: 8098  )
+sink          : 0.612   (tp: 109652/ fp: 20976 / fn: 48533 )
+bathtub       : 0.760   (tp: 218807/ fp: 48831 / fn: 20143 )
+otherfurniture: 0.314   (tp: 618010/ fp: 585423/ fn: 766915)
+mean IOU 0.6352684244606763
+140 3 Val MegaMulAdd= 48482.490311804875 MegaHidden 75.66116417560976 time= 206.83602571487427 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.815   (tp: 14738453/ fp: 2305271/ fn: 1040122)
+floor         : 0.902   (tp: 10020944/ fp: 594610/ fn: 494891)
+cabinet       : 0.675   (tp: 1947104/ fp: 466299/ fn: 471447)
+bed           : 0.617   (tp: 1183746/ fp: 139995/ fn: 595490)
+chair         : 0.748   (tp: 1607353/ fp: 170783/ fn: 369702)
+sofa          : 0.742   (tp: 1407761/ fp: 384999/ fn: 104608)
+table         : 0.609   (tp: 1004568/ fp: 249285/ fn: 396329)
+door          : 0.695   (tp: 1159560/ fp: 277997/ fn: 230310)
+window        : 0.572   (tp: 791180/ fp: 257811/ fn: 333159)
+bookshelf     : 0.637   (tp: 809667/ fp: 133905/ fn: 327545)
+picture       : 0.409   (tp: 147933/ fp: 64683 / fn: 148695)
+counter       : 0.437   (tp: 162006/ fp: 48342 / fn: 160574)
+desk          : 0.588   (tp: 613184/ fp: 232804/ fn: 197130)
+curtain       : 0.689   (tp: 689576/ fp: 96732 / fn: 214460)
+refrigerator  : 0.738   (tp: 313498/ fp: 23206 / fn: 88185 )
+shower curtain: 0.278   (tp:  30922/ fp: 7718  / fn: 72449 )
+toilet        : 0.942   (tp: 175426/ fp: 4426  / fn: 6438  )
+sink          : 0.610   (tp: 110440/ fp: 22893 / fn: 47745 )
+bathtub       : 0.773   (tp: 218951/ fp: 44297 / fn: 19999 )
+otherfurniture: 0.320   (tp: 621349/ fp: 556798/ fn: 763576)
+mean IOU 0.6398119399849225
+141 Train loss 0.2638728231578678 MegaMulAdd= 17339.58052157513 MegaHidden 26.748503626943002 time= 500.27154755592346 s
+142 Train loss 0.25702826843246235 MegaMulAdd= 17108.221423253886 MegaHidden 26.393769202072537 time= 495.3406620025635 s
+143 Train loss 0.2601263483913688 MegaMulAdd= 17116.104676518135 MegaHidden 26.455295461139894 time= 496.0505838394165 s
+144 Train loss 0.26227380040210563 MegaMulAdd= 17298.801149512954 MegaHidden 26.706152621761657 time= 499.0360140800476 s
+145 Train loss 0.25919012947903053 MegaMulAdd= 17258.97234495337 MegaHidden 26.599979191709846 time= 498.61449098587036 s
+146 Train loss 0.24739733420602686 MegaMulAdd= 17044.09324650777 MegaHidden 26.346307191709847 time= 494.5624506473541 s
+147 Train loss 0.2515641472169331 MegaMulAdd= 17301.218481989636 MegaHidden 26.643320207253886 time= 499.4460861682892 s
+148 Train loss 0.2637883776000568 MegaMulAdd= 17266.87551780311 MegaHidden 26.652286590673572 time= 498.1452794075012 s
+149 Train loss 0.25396894474888776 MegaMulAdd= 17181.974014673575 MegaHidden 26.52229761658031 time= 497.0435791015625 s
+150 Train loss 0.24914854924593652 MegaMulAdd= 17241.362765056994 MegaHidden 26.617600124352332 time= 497.84919452667236 s
+150 1 Val MegaMulAdd= 16256.345477307317 MegaHidden 25.27300323902439 time= 68.67711353302002 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.811   (tp: 14598724/ fp: 2228044/ fn: 1179851)
+floor         : 0.901   (tp: 9995193/ fp: 577029/ fn: 520642)
+cabinet       : 0.667   (tp: 1967034/ fp: 530793/ fn: 451517)
+bed           : 0.603   (tp: 1199429/ fp: 210965/ fn: 579807)
+chair         : 0.727   (tp: 1581507/ fp: 197061/ fn: 395548)
+sofa          : 0.705   (tp: 1348489/ fp: 401332/ fn: 163880)
+table         : 0.582   (tp: 987240/ fp: 295388/ fn: 413657)
+door          : 0.702   (tp: 1143671/ fp: 240432/ fn: 246199)
+window        : 0.520   (tp: 763749/ fp: 345605/ fn: 360590)
+bookshelf     : 0.633   (tp: 828734/ fp: 171366/ fn: 308478)
+picture       : 0.387   (tp: 147630/ fp: 85338 / fn: 148998)
+counter       : 0.465   (tp: 183452/ fp: 72133 / fn: 139128)
+desk          : 0.540   (tp: 583887/ fp: 270902/ fn: 226427)
+curtain       : 0.673   (tp: 657628/ fp: 72581 / fn: 246408)
+refrigerator  : 0.683   (tp: 304562/ fp: 43999 / fn: 97121 )
+shower curtain: 0.339   (tp:  39801/ fp: 13882 / fn: 63570 )
+toilet        : 0.931   (tp: 174890/ fp: 5987  / fn: 6974  )
+sink          : 0.592   (tp: 109347/ fp: 26587 / fn: 48838 )
+bathtub       : 0.794   (tp: 216246/ fp: 33248 / fn: 22704 )
+otherfurniture: 0.319   (tp: 621526/ fp: 561064/ fn: 763399)
+mean IOU 0.6286989507801128
+150 2 Val MegaMulAdd= 32401.780972331708 MegaHidden 50.4838748097561 time= 137.71610307693481 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.812   (tp: 14702779/ fp: 2322741/ fn: 1075796)
+floor         : 0.903   (tp: 10015808/ fp: 571856/ fn: 500027)
+cabinet       : 0.661   (tp: 1954265/ fp: 537577/ fn: 464286)
+bed           : 0.620   (tp: 1206683/ fp: 166707/ fn: 572553)
+chair         : 0.735   (tp: 1587450/ fp: 183390/ fn: 389605)
+sofa          : 0.729   (tp: 1368633/ fp: 364576/ fn: 143736)
+table         : 0.581   (tp: 982780/ fp: 289586/ fn: 418117)
+door          : 0.747   (tp: 1162174/ fp: 165052/ fn: 227696)
+window        : 0.551   (tp: 788044/ fp: 306829/ fn: 336295)
+bookshelf     : 0.648   (tp: 828365/ fp: 141613/ fn: 308847)
+picture       : 0.417   (tp: 149253/ fp: 61657 / fn: 147375)
+counter       : 0.506   (tp: 187551/ fp: 47825 / fn: 135029)
+desk          : 0.546   (tp: 597817/ fp: 283895/ fn: 212497)
+curtain       : 0.655   (tp: 641504/ fp: 75900 / fn: 262532)
+refrigerator  : 0.778   (tp: 332202/ fp: 25152 / fn: 69481 )
+shower curtain: 0.364   (tp:  40659/ fp: 8329  / fn: 62712 )
+toilet        : 0.940   (tp: 175229/ fp: 4580  / fn: 6635  )
+sink          : 0.610   (tp: 109811/ fp: 21885 / fn: 48374 )
+bathtub       : 0.804   (tp: 217026/ fp: 30887 / fn: 21924 )
+otherfurniture: 0.324   (tp: 627400/ fp: 551005/ fn: 757525)
+mean IOU 0.6466061590225397
+150 3 Val MegaMulAdd= 48723.20198165854 MegaHidden 75.80054384390245 time= 206.55469012260437 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.818   (tp: 14762868/ fp: 2269489/ fn: 1015707)
+floor         : 0.902   (tp: 10017417/ fp: 588192/ fn: 498418)
+cabinet       : 0.666   (tp: 1955666/ fp: 518385/ fn: 462885)
+bed           : 0.617   (tp: 1193703/ fp: 156420/ fn: 585533)
+chair         : 0.738   (tp: 1586948/ fp: 173203/ fn: 390107)
+sofa          : 0.728   (tp: 1388389/ fp: 394333/ fn: 123980)
+table         : 0.600   (tp: 999239/ fp: 264054/ fn: 401658)
+door          : 0.749   (tp: 1162612/ fp: 162606/ fn: 227258)
+window        : 0.564   (tp: 802712/ fp: 299172/ fn: 321627)
+bookshelf     : 0.641   (tp: 818229/ fp: 139409/ fn: 318983)
+picture       : 0.429   (tp: 151435/ fp: 56611 / fn: 145193)
+counter       : 0.508   (tp: 188799/ fp: 48787 / fn: 133781)
+desk          : 0.581   (tp: 612668/ fp: 244043/ fn: 197646)
+curtain       : 0.684   (tp: 658133/ fp: 58763 / fn: 245903)
+refrigerator  : 0.790   (tp: 335481/ fp: 23115 / fn: 66202 )
+shower curtain: 0.371   (tp:  41838/ fp: 9438  / fn: 61533 )
+toilet        : 0.942   (tp: 175277/ fp: 4210  / fn: 6587  )
+sink          : 0.605   (tp: 109105/ fp: 22298 / fn: 49080 )
+bathtub       : 0.810   (tp: 218173/ fp: 30462 / fn: 20777 )
+otherfurniture: 0.311   (tp: 612161/ fp: 582632/ fn: 772764)
+mean IOU 0.6526268634007355
+151 Train loss 0.2602198854475826 MegaMulAdd= 17206.551331647668 MegaHidden 26.55337819689119 time= 495.8039071559906 s
+152 Train loss 0.25911389523512357 MegaMulAdd= 17169.409046839377 MegaHidden 26.49961023834197 time= 492.7968888282776 s
+153 Train loss 0.252642369309029 MegaMulAdd= 17073.135595937823 MegaHidden 26.321595357512955 time= 490.90443444252014 s
+154 Train loss 0.24678915008515506 MegaMulAdd= 17058.676482113988 MegaHidden 26.343592331606217 time= 490.5311415195465 s
+155 Train loss 0.2584779145462172 MegaMulAdd= 17177.776169450775 MegaHidden 26.517643316062173 time= 492.8180911540985 s
+156 Train loss 0.2519348714645807 MegaMulAdd= 17331.403115772024 MegaHidden 26.699051067357512 time= 497.8084020614624 s
+157 Train loss 0.2561349497212992 MegaMulAdd= 17241.61419112953 MegaHidden 26.620180518134713 time= 495.46926951408386 s
+158 Train loss 0.24417599982448987 MegaMulAdd= 17210.828974590677 MegaHidden 26.550815088082903 time= 493.891676902771 s
+159 Train loss 0.2446424709028238 MegaMulAdd= 17212.975809119172 MegaHidden 26.573435025906733 time= 493.7388470172882 s
+160 Train loss 0.24999949897264506 MegaMulAdd= 17263.126578943004 MegaHidden 26.630860393782385 time= 495.4392623901367 s
+160 1 Val MegaMulAdd= 16181.421237385366 MegaHidden 25.236024351219513 time= 68.58585858345032 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.813   (tp: 14595581/ fp: 2171597/ fn: 1182994)
+floor         : 0.903   (tp: 10045967/ fp: 606065/ fn: 469868)
+cabinet       : 0.660   (tp: 1922080/ fp: 493723/ fn: 496471)
+bed           : 0.580   (tp: 1144620/ fp: 193964/ fn: 634616)
+chair         : 0.723   (tp: 1568293/ fp: 190960/ fn: 408762)
+sofa          : 0.663   (tp: 1301472/ fp: 451884/ fn: 210897)
+table         : 0.576   (tp: 977502/ fp: 297141/ fn: 423395)
+door          : 0.698   (tp: 1165056/ fp: 279583/ fn: 224814)
+window        : 0.513   (tp: 731891/ fp: 302440/ fn: 392448)
+bookshelf     : 0.651   (tp: 842699/ fp: 156404/ fn: 294513)
+picture       : 0.423   (tp: 153953/ fp: 66939 / fn: 142675)
+counter       : 0.486   (tp: 187765/ fp: 63635 / fn: 134815)
+desk          : 0.543   (tp: 606578/ fp: 306600/ fn: 203736)
+curtain       : 0.694   (tp: 692071/ fp: 92603 / fn: 211965)
+refrigerator  : 0.750   (tp: 321876/ fp: 27424 / fn: 79807 )
+shower curtain: 0.329   (tp:  38139/ fp: 12515 / fn: 65232 )
+toilet        : 0.925   (tp: 173762/ fp: 5910  / fn: 8102  )
+sink          : 0.586   (tp: 108487/ fp: 26910 / fn: 49698 )
+bathtub       : 0.782   (tp: 213728/ fp: 34323 / fn: 25222 )
+otherfurniture: 0.292   (tp: 598877/ fp: 665458/ fn: 786048)
+mean IOU 0.6296168793510752
+160 2 Val MegaMulAdd= 32363.924634692685 MegaHidden 50.47159461463415 time= 137.97172737121582 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.818   (tp: 14714436/ fp: 2209696/ fn: 1064139)
+floor         : 0.904   (tp: 10042760/ fp: 589051/ fn: 473075)
+cabinet       : 0.670   (tp: 1942099/ fp: 481096/ fn: 476452)
+bed           : 0.610   (tp: 1171010/ fp: 141279/ fn: 608226)
+chair         : 0.743   (tp: 1612139/ fp: 194127/ fn: 364916)
+sofa          : 0.705   (tp: 1366627/ fp: 425922/ fn: 145742)
+table         : 0.593   (tp: 992944/ fp: 273931/ fn: 407953)
+door          : 0.705   (tp: 1158326/ fp: 252274/ fn: 231544)
+window        : 0.553   (tp: 769894/ fp: 266707/ fn: 354445)
+bookshelf     : 0.671   (tp: 858671/ fp: 141707/ fn: 278541)
+picture       : 0.442   (tp: 153861/ fp: 51780 / fn: 142767)
+counter       : 0.477   (tp: 186403/ fp: 67886 / fn: 136177)
+desk          : 0.583   (tp: 624537/ fp: 260755/ fn: 185777)
+curtain       : 0.709   (tp: 686887/ fp: 64506 / fn: 217149)
+refrigerator  : 0.775   (tp: 329694/ fp: 23812 / fn: 71989 )
+shower curtain: 0.320   (tp:  36816/ fp: 11701 / fn: 66555 )
+toilet        : 0.942   (tp: 175009/ fp: 3962  / fn: 6855  )
+sink          : 0.590   (tp: 107978/ fp: 24746 / fn: 50207 )
+bathtub       : 0.809   (tp: 215183/ fp: 27026 / fn: 23767 )
+otherfurniture: 0.293   (tp: 580836/ fp: 598401/ fn: 804089)
+mean IOU 0.6456290280128704
+160 3 Val MegaMulAdd= 48510.31860854634 MegaHidden 75.6868088195122 time= 206.58533358573914 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.821   (tp: 14748558/ fp: 2175472/ fn: 1030017)
+floor         : 0.904   (tp: 10039669/ fp: 589970/ fn: 476166)
+cabinet       : 0.661   (tp: 1936210/ fp: 511294/ fn: 482341)
+bed           : 0.619   (tp: 1175997/ fp: 121625/ fn: 603239)
+chair         : 0.745   (tp: 1607733/ fp: 181957/ fn: 369322)
+sofa          : 0.710   (tp: 1377680/ fp: 429276/ fn: 134689)
+table         : 0.594   (tp: 992658/ fp: 270777/ fn: 408239)
+door          : 0.718   (tp: 1162870/ fp: 230828/ fn: 227000)
+window        : 0.566   (tp: 779756/ fp: 254501/ fn: 344583)
+bookshelf     : 0.673   (tp: 856589/ fp: 135101/ fn: 280623)
+picture       : 0.436   (tp: 153272/ fp: 55140 / fn: 143356)
+counter       : 0.488   (tp: 183757/ fp: 54107 / fn: 138823)
+desk          : 0.600   (tp: 626057/ fp: 233462/ fn: 184257)
+curtain       : 0.713   (tp: 691147/ fp: 65081 / fn: 212889)
+refrigerator  : 0.778   (tp: 329506/ fp: 21910 / fn: 72177 )
+shower curtain: 0.335   (tp:  38203/ fp: 10550 / fn: 65168 )
+toilet        : 0.944   (tp: 175112/ fp: 3573  / fn: 6752  )
+sink          : 0.596   (tp: 107920/ fp: 22839 / fn: 50265 )
+bathtub       : 0.829   (tp: 215580/ fp: 21245 / fn: 23370 )
+otherfurniture: 0.300   (tp: 608136/ fp: 641357/ fn: 776789)
+mean IOU 0.6514084331825177
+161 Train loss 0.2515199769820486 MegaMulAdd= 17253.658177740934 MegaHidden 26.614134424870464 time= 497.24898171424866 s
+162 Train loss 0.2533043495730146 MegaMulAdd= 17248.146741512955 MegaHidden 26.609452352331605 time= 495.28358817100525 s
+163 Train loss 0.23937031636377434 MegaMulAdd= 17261.33357003109 MegaHidden 26.607682487046635 time= 495.8493514060974 s
+164 Train loss 0.2496545725538359 MegaMulAdd= 17207.02562495337 MegaHidden 26.571383088082904 time= 494.5788984298706 s
+165 Train loss 0.24427825754339044 MegaMulAdd= 17101.489152165803 MegaHidden 26.413023170984456 time= 493.63376927375793 s
+166 Train loss 0.24389622341115752 MegaMulAdd= 17161.919739937824 MegaHidden 26.485075523316063 time= 493.37204456329346 s
+167 Train loss 0.2472149526531046 MegaMulAdd= 17117.283760124352 MegaHidden 26.441174134715023 time= 493.7906835079193 s
+168 Train loss 0.24111753881171152 MegaMulAdd= 17209.382506528495 MegaHidden 26.573901139896375 time= 494.8792519569397 s
+169 Train loss 0.25041105694972077 MegaMulAdd= 17244.53932422798 MegaHidden 26.601297202072537 time= 498.9923174381256 s
+170 Train loss 0.24193882709973819 MegaMulAdd= 17217.341795730572 MegaHidden 26.582136621761656 time= 499.05829405784607 s
+170 1 Val MegaMulAdd= 16206.364428956096 MegaHidden 25.248272546341465 time= 69.55120301246643 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.815   (tp: 14553388/ fp: 2076529/ fn: 1225187)
+floor         : 0.900   (tp: 10007979/ fp: 600519/ fn: 507856)
+cabinet       : 0.623   (tp: 1893066/ fp: 620275/ fn: 525485)
+bed           : 0.615   (tp: 1182195/ fp: 142819/ fn: 597041)
+chair         : 0.719   (tp: 1579219/ fp: 219431/ fn: 397836)
+sofa          : 0.674   (tp: 1311950/ fp: 433571/ fn: 200419)
+table         : 0.606   (tp: 1027632/ fp: 294631/ fn: 373265)
+door          : 0.681   (tp: 1129366/ fp: 269462/ fn: 260504)
+window        : 0.538   (tp: 794994/ fp: 354014/ fn: 329345)
+bookshelf     : 0.624   (tp: 783180/ fp: 118213/ fn: 354032)
+picture       : 0.395   (tp: 158067/ fp: 103926/ fn: 138561)
+counter       : 0.450   (tp: 166188/ fp: 46773 / fn: 156392)
+desk          : 0.609   (tp: 622267/ fp: 211951/ fn: 188047)
+curtain       : 0.684   (tp: 697318/ fp: 114698/ fn: 206718)
+refrigerator  : 0.770   (tp: 336329/ fp: 35301 / fn: 65354 )
+shower curtain: 0.252   (tp:  29156/ fp: 12130 / fn: 74215 )
+toilet        : 0.931   (tp: 174715/ fp: 5747  / fn: 7149  )
+sink          : 0.608   (tp: 108449/ fp: 20297 / fn: 49736 )
+bathtub       : 0.739   (tp: 214111/ fp: 50676 / fn: 24839 )
+otherfurniture: 0.299   (tp: 626041/ fp: 709902/ fn: 758884)
+mean IOU 0.626586599422256
+170 2 Val MegaMulAdd= 32380.87389502439 MegaHidden 50.46557861463415 time= 143.55369663238525 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.818   (tp: 14667953/ fp: 2163624/ fn: 1110622)
+floor         : 0.903   (tp: 10037637/ fp: 600371/ fn: 478198)
+cabinet       : 0.668   (tp: 1933721/ fp: 478086/ fn: 484830)
+bed           : 0.622   (tp: 1179468/ fp: 116516/ fn: 599768)
+chair         : 0.734   (tp: 1613551/ fp: 221331/ fn: 363504)
+sofa          : 0.703   (tp: 1340239/ fp: 394069/ fn: 172130)
+table         : 0.607   (tp: 1029231/ fp: 294915/ fn: 371666)
+door          : 0.685   (tp: 1143458/ fp: 279473/ fn: 246412)
+window        : 0.547   (tp: 804497/ fp: 347114/ fn: 319842)
+bookshelf     : 0.650   (tp: 817659/ fp: 121614/ fn: 319553)
+picture       : 0.424   (tp: 157341/ fp: 74661 / fn: 139287)
+counter       : 0.443   (tp: 162819/ fp: 45221 / fn: 159761)
+desk          : 0.598   (tp: 611758/ fp: 212571/ fn: 198556)
+curtain       : 0.667   (tp: 669600/ fp: 99837 / fn: 234436)
+refrigerator  : 0.793   (tp: 338686/ fp: 25248 / fn: 62997 )
+shower curtain: 0.242   (tp:  27432/ fp: 9992  / fn: 75939 )
+toilet        : 0.939   (tp: 175245/ fp: 4795  / fn: 6619  )
+sink          : 0.624   (tp: 109773/ fp: 17741 / fn: 48412 )
+bathtub       : 0.787   (tp: 215093/ fp: 34457 / fn: 23857 )
+otherfurniture: 0.298   (tp: 607870/ fp: 651808/ fn: 777055)
+mean IOU 0.637509793471584
+170 3 Val MegaMulAdd= 48493.27749166829 MegaHidden 75.6557952 time= 217.2802712917328 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.819   (tp: 14721366/ fp: 2189391/ fn: 1057209)
+floor         : 0.903   (tp: 10037364/ fp: 598077/ fn: 478471)
+cabinet       : 0.670   (tp: 1947546/ fp: 488272/ fn: 471005)
+bed           : 0.632   (tp: 1187277/ fp: 100091/ fn: 591959)
+chair         : 0.744   (tp: 1618095/ fp: 197389/ fn: 358960)
+sofa          : 0.716   (tp: 1359103/ fp: 387069/ fn: 153266)
+table         : 0.609   (tp: 1039390/ fp: 306978/ fn: 361507)
+door          : 0.687   (tp: 1149071/ fp: 282452/ fn: 240799)
+window        : 0.557   (tp: 802979/ fp: 317883/ fn: 321360)
+bookshelf     : 0.676   (tp: 848253/ fp: 116829/ fn: 288959)
+picture       : 0.429   (tp: 155621/ fp: 66543 / fn: 141007)
+counter       : 0.431   (tp: 158292/ fp: 44385 / fn: 164288)
+desk          : 0.610   (tp: 606690/ fp: 184681/ fn: 203624)
+curtain       : 0.676   (tp: 671415/ fp: 89070 / fn: 232621)
+refrigerator  : 0.781   (tp: 331153/ fp: 22095 / fn: 70530 )
+shower curtain: 0.234   (tp:  26393/ fp: 9489  / fn: 76978 )
+toilet        : 0.934   (tp: 175104/ fp: 5546  / fn: 6760  )
+sink          : 0.634   (tp: 111573/ fp: 17804 / fn: 46612 )
+bathtub       : 0.804   (tp: 215898/ fp: 29584 / fn: 23052 )
+otherfurniture: 0.312   (tp: 619599/ fp: 600665/ fn: 765326)
+mean IOU 0.6429028964696563
+171 Train loss 0.2481164417967394 MegaMulAdd= 17185.710069139895 MegaHidden 26.501554031088084 time= 497.69885540008545 s
+172 Train loss 0.24120114937231138 MegaMulAdd= 17244.56020588601 MegaHidden 26.590805098445593 time= 498.9426724910736 s
+173 Train loss 0.24198424100101767 MegaMulAdd= 17195.80449815544 MegaHidden 26.55636402072539 time= 499.2020170688629 s
+174 Train loss 0.2404973567402982 MegaMulAdd= 17217.335608829013 MegaHidden 26.541369160621763 time= 511.5089912414551 s
+175 Train loss 0.2471993410742128 MegaMulAdd= 17244.474856373057 MegaHidden 26.594997512953366 time= 501.36691784858704 s
+176 Train loss 0.23118047875823913 MegaMulAdd= 17256.315966259066 MegaHidden 26.60690951295337 time= 499.55061531066895 s
+177 Train loss 0.23605710843747313 MegaMulAdd= 17069.85007676684 MegaHidden 26.375910549222798 time= 495.68984365463257 s
+178 Train loss 0.2396633295560038 MegaMulAdd= 17260.21180750259 MegaHidden 26.607995025906735 time= 499.41165256500244 s
+179 Train loss 0.2407081559687466 MegaMulAdd= 17103.18924211399 MegaHidden 26.416598259067356 time= 496.2971682548523 s
+180 Train loss 0.23709161197403808 MegaMulAdd= 17285.866717139896 MegaHidden 26.668682487046635 time= 500.1770889759064 s
+180 1 Val MegaMulAdd= 16162.32791804878 MegaHidden 25.210800702439023 time= 70.75312614440918 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.803   (tp: 14512408/ fp: 2285943/ fn: 1266167)
+floor         : 0.903   (tp: 10016328/ fp: 579475/ fn: 499507)
+cabinet       : 0.637   (tp: 1912073/ fp: 585399/ fn: 506478)
+bed           : 0.607   (tp: 1176818/ fp: 158206/ fn: 602418)
+chair         : 0.748   (tp: 1636856/ fp: 212056/ fn: 340199)
+sofa          : 0.685   (tp: 1301202/ fp: 387625/ fn: 211167)
+table         : 0.589   (tp: 1010351/ fp: 314470/ fn: 390546)
+door          : 0.684   (tp: 1161818/ fp: 308795/ fn: 228052)
+window        : 0.536   (tp: 787246/ fp: 344568/ fn: 337093)
+bookshelf     : 0.591   (tp: 755015/ fp: 140918/ fn: 382197)
+picture       : 0.381   (tp: 153467/ fp: 106168/ fn: 143161)
+counter       : 0.384   (tp: 151041/ fp: 70846 / fn: 171539)
+desk          : 0.564   (tp: 607599/ fp: 266974/ fn: 202715)
+curtain       : 0.634   (tp: 642982/ fp: 109964/ fn: 261054)
+refrigerator  : 0.774   (tp: 330000/ fp: 24578 / fn: 71683 )
+shower curtain: 0.217   (tp:  24431/ fp: 9303  / fn: 78940 )
+toilet        : 0.933   (tp: 175680/ fp: 6475  / fn: 6184  )
+sink          : 0.603   (tp: 107844/ fp: 20600 / fn: 50341 )
+bathtub       : 0.765   (tp: 215516/ fp: 42737 / fn: 23434 )
+otherfurniture: 0.302   (tp: 594965/ fp: 587735/ fn: 789960)
+mean IOU 0.616947712400503
+180 2 Val MegaMulAdd= 32340.993492292684 MegaHidden 50.44935367804878 time= 141.1778461933136 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.814   (tp: 14697267/ fp: 2276039/ fn: 1081308)
+floor         : 0.903   (tp: 10028253/ fp: 584156/ fn: 487582)
+cabinet       : 0.649   (tp: 1934158/ fp: 560306/ fn: 484393)
+bed           : 0.634   (tp: 1184130/ fp: 89674 / fn: 595106)
+chair         : 0.739   (tp: 1619392/ fp: 214244/ fn: 357663)
+sofa          : 0.700   (tp: 1339874/ fp: 401094/ fn: 172495)
+table         : 0.590   (tp: 1006879/ fp: 305107/ fn: 394018)
+door          : 0.697   (tp: 1167183/ fp: 283713/ fn: 222687)
+window        : 0.589   (tp: 811868/ fp: 253978/ fn: 312471)
+bookshelf     : 0.601   (tp: 759075/ fp: 126418/ fn: 378137)
+picture       : 0.398   (tp: 148547/ fp: 77001 / fn: 148081)
+counter       : 0.385   (tp: 151287/ fp: 70642 / fn: 171293)
+desk          : 0.577   (tp: 615940/ fp: 256992/ fn: 194374)
+curtain       : 0.651   (tp: 649242/ fp: 94028 / fn: 254794)
+refrigerator  : 0.776   (tp: 330939/ fp: 24658 / fn: 70744 )
+shower curtain: 0.229   (tp:  25648/ fp: 8807  / fn: 77723 )
+toilet        : 0.944   (tp: 175597/ fp: 4244  / fn: 6267  )
+sink          : 0.622   (tp: 109971/ fp: 18670 / fn: 48214 )
+bathtub       : 0.794   (tp: 216538/ fp: 33912 / fn: 22412 )
+otherfurniture: 0.311   (tp: 608398/ fp: 572606/ fn: 776527)
+mean IOU 0.6300737928529423
+180 3 Val MegaMulAdd= 48502.44182446829 MegaHidden 75.66994107317073 time= 214.99518966674805 s
+evaluating 55349376 points...
+classes          IoU
+----------------------------
+wall          : 0.814   (tp: 14725477/ fp: 2320039/ fn: 1053098)
+floor         : 0.904   (tp: 10033690/ fp: 582316/ fn: 482145)
+cabinet       : 0.653   (tp: 1934948/ fp: 543329/ fn: 483603)
+bed           : 0.628   (tp: 1179347/ fp: 100174/ fn: 599889)
+chair         : 0.746   (tp: 1628164/ fp: 205535/ fn: 348891)
+sofa          : 0.705   (tp: 1342560/ fp: 391980/ fn: 169809)
+table         : 0.595   (tp: 1008368/ fp: 293475/ fn: 392529)
+door          : 0.712   (tp: 1170035/ fp: 254578/ fn: 219835)
+window        : 0.591   (tp: 806266/ fp: 239549/ fn: 318073)
+bookshelf     : 0.590   (tp: 738567/ fp: 115490/ fn: 398645)
+picture       : 0.405   (tp: 150707/ fp: 75149 / fn: 145921)
+counter       : 0.403   (tp: 154264/ fp: 60410 / fn: 168316)
+desk          : 0.583   (tp: 620732/ fp: 253983/ fn: 189582)
+curtain       : 0.657   (tp: 650771/ fp: 86325 / fn: 253265)
+refrigerator  : 0.787   (tp: 336177/ fp: 25387 / fn: 65506 )
+shower curtain: 0.264   (tp:  29580/ fp: 8472  / fn: 73791 )
+toilet        : 0.947   (tp: 176034/ fp: 4022  / fn: 5830  )
+sink          : 0.627   (tp: 111299/ fp: 19248 / fn: 46886 )
+bathtub       : 0.810   (tp: 216554/ fp: 28391 / fn: 22396 )
+otherfurniture: 0.312   (tp: 618370/ fp: 596713/ fn: 766555)
+mean IOU 0.636667016080625
+181 Train loss 0.24283164725094647 MegaMulAdd= 17263.184107979276 MegaHidden 26.63679303626943 time= 503.64023184776306 s
+182 Train loss 0.24467008304479834 MegaMulAdd= 17186.991250777202 MegaHidden 26.490363316062176 time= 519.6801931858063 s
+183 Train loss 0.2428231985828319 MegaMulAdd= 17189.676395854924 MegaHidden 26.533930528497407 time= 511.94270944595337 s
+184 Train loss 0.23686035795064717 MegaMulAdd= 17159.911671046633 MegaHidden 26.497822797927462 time= 506.9109525680542 s
+185 Train loss 0.232926577378016 MegaMulAdd= 17227.791597056996 MegaHidden 26.622743751295335 time= 495.6452519893646 s
+186 Train loss 0.23538208375503492 MegaMulAdd= 17066.5135920829 MegaHidden 26.299353533678755 time= 492.40059781074524 s
+187 Train loss 0.23459969378717535 MegaMulAdd= 17221.156613761657 MegaHidden 26.60110520207254 time= 495.78294253349304 s
+188 Train loss 0.22944415568724855 MegaMulAdd= 17068.038847253887 MegaHidden 26.317619689119173 time= 494.4649667739868 s

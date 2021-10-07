@@ -43,20 +43,21 @@ def evaluate(pred_ids, gt_ids):
     print('evaluating', gt_ids.size, 'points...')
     confusion = confusion_matrix(pred_ids, gt_ids)
     class_accuracies = {}
-    mean_iou = 0
+    mean_accuracy = 0
     counter = 0
     for i in range(N_CLASSES):
         label_name = CLASS_LABELS[i]
         class_accuracies[label_name] = get_accuracy(i, confusion)
         if class_accuracies[label_name][1] == 0:
             continue
-        mean_iou += class_accuracies[label_name][0]
+        mean_accuracy += class_accuracies[label_name][0]
         counter = counter + 1
-    mean_iou /= counter
+    mean_accuracy /= counter
     print('classes          Accuracy')
     print('----------------------------')
     for i in range(N_CLASSES):
         label_name = CLASS_LABELS[i]
         print('{0:<14s}: {1:>5.3f}   ({2:>6d}/{3:<6d})'.format(label_name,
               class_accuracies[label_name][0], class_accuracies[label_name][1], class_accuracies[label_name][2]))
-    print('mean Accuracy', mean_iou)
+    print('mean Accuracy', mean_accuracy)
+    return mean_accuracy

@@ -7,6 +7,7 @@ import glob
 import torch
 import iou, accuracy
 import time
+import multiprocessing as mp
 
 k = 3
 
@@ -23,15 +24,15 @@ def draw_registration_result(source, target, transformation, scene=None):
     #                                   lookat=[1.9892, 2.0208, 1.8945],
     #                                   up=[-0.2779, -0.9482, 0.1556])
 
-    if scene:
-        vis = o3d.visualization.Visualizer()
-        vis.create_window()
-        vis.add_geometry(source_temp)
-        vis.add_geometry(target_temp)
-        vis.poll_events()
-        vis.update_renderer()
-        vis.capture_screen_image('captures/{}.png'.format(scene))
-        vis.destroy_window()
+    # if scene:
+    #     vis = o3d.visualization.Visualizer()
+    #     vis.create_window()
+    #     vis.add_geometry(source_temp)
+    #     vis.add_geometry(target_temp)
+    #     vis.poll_events()
+    #     vis.update_renderer()
+    #     vis.capture_screen_image('captures/{}.png'.format(scene))
+    #     vis.destroy_window()
 
 
 def preprocess_point_cloud(pcd, voxel_size):
@@ -92,7 +93,7 @@ def do_registration(source, target, scene):
                                                 source_fpfh, target_fpfh,
                                                 voxel_size)
     # print(result_ransac)
-    draw_registration_result(source_down, target_down, result_ransac.transformation, scene)
+    # draw_registration_result(source_down, target_down, result_ransac.transformation, scene)
 
     result_icp = refine_registration(source, target, source_fpfh, target_fpfh,
                                      voxel_size, result_ransac)
@@ -126,16 +127,25 @@ def calculate_distance_point_to_triangle(p, p0, p1, p2):
 def get_triangles(id, gt):
     return np.where(gt[:,]==id)[0]
 
+distance_threshold = 0.02
+
+files = glob.glob('/opt/datasets/reconstructed/*.ply')
+failed_train = open('/app/src/examples/ScanNet/failed_scenes_train.txt', 'r')
+failed_val = open('/app/src/examples/ScanNet/failed_scenes_val.txt', 'r')
+failed_lines = [s.strip() for s in failed_train.readlines()]
+failed_lines.append([s.strip() for s in failed_val.readlines()])
+files = [f for f in files if f[len('/opt/datasets/reconstructed/'):-len('.ply')] not in failed_lines]
+
 def calculate_reconstruction_accuracy(src, gt):
     distances = []
     nbrs = NearestNeighbors(n_neighbors=k, algorithm='ball_tree').fit(np.asarray(gt.vertices))
-    for vtx in src:
-        # start=time.time()
+    for y, vtx in enumerate(src):
         # the indices of the three closest vertices
-        indices = nbrs.kneighbors([vtx], return_distance=False)
-        
+        dists, indices = nbrs.kneighbors([vtx], return_distance=True)
         triangles = []
-        for id in indices[0]:
+        for x, id in enumerate(indices[0]):
+            if dists[0][x] > distance_threshold:
+                continue
             for triangle in get_triangles(id, np.asarray(gt.triangles)):
                 # add vertices of triangle
                 triangles.append(np.asarray(gt.triangles)[triangle])
@@ -150,12 +160,15 @@ def calculate_reconstruction_accuracy(src, gt):
         
         # append lowest distance
         distances.append(distance)
-        # print(time.time()-start)
-    return np.mean(np.array(distances))
+    distances[:] = [x if x != np.Inf else np.nan for x in distances]
+    return np.nanmean(np.array(distances))
 
 def evaluate_reconstruction(source, target_mesh, scene_id):
+    print(source)
+    start=time.time()
     mean_reconstruction_accuracy = calculate_reconstruction_accuracy(np.asarray(source.points), target_mesh)
-    print(scene_id, '\t', mean_reconstruction_accuracy)
+    print(scene_id, '\t', mean_reconstruction_accuracy, '\t', time.time()-start)
+    return mean_reconstruction_accuracy
 
 def evaluate_segmentation(source, target, source_path, scene_id):
     # read grount truth labels:
@@ -176,21 +189,37 @@ def evaluate_segmentation(source, target, source_path, scene_id):
     accuracy.evaluate(predicted_labels_original_pc, gt_labels.astype(int))
 
 
-# TODO change to predicted to evaluate segmentation
 source_paths = glob.glob('/opt/datasets/reconstructed/*.ply')
 prefix_len = len('/opt/datasets/reconstructed/')
 
-for source_path in source_paths:
-    scene_id = source_path[prefix_len:-len('.ply')]
-    target_path = '/opt/datasets/scans/scene{}/scene{}_vh_clean_2.labels.ply'.format(scene_id, scene_id)
+MRA = []
+
+def evaluate_rec(source_path):
+    if source_path not in files:
+        print('Skip ' + source_path + ', low quality reconstruction')
+        return
+
+    scene_id = source_path[prefix_len:-len('.ply')]    
+    with open('/app/results/nohup.out', 'r') as results:
+        results_lines = results.readlines()
+        for line in results_lines:
+            if line.startswith(scene_id[:7]):
+                print('Skip ' + scene_id + ', already evaluated')
+                return
+
+    target_path = '/opt/datasets/scans/scene{}/scene{}_vh_clean_2.labels.ply'.format(scene_id[:7], scene_id[:7])
 
     source = o3d.io.read_point_cloud(source_path)
     target = o3d.io.read_point_cloud(target_path)
     target_mesh = o3d.io.read_triangle_mesh(target_path)
 
-    source.scale(4, np.zeros(3))
-
     transformation = do_registration(source, target, scene_id)
     source.transform(transformation)
+    MRA.append(evaluate_reconstruction(source, target_mesh, scene_id))
 
-    evaluate_reconstruction(source, target_mesh, scene_id)
+for source in source_paths:
+    evaluate_rec(source)  
+
+print(MRA)
+MRA_average = sum(MRA)/len(MRA)
+print(MRA_average)

@@ -58,3 +58,4 @@ def evaluate(pred_ids,gt_ids):
         print('{0:<14s}: {1:>5.3f}   (tp: {2:>6d}/ fp: {3:<6d}/ fn: {4:<6d})'.format(label_name,
               class_ious[label_name][0], class_ious[label_name][1], class_ious[label_name][2], class_ious[label_name][3]))
     print('mean IOU', mean_iou)
+    return mean_iou
